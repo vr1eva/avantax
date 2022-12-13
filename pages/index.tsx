@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to Next.js on Replit!
+          Welcome to Avantax on Replit!
         </h1>
 
         <p className={styles.description}>
@@ -63,7 +63,7 @@ const Home: NextPage = () => {
           <span className={styles.logo}>
             <Image src="/replit.svg" alt="Replit Logo" width={20} height={18} />
           </span>
-          Replit
+          Replit for Avantax
         </a>
       </footer>
     </div>
