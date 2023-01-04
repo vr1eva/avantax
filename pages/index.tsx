@@ -1,11 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Avantax / Homepage</title>
         <meta name="description" content="Solucion de impuestos" />
@@ -13,14 +13,12 @@ const Home: NextPage = () => {
       </Head>
 
       <Navbar />
-      <main className={styles.main}>
+      <main>
 
       </main>
 
-      <footer className={styles.footer}>
-        <p>Diseñado por Camila Santa María y programado por Bruno Gonzales para Avantax</p>
+      <Footer text="Diseñado por Camila Santa Maria y programado por Bruno Gonzales" />
 
-      </footer>
     </div>
   )
 }
