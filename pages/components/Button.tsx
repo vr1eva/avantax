@@ -1,12 +1,14 @@
 import styles from "./Button.module.scss";
 interface Props {
   onClick: () => void;
-  text: string;
+  name: string;
+  variant: string
 }
 
-const Button = ({ onClick, text }: Props) => {
+const Button = ({ onClick, name, variant = "default" }: Props) => {
+  const buttonStyle = `${styles.button} ${styles[variant]}`
   return (
-    <button className={styles.button} onClick={onClick}>{text}</button>
+    <button className={buttonStyle} onClick={onClick}>{name}</button>
   );
 };
 

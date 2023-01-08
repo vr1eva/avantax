@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { DATA } from './data.js';
 
-export default function Table(props) {
-  const { data } = props;
+export default function Table({ data = DATA }) {
+  const [dropdown, setDropdown] = useState('');
+  const [selectedOption, setSelectedOption] = useState('');
+
   const headers = Object.keys(data[0]);
 
   const headerRow = headers.map((header, index) => {
     return (
-      <th key={index}>{header}</th>
+      <th key={index} onClick={() => setDropdown(header)}>{header}</th>
     );
   });
 
-  const rows = data.map((row, index) => {
+  const rows = data.filter((row) => {
+    return row[dropdown] === selectedOption;
+  }).map((row, index) => {
     const rowData = headers.map((header, index) => {
       return (
         <td key={index}>{row[header]}</td>
@@ -22,7 +27,21 @@ export default function Table(props) {
     );
   });
 
-  return (
+  const dropdownOptions = data.map((row, index) => row[dropdown]).filter((value, index, self) => {
+    return self.indexOf(value) === index;
+  }).map((value, index) => {
+    return (
+      <option key={index}>{value}</option>
+    );
+  });
+
+  const dropdownMenu = (
+    <select onChange={(e) => setSelectedOption(e.target.value)}>
+      {dropdownOptions}
+    </select>
+  );
+
+  const table = (
     <table>
       <thead>
         <tr>{headerRow}</tr>
@@ -31,5 +50,13 @@ export default function Table(props) {
         {rows}
       </tbody>
     </table>
-  )
+  );
+
+  return (
+    <div>
+      {dropdownMenu}
+      {table}
+    </div>
+  );
+
 }

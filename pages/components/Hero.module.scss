@@ -1,0 +1,24 @@
+.hero {
+  position: relative;
+  max-width: 1440px;
+}
+
+
+.heading {
+  font-weight: normal;
+  position: absolute;
+  top:171px;
+  left: 85px;
+  font-size: 72px;
+  width: 732px;
+  color: white;
+
+  b {
+    font-weight: 900;
+  }
+}
+
+.image {
+  max-height:678px;
+  width:100%
+}

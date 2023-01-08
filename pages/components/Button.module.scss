@@ -1,6 +1,5 @@
 .button {
-  background-color: #454797;
-  color: #fff;
+  color: var(--dark);
   border-radius: 32px;
   padding: 10px 29px 10px 29px;
   height: 50px;
@@ -12,4 +11,14 @@
   &:hover {
   cursor: pointer;
   }
+}
+
+.primary {
+  background-color: #454797;
+  color: white;
+}
+
+
+.default {
+  background-color: white;
 }
