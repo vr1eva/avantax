@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
+import Benefits from "./components/Benefits"
 
 const Home: NextPage = () => {
   return (
@@ -16,7 +17,9 @@ const Home: NextPage = () => {
       <Header />
 
       <Hero />
-      
+
+      <Benefits />
+
       <main>
       </main>
 
