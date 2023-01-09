@@ -1,0 +1,36 @@
+.hero {
+  position: relative;
+  max-width: 1440px;
+}
+
+.description {
+  position: absolute;
+  top:171px;
+  left: 85px;
+  width: 732px;
+}
+
+
+.heading {
+  font-weight: normal;
+  font-size: 72px;
+  color: white;
+margin: 0;
+  b {
+    font-weight: 900;
+  }
+}
+
+.subheading {
+  font-size:22px;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 45px;
+}
+
+.image {
+  max-width:100%;
+  width:100%;
+  margin: 0 auto;
+}
+

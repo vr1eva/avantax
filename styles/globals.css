@@ -2,8 +2,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -13,4 +11,15 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+
+
+:root {
+    --dark: "#212121"
+    --orange: "#D57315";
+    --beige: "#D8CDBA";
+    --mintGreen: "#70B39C";
+    --indigo: "#454797";
+    --purple: "#5A599C";
 }
