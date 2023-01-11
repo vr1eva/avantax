@@ -1,3 +1,9 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .highlight {
   color: var(--indigo);
 }
@@ -15,7 +21,7 @@
   background-color: var(--light);
   padding: 50px 65px;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1244px;
   margin: -173px auto 0;
   position: relative;
 }
