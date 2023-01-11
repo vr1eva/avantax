@@ -16,16 +16,11 @@ const Home: NextPage = () => {
       </Head>
 
       <Header />
-
-      <Hero />
-
-      <Benefits />
-
-      <About />
-
       <main>
+        <Hero />
+        <Benefits />
+        <About />
       </main>
-
       <Footer text="Diseñado por Camila Santa Maria y programado por Bruno Gonzales" />
     </div>
   )

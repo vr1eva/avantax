@@ -33,7 +33,6 @@ export default function About() {
           <Button className={styles.button} variant="primary" name="Conoce más sobre nosotros" onClick={() => { }} />
         </div>
       </div>
-
     </section>
   )
 }
