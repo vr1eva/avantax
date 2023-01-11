@@ -41,7 +41,6 @@ function KPI({ estimation, legend }) {
   return (
     <div className={styles.kpi}>
       <h1 className={styles.estimation}>{estimation} <p className={styles.legend}>{legend}</p></h1>
-
     </div>
   )
 }
