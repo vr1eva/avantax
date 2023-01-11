@@ -5,7 +5,7 @@ import hero from "../assets/hero.jpg"
 
 export default function Hero() {
   return (
-    <div className="hero">
+    <div className={styles.hero}>
       <div className={styles.description}>
         <h2 className={styles.heading}><b>Le damos propósito</b> a tus impuestos</h2>
         <p className={styles.subheading}>Somos una consultora especializada en la implementación de proyectos de inversión pública mediante el mecanismo de Obras por Impuestos</p>
