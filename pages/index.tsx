@@ -5,6 +5,7 @@ import Header from "./components/Header"
 import Hero from "./components/Hero"
 import Benefits from "./components/Benefits"
 import About from "./components/About"
+import Services from "./components/Services"
 
 const Home: NextPage = () => {
   return (
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
         <Hero />
         <Benefits />
         <About />
+        <Services />
       </main>
       <Footer text="Diseñado por Camila Santa Maria y programado por Bruno Gonzales" />
     </div>

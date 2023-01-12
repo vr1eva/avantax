@@ -5,10 +5,10 @@ const poppins = Poppins({
   subsets: ['latin']
 })
 
-const Button = ({ onClick, name, variant = "default" }) => {
+const Button = ({ onClick, name, variant = "default", children }) => {
   const buttonStyle = `${styles.button} ${styles[variant]} ${[poppins.className]}`
   return (
-    <button className={buttonStyle} onClick={onClick}>{name}</button>
+    <button className={buttonStyle} onClick={onClick}>{children} {name}</button>
   );
 };
 

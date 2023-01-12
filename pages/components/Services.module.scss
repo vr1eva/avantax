@@ -1,0 +1,95 @@
+.services {
+  display: flex;
+  gap: 42px;
+  width: 1306px;
+  margin: 0 auto;
+  overflow-y: hidden;
+}
+
+.highlight {
+  color: var(--indigo);
+  font-weight: 800;
+}
+
+.heading {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 51px;
+  margin: 0;
+}
+
+.description {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 35px 0 0;
+  width: 437px;
+}
+
+.cards {
+ display: flex;
+  flex-direction: column;
+ 
+}
+
+.card {
+  padding: 28px 22px 84px;
+  min-width: 350px;
+  height: 357px;
+  overflow: hidden;
+  border-radius: 20px;
+  color: white;
+  position: relative;
+  transition: all 0.5s ease;
+ 
+}
+
+.cardHeading {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 32px;
+  margin: 0;
+}
+
+.cardItems {
+  margin: 13px 0 0;;
+  padding: 0 22px;
+}
+
+.cardItem {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.cardImage {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+}
+
+.cardsList {
+ display:flex;
+  max-width: 827px;
+  overflow-x: hidden;
+  gap: 25px;
+}
+
+.content {
+  width: 437px;
+}
+
+.controls {
+  margin-top: 27px;
+  display:flex;
+  gap: 38px;
+
+  img:hover {
+    cursor: pointer;
+  }
+}
+
