@@ -16,7 +16,7 @@ export default function About() {
         <div className={styles.rowContainer}>
           <div className={styles.kpis}>
             {KPIs.map(({ estimation, legend }) => (
-              <KPI estimation={estimation} legend={legend} />))}
+              <KPI key={legend} estimation={estimation} legend={legend} />))}
           </div>
           <div className={styles.content}>
             <h2 className={styles.heading}>Sobre Nosotros</h2>
@@ -24,7 +24,7 @@ export default function About() {
               de infraestructura en el país. <br /> <br />
               Brindamos asesoría especializada en el mecanismo de
               <span className={styles.highlight}> Obras por Impuestos (OxI)</span>,
-              donde las empresas participan a través del canje de sus
+              donde las empresas participan a través del canje de susx
               impuestos por el financiamiento y ejecución de proyectos de construcción o mejora de infraestructura en la comunidad, como la construcción de carreteras, escuelas o
               parques públicos.</p>
           </div>
