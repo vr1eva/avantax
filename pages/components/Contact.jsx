@@ -11,13 +11,11 @@ export default function() {
   )
 }
 
-function handleSubmit() {
-  //nothing
-}
+function doNothing() { }
 
 function Form() {
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={doNothing}>
       <div className={styles.row}>
         <TextField name="name" label="Nombre" placeholder="Nombre" />
         <TextField name="surname" label="Apellido" placeholder="Tu apellido" />
@@ -39,7 +37,7 @@ function Form() {
         <TextArea name="message" label="Mensaje" placeholder="Escribe tu mensaje aquí..." />
       </div>
       <div className={styles.row}>
-        <Button type="submit" variant="primary" className={styles.button} >Enviar mensaje</Button>
+        <Button type="submit" variant="primary" className={styles.button}>Enviar mensaje</Button>
       </div>
     </form>
   )
