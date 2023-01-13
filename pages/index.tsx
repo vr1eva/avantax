@@ -6,6 +6,7 @@ import Hero from "./components/Hero"
 import Benefits from "./components/Benefits"
 import About from "./components/About"
 import Services from "./components/Services"
+import Contact from "./components/Contact"
 
 const Home: NextPage = () => {
   return (
@@ -22,6 +23,7 @@ const Home: NextPage = () => {
         <Benefits />
         <About />
         <Services />
+        <Contact />
       </main>
       <Footer text="Diseñado por Camila Santa Maria y programado por Bruno Gonzales" />
     </div>

@@ -36,9 +36,12 @@ export default function Table({ data = DATA }) {
   });
 
   const dropdownMenu = (
-    <select onChange={(e) => setSelectedOption(e.target.value)}>
-      {dropdownOptions}
-    </select>
+    <>
+      <p>Filtrando por {dropdown}</p>
+      <select onChange={(e) => setSelectedOption(e.target.value)}>
+        {dropdownOptions}
+      </select>
+    </>
   );
 
   const table = (

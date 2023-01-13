@@ -11,7 +11,7 @@ const KPIs = [
 export default function About() {
   return (
     <section className={styles.about}>
-      <Image className={styles.image} width={1440} height={372} src={about} />
+      <Image alt="Construction car moving rocks" className={styles.image} width={1440} height={372} src={about} />
       <div className={styles.modal}>
         <div className={styles.rowContainer}>
           <div className={styles.kpis}>
