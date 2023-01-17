@@ -25,7 +25,7 @@ const Home: NextPage = () => {
         <Services />
         <Contact />
       </main>
-      <Footer text="Diseñado por Camila Santa Maria y programado por Bruno Gonzales" />
+      <Footer />
     </div>
   )
 }
