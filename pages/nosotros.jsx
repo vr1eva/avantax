@@ -1,6 +1,7 @@
 import styles from "./nosotros.module.scss"
 import placeholders from "./assets/placeholders.jpg"
 import Image from "next/image"
+import FaqCard from "./components/FaqCard"
 
 export default function() {
   return (
@@ -14,5 +15,10 @@ export default function() {
             A lo largo de nuestras trayectorias profesionales hemos articulado un portafolio de <span>más de 30 proyectos</span> de diversos sectores como salud, educación, transporte, seguridad ciudadana y electrificación, cuyo monto total de inversión supera <span>los 250 millones de soles.</span></p>
         </div>
       </div>
+
+      <FaqCard />
+
+
     </div>)
 }
+

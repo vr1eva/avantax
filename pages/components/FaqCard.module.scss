@@ -1,0 +1,44 @@
+.faq {
+  margin: 120px auto 0;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 1244px;
+  background: var(--light);
+  border-radius: 16px;
+  position: relative;
+  padding: 43px 65px 74px;
+}
+
+.heading {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 51px;
+  margin: 0;
+}
+
+.paragraph {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 25px 0 0 0;
+}
+
+.actions {
+  align-self: flex-end;
+  margin: 45px 0 0 0;
+}
+
+.image {
+  margin: -166px auto 0;
+}
