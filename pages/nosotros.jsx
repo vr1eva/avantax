@@ -2,6 +2,7 @@ import styles from "./nosotros.module.scss"
 import placeholders from "./assets/placeholders.jpg"
 import Image from "next/image"
 import FaqCard from "./components/FaqCard"
+import Teammates from "./components/Teammates"
 
 export default function() {
   return (
@@ -18,6 +19,7 @@ export default function() {
 
       <FaqCard />
 
+      <Teammates />
 
     </div>)
 }

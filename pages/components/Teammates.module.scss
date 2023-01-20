@@ -1,0 +1,23 @@
+.teammates {
+  margin: 0 auto;
+  max-width: 1206px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 120px 0 175px;
+  
+}
+
+.heading {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 51px;
+  margin: 0 0 80px;
+}
+
+.teamcards {
+  gap: 113px;
+  flex-direction: column;
+  display:flex;
+}

@@ -1,0 +1,66 @@
+.card {
+  display: flex;
+  gap:40px;
+  background: var(--light);
+  max-width: 962px;
+  margin: 0 auto;
+  padding-bottom: 74px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.cardImage {
+  height: 290px;
+  width: 253px;
+  border-radius: 15px;
+}
+
+.leftyCardImage {
+  position:absolute;
+  top: -18px;
+  left: -88px;
+}
+
+.rightyCardImage {
+  position:absolute;
+  top: -18px;
+  right: -95px;
+}
+
+
+.rightyCard  {
+  padding: 44px 198px 74px 40px;  
+  text-align: end;
+}
+
+.leftyCard  {
+  padding: 44px 40px 74px 198px;
+}
+
+.name {
+  margin: 0;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 32px;
+  color: var(--dark);
+}
+
+.bio {
+  margin: 12px 0 0; 
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  max-width: 724px;
+}
+
+.role {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--indigo);
+  margin: 0;
+}
+
