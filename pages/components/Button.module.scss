@@ -14,9 +14,18 @@
 }
 
 .primary {
-  background-color: #454797;
+  background-color: var(--indigo);
   color: white;
   font-weight: 500;
+}
+
+.light {
+  color: var(--indigo);
+  background: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
 }
 
 

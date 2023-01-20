@@ -1,0 +1,42 @@
+.nosotros {
+  padding: 127px 0 0 0;
+}
+.heading {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 72px;
+  line-height: 95px;
+  color: var(--orange);
+  width: 906px;
+  margin: 0 0 -111px;
+  padding-left: 338px;
+  position: relative;
+  width: 1029px;
+}
+
+.hero {
+  width: 100%;
+  max-width: 1244px;
+  margin: 0 auto;
+}
+
+.paragraph {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 35px;
+  color: var(--dark);
+  width: 698px;
+  padding-top: 158px;
+
+  span {
+    color: var(--indigo);
+    font-weight: 600;
+  }
+}
+
+.row {
+  display: flex;
+  gap: 42px;
+}
+
