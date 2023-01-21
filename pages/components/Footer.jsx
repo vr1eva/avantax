@@ -34,12 +34,12 @@ function Footer() {
 function Social() {
   return (
     <div className={styles.social}>
-      <Image src={logo} />
+      <Image alt="avantax logo" src={logo} />
       <div className={styles.socialDivider} />
       <div className={styles.socialMediaLinks}>
-        <a href="#"><Image width={24} height={24} src={linkedin} /></a>
-        <a href="#"><Image width={24} height={19.5} src={twitter} /></a>
-        <a href="#"><Image width={24} height={24} src={instagram} /></a>
+        <a href="#"><Image alt="linkedin logo" width={24} height={24} src={linkedin} /></a>
+        <a href="#"><Image alt="twitter logo" width={24} height={19.5} src={twitter} /></a>
+        <a href="#"><Image alt="instagram logo" width={24} height={24} src={instagram} /></a>
       </div>
     </div>
   )
@@ -49,7 +49,7 @@ function Details() {
   return (
     <div className={styles.details}>
       {details.map(det => (
-        <div>
+        <div key={det.label}>
           <p className={styles.detailLabel}>{det.label}</p>
           <p className={styles.detailValue}>{det.value}</p>
         </div>
@@ -63,7 +63,7 @@ function Links() {
   return (
     <div className={styles.links}>
       {links.map(link => (
-        <a className={styles.link} href={link.href}>{link.title}</a>
+        <a key={link.path} className={styles.link} href={link.href}>{link.title}</a>
       ))}
     </div>
   )

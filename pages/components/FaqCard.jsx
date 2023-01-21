@@ -3,7 +3,7 @@ import Button from "./Button"
 import Image from "next/image"
 import faqCardImage from "../assets/faqCardImage.jpg"
 
-export default function() {
+export default function FaqCard() {
   return (
     <div className={styles.faq}>
       <div className={styles.card}>
@@ -19,7 +19,7 @@ export default function() {
 
       </div>
 
-      <Image className={styles.image} src={faqCardImage} width={1440} height={372} />
+      <Image alt="background image" className={styles.image} src={faqCardImage} width={1440} height={372} />
     </div>
   )
 }

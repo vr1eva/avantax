@@ -49,7 +49,7 @@ const STAGES = [{
   items: ["Obtención del CIPRL. "]
 },
 ]
-export default function() {
+export default function Services() {
   const [position, setPosition] = useState(0)
   return (
     <section className={styles.services}>

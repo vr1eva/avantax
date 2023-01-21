@@ -53,7 +53,7 @@ const reducer = (state, action) => {
   }
 }
 
-export default function() {
+export default function Faq() {
   const [faqs, dispatch] = useReducer(reducer, initialState)
   return (
     <div className={styles.faq}>
@@ -61,10 +61,10 @@ export default function() {
       <p>Aclaramos todas las dudas que tengas ¿Aún tienes preguntas? <b className={styles.highlight}>Ponte en contacto con nuestro equipo.</b></p>
       <div className={styles.faqs}>
         {faqs.map(faq => (
-          <div className={styles.prompt} >
+          <div key={faq.question} className={styles.prompt} >
             <div className={styles.row}>
               <h3 className={styles.question}>{faq.question}</h3>
-              <Image onClick={() => dispatch({ type: "TOGGLE_FAQ", payload: faq.question })} className={styles.expandable} src={faq.expanded ? expanded : notExpanded} />
+              <Image alt="see answer button" onClick={() => dispatch({ type: "TOGGLE_FAQ", payload: faq.question })} className={styles.expandable} src={faq.expanded ? expanded : notExpanded} />
             </div>
             {faq.expanded ? <p className={styles.answer}>{faq.answer}</p> : null}
           </div>

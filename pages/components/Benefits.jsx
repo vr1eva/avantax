@@ -13,10 +13,10 @@ import Image from "next/image"
 const icons = { buildings, convert, cupheart, status, medal, ranking, award, money }
 
 
-export default function() {
+export default function Benefits() {
   return (
     <section className={styles.benefits} id="beneficios">
-      <Benefits />
+      <Benefit />
       <CompanyBenefits />
       <CallToAction />
     </section>
@@ -48,7 +48,7 @@ export const BENEFITS = [
 
 
 
-function Benefits() {
+function Benefit() {
   const heading = "¿Qué beneficios brindan las Obras por Impuestos al país?"
   return (
     <div className={styles.benefit}>

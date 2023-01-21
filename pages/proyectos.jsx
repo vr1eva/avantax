@@ -2,7 +2,7 @@ import Table from "./components/Table.jsx";
 import Button from "./components/Button.jsx"
 import styles from "./proyectos.module.scss"
 
-export default function() {
+export default function Proyectos() {
   return (
     <div className={styles.proyectos}>
       <h2 className={styles.heading}>Cartera de proyectos</h2>

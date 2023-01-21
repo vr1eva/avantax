@@ -1,7 +1,7 @@
 import styles from "./Contact.module.scss"
 import Button from "./Button"
 
-export default function() {
+export default function Contact() {
   return (
     <div className={styles.contact}>
       <h2 className={styles.heading}>Empecemos a trabajar juntos</h2>
