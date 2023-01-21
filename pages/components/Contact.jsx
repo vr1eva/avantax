@@ -15,7 +15,7 @@ function doNothing() { }
 
 function Form() {
   return (
-    <form className={styles.form} onSubmit={doNothing}>
+    <form className={styles.form} onSubmit={doNothing} id="contacto">
       <div className={styles.row}>
         <TextField name="name" label="Nombre" placeholder="Nombre" />
         <TextField name="surname" label="Apellido" placeholder="Tu apellido" />

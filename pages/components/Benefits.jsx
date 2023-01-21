@@ -15,7 +15,7 @@ const icons = { buildings, convert, cupheart, status, medal, ranking, award, mon
 
 export default function() {
   return (
-    <section className={styles.benefits}>
+    <section className={styles.benefits} id="beneficios">
       <Benefits />
       <CompanyBenefits />
       <CallToAction />
