@@ -3,12 +3,16 @@
   margin-left: auto;
 }
 
+.headerContainer {
+  width: 100%;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.07);
+}
+
 .header {
   display:flex;
   padding: 0 55px;
   margin: 0 auto;
   max-width: 1440px;
-  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.07);
 }
 
 .link {

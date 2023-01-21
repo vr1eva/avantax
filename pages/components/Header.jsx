@@ -33,9 +33,11 @@ function Logo() {
 
 export default function Header() {
   return (
-    <header className={styles.header}>
-      <Logo />
-      <Navbar />
-    </header>
+    <div className={styles.headerContainer}>
+      <header className={styles.header}>
+        <Logo />
+        <Navbar />
+      </header>
+    </div>
   );
 }
