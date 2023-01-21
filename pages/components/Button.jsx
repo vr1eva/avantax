@@ -5,8 +5,7 @@ const poppins = Poppins({
   subsets: ['latin']
 })
 
-function doNothing() {
-}
+function doNothing() { }
 
 const Button = ({ onClick = doNothing, type = "button", name, variant = "default", children, className }) => {
   const buttonStyle = `${styles.button} ${styles[variant]} ${[poppins.className]} ${className}`
