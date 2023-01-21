@@ -7,4 +7,4 @@ export const LINKS = [
   { name: 'Contáctanos', path: '/#contacto' },
 ];
 
-export const HIGHLIGHTED_PATH = "/contacto"
+export const HIGHLIGHTED_PATH = "/#contacto"
