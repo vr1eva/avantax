@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { DATA } from './data.js';
+import styles from "./Table.module.scss";
 
 export default function Table({ data = DATA }) {
   const [dropdown, setDropdown] = useState('');
@@ -9,7 +10,7 @@ export default function Table({ data = DATA }) {
 
   const headerRow = headers.map((header, index) => {
     return (
-      <th key={index} onClick={() => setDropdown(header)}>{header}</th>
+      <th className={styles.tableHeader} key={index} onClick={() => setDropdown(header)}>{header}</th>
     );
   });
 
@@ -36,16 +37,18 @@ export default function Table({ data = DATA }) {
   });
 
   const dropdownMenu = (
-    <>
-      <p>Filtrando por {dropdown}</p>
-      <select onChange={(e) => setSelectedOption(e.target.value)}>
+    <div className={styles.dropdownMenu}>
+      <p className={styles.filterLabel}>Selecciona una cabecera y filtra por categoría</p>
+      <select className={styles.select} onChange={(e) => setSelectedOption(e.target.value)}>
+        <option hidden={dropdownOptions.length > 0 ? true : false}>Filtrar resultados</option>
+
         {dropdownOptions}
       </select>
-    </>
+    </div>
   );
 
   const table = (
-    <table>
+    <table className={styles.table}>
       <thead>
         <tr>{headerRow}</tr>
       </thead>
@@ -56,7 +59,7 @@ export default function Table({ data = DATA }) {
   );
 
   return (
-    <div>
+    <div className={styles.tableContainer}>
       {dropdownMenu}
       {table}
     </div>
