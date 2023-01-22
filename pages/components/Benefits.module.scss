@@ -1,5 +1,5 @@
 .benefits {
-  padding: 10px 0 120px;
+  padding: 52px 0 120px;
 }
 
 .benefit {
@@ -30,20 +30,31 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .benefits {
-    margin: 52px 15px;
-    height: 938px;  
+  .benefit {
+    display: flex;
+    flex-direction: column;
+    gap:44px;
+    margin: 0;
   }
 
   .heading {
     font-weight: 600;
     font-size: 22px;
     line-height: 32px;
-    margin-bottom: 44px;
+    margin: 0;
+    
   }
 
   .cards {
     gap:15px;
+    width: 100%;
+    overflow-x: scroll;
+    padding: 0 15px;
+  }
+
+  .card {
+    width: 240px;
+    height: 203px;
   }
 
   .image {

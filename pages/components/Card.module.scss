@@ -26,13 +26,16 @@
   .card {
     width: 240px;
     padding: 26px 24px;
-    height: 203px;
+    flex-shrink: 0;
+    padding: 26px 24px;
   }
 
   .title {
+    color: var(--dark);
     font-weight: 600;
     font-size: 18px;
     line-height: 27px;
+    margin: 14px 0 0;
   }
 
   .description {
@@ -42,11 +45,4 @@
     margin-top: 6px;
   }
 
-  .title {
-    color: var(--dark);
-    font-weight: 600;
-    font-size: 21px;
-    line-height: 32px;
-    margin: 14px 0 0;
-  }
 }
