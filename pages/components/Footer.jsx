@@ -20,7 +20,6 @@ function Footer() {
   return (
     <div className={styles.footer} >
       <div className={styles.row}>
-
         <Social />
         <Details />
         <Links />
