@@ -30,9 +30,8 @@
 }
 
 .cards {
- display: flex;
+  display: flex;
   flex-direction: column;
- 
 }
 
 .card {
@@ -93,4 +92,36 @@
     cursor: pointer;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .heading {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 32px;
+ }
+
+ .description {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: 20px;
+ }
+
+ .highlight {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+ }
+
+ .services {
+    flex-direction: column;
+    gap: 44px;
+    padding: 0 15px;
+ }
+}
+
+
 

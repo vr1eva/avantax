@@ -79,3 +79,34 @@
   width: 100%;
 }
 
+@media only screen and (max-width: 600px) {
+  .heading {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 32px;
+    text-align: center;
+  }
+
+  .description {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    margin: 20px 0 0;
+  }
+
+  .contact {
+    width: 100%;
+  }
+
+  .form {
+    margin-top:32px;
+    flex-direction: column;
+  }
+
+  .row {
+    flex-direction: column
+  }
+}

@@ -1,7 +1,9 @@
 import Image from "next/image"
 import Button from "./Button"
-import about from "../assets/about.jpg"
 import styles from "./About.module.scss"
+import aboutImage from "../assets/about.jpg"
+
+
 
 const KPIs = [
   { estimation: "+30", legend: "Proyectos" },
@@ -10,8 +12,11 @@ const KPIs = [
 
 export default function About() {
   return (
-    <section className={styles.about}>
-      <Image alt="Construction car moving rocks" className={styles.image} width={1440} height={372} src={about} />
+    <section className={styles.about} style={{
+      backgroundImage: `url(${aboutImage.src})`,
+      width: '100%',
+      height: '761px',
+    }}>
       <div className={styles.modal}>
         <div className={styles.rowContainer}>
           <div className={styles.kpis}>
