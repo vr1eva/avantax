@@ -6,48 +6,49 @@ import approval from "../assets/approval.svg"
 import arrowLeft from "../assets/arrowLeft.svg"
 import arrowRight from "../assets/arrowRight.svg"
 import styles from "./Services.module.scss"
-import { colors } from "../assets/colors"
+import { colors } from "../../constants/colors"
 import Image from "next/image"
 import { useState } from "react"
 
 const icons = {
   board, tasks, verified, user, approval
 }
-const STAGES = [{
-  background: "purple",
-  color: "white",
-  icon: "board",
-  title: "Fase 1",
-  items: ["Evaluación técnica, legal y económica del proyecto de interés, y de ser el caso, formulación y reformulación de estudios de inversión pública.", "Relacionamiento con funcionarios públicos y comunidad vinculados al proyecto."]
-},
-{
-  icon: "tasks",
-  color: "black",
-  background: "mintGreen",
-  title: "Fase 2",
-  items: ["Desarrollo de documentación previa al proceso de adjudicación del proyecto.", "Proceso de selección privado de empresa contratista encargada de la ejecución del proyecto."]
-},
-{
-  icon: "verified",
-  background: "orange",
-  color: "white",
-  title: "Fase 3",
-  items: ["Proceso de adjudicación pública del proyecto y otorgamiento de buena pro."]
-},
-{
-  icon: "user",
-  background: "beige",
-  color: "black",
-  title: "Fase 4",
-  items: ["Gerencia y supervisión del proyecto a través de nuestra PMO.", "Administración contractual del proyecto."]
-},
-{
-  icon: "approval",
-  color: "white",
-  background: "indigo",
-  title: "Fase 5",
-  items: ["Obtención del CIPRL. "]
-},
+const STAGES = [
+  {
+    background: "purple",
+    color: "white",
+    icon: "board",
+    title: "Fase 1",
+    items: ["Evaluación técnica, legal y económica del proyecto de interés, y de ser el caso, formulación y reformulación de estudios de inversión pública.", "Relacionamiento con funcionarios públicos y comunidad vinculados al proyecto."]
+  },
+  {
+    icon: "tasks",
+    color: "black",
+    background: "mintGreen",
+    title: "Fase 2",
+    items: ["Desarrollo de documentación previa al proceso de adjudicación del proyecto.", "Proceso de selección privado de empresa contratista encargada de la ejecución del proyecto."]
+  },
+  {
+    icon: "verified",
+    background: "orange",
+    color: "white",
+    title: "Fase 3",
+    items: ["Proceso de adjudicación pública del proyecto y otorgamiento de buena pro."]
+  },
+  {
+    icon: "user",
+    background: "beige",
+    color: "black",
+    title: "Fase 4",
+    items: ["Gerencia y supervisión del proyecto a través de nuestra PMO.", "Administración contractual del proyecto."]
+  },
+  {
+    icon: "approval",
+    color: "white",
+    background: "indigo",
+    title: "Fase 5",
+    items: ["Obtención del CIPRL. "]
+  },
 ]
 export default function Services() {
   const [position, setPosition] = useState(0)

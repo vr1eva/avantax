@@ -3,7 +3,7 @@ import Link from "next/link"
 import Button from "./Button"
 import styles from "./Header.module.scss"
 import logo from "../assets/logo.svg"
-import { LINKS, HIGHLIGHTED_PATH } from "../assets/links"
+import { LINKS, HIGHLIGHTED_PATH } from "../../constants/links"
 
 function Navbar() {
   return (
