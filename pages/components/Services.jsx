@@ -6,7 +6,7 @@ import approval from "../assets/approval.svg"
 import arrowLeft from "../assets/arrowLeft.svg"
 import arrowRight from "../assets/arrowRight.svg"
 import styles from "./Services.module.scss"
-import { colors } from "./colors"
+import { colors } from "../assets/colors"
 import Image from "next/image"
 import { useState } from "react"
 

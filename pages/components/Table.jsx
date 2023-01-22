@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DATA } from './data.js';
+import { DATA } from '../assets/data.js';
 import styles from "./Table.module.scss";
 
 export default function Table({ data = DATA }) {
