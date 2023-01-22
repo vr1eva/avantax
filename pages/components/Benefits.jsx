@@ -12,7 +12,6 @@ import money from "../assets/money.svg"
 import Image from "next/image"
 const icons = { buildings, convert, cupheart, status, medal, ranking, award, money }
 
-
 export default function Benefits() {
   return (
     <section className={styles.benefits} id="beneficios">
@@ -46,8 +45,6 @@ export const BENEFITS = [
   },
 ]
 
-
-
 function Benefit() {
   const heading = "¿Qué beneficios brindan las Obras por Impuestos al país?"
   return (
@@ -61,6 +58,7 @@ function Benefit() {
             description={item.description}
           >
             <Image
+              className={styles.image}
               alt={"Benefit" + item.title}
               src={icons[item.icon]}
               width={70}
@@ -69,7 +67,6 @@ function Benefit() {
           </Card>
         ))}
       </div>
-
     </div>
   )
 }
@@ -110,6 +107,7 @@ function CompanyBenefits() {
             description={item.description}
           >
             <Image
+              className={styles.image}
               alt={"Benefit" + item.title}
               src={icons[item.icon]}
               width={70}

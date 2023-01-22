@@ -28,3 +28,25 @@
   max-width: 255px;
   margin: 0 auto;
 }
+
+@media only screen and (max-width: 600px) {
+  .benefits {
+    margin: 52px 15px;
+  }
+
+  .heading {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 32px;
+    margin-bottom: 44px;
+  }
+
+  .cards {
+    gap:15px;
+  }
+
+  .image {
+    width: 62px;
+    height: 62px;
+  }
+}

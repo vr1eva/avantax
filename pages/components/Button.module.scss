@@ -33,3 +33,10 @@
   background-color: white;
   font-weight: 400;
 }
+
+@media only screen and (max-width: 600px) {
+  .button {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}

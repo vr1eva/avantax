@@ -2,6 +2,7 @@
   position: relative;
   max-width: 1440px;
   margin: 0 auto;
+  background: linear-gradient(360deg, rgba(0, 0, 0, 0.59) 0%, rgba(0, 0, 0, 0) 67.72%, rgba(0, 0, 0, 0) 97.16%);
 }
 
 .description {
@@ -10,7 +11,6 @@
   left: 85px;
   width: 740px;
 }
-
 
 .heading {
   font-weight: 600;
@@ -37,3 +37,32 @@
   margin: 0 auto;
 }
 
+
+@media only screen and (max-width: 600px) {
+  .description {
+    position: relative;
+    z-index: 1;
+    padding: 251px 15px 48px;
+  }
+
+  .heading {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 51px;
+  }
+
+  .subheading {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .image {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+}

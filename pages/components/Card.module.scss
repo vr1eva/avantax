@@ -15,9 +15,38 @@
 }
 
 .description {
- color: var(--dark);
+  color: var(--dark);
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   margin: 22px 0 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 240px;
+    padding: 26px 24px;
+    height: 203px;
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 6px;
+  }
+
+  .title {
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 32px;
+    margin: 14px 0 0;
+  }
 }

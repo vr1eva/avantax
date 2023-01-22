@@ -13,6 +13,7 @@
   padding: 0 55px;
   margin: 0 auto;
   max-width: 1440px;
+  align-items: center;
 }
 
 .link {
@@ -20,8 +21,22 @@
   align-items: center;
 }
 
+.menu {
+  display: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+
 @media only screen and (max-width: 600px) {
   .nav {
    display: none;
- }
+  }
+
+  .menu {
+    display: flex;
+  }
+
+  .header{
+    padding: 0 18px;
+  }
 }
