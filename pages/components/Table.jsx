@@ -1,40 +1,44 @@
-import React, { useState } from 'react';
-import { DATA } from '../../constants/data.js';
+import React, { useState, useEffect} from 'react';
 import styles from "./Table.module.scss";
 import arrowDown from "../assets/arrow-down.svg"
-import * as fs from "fs";
-import { readFile, set_fs } from "xlsx";
-import { read, writeFileXLSX } from "xlsx";
 
-export async function getServerSideProps(context) {
-  set_fs(fs);
+const headers = [
+  {text: "Nº", key: "id"},
+  {text: "Estado", key: "status"},
+  {text: "Nivel", key: "level"},
+  {text: "Departamento", key: "department"},
+  {text: "Provincia", key: "province"},
+  {text: "Distrito", key: "district" },
+  {text: "Entidad Pública", key: "entity"},
+  {text:"Código SNIP", key: "snipCode"},
+  {text: "Nombre del proyecto", key: "name" },
+  {text: "Tipologia", key: "tipology"},
+  {text:"Monto de inversión referencial (S/M)", key: "investment"},
+  {text: "Tope CIPRL 2021", key: "ciprlMax"}
+]
 
-  const workbook = readFile("../assets/projects.xlsx");
 
-  return {
-    props: {workbook}, // will be passed to the page component as props
-  }
-}
-
-export default function Table({ data = DATA , workbook}) {
+export default function Table({ data }) {
   const [dropdown, setDropdown] = useState('');
   const [selectedOption, setSelectedOption] = useState('');
 
-  const headers = Object.keys(data[0]);
-  
+  useEffect(() => {
+    setSelectedOption(headers[4].key)
+  }, [])
 
   const headerRow = headers.map((header, index) => {
     return (
-      <th className={`${styles.tableHeader} ${header}`} key={index} onClick={() => setDropdown(header)}>{header}</th>
+      <th className={`${styles.tableHeader}`} key={index} onClick={() => setDropdown(header.key)}>{header.text}</th>
     );
   });
 
+ 
   const rows = data.filter((row) => {
     return row[dropdown] === selectedOption;
   }).map((row, index) => {
     const rowData = headers.map((header, index) => {
       return (
-        <td className={styles.tableData} key={index}><span>{row[header]}</span></td>
+        <td className={styles.tableData} key={index}><span>{row[header.key]}</span></td>
       );
     });
 

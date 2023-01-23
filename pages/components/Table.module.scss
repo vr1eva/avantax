@@ -7,7 +7,7 @@
 
 .table  {
   width: 1256px;
-  height: 927px;
+  min-height: 927px;
   margin-top: 35px;
 }
 
@@ -72,6 +72,7 @@
   &:first-letter {
       text-transform: uppercase;
   }
+  cursor: pointer;
 }
 
 .tableRow {
