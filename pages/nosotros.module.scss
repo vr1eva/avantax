@@ -1,6 +1,7 @@
 .nosotros {
   padding: 127px 0 0 0;
 }
+
 .heading {
   font-style: normal;
   font-weight: 500;
@@ -37,5 +38,35 @@
 .row {
   display: flex;
   gap: 42px;
+}
+
+@media only screen and (max-width: 600px) {
+  .paragraph {
+     margin: 0; 
+  }
+  .nosotros {
+    padding: 40px 0 0 ;
+  }
+  .row {
+    flex-direction: column;
+    margin-top: 44px;
+  }
+
+  .image {
+    width: 100%;
+  }
+  .heading {
+    font-style: normal;
+    font-size: 40px;
+    line-height: 51px;
+    margin:0;
+    width: unset;
+    padding: 0 15px 0 15px;;
+  }
+
+  .paragraph {
+    width: 100%;
+    padding: 0 15px;
+  }
 }
 

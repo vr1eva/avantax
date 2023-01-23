@@ -26,12 +26,6 @@ function Navbar() {
               />
             </Link>)
         })}
-        <Link href="/faq" className={`${styles.link} ${styles.faqAlias}`} > 
-          <Button
-            name="Preguntas frequents"
-            variant="default"
-          />
-        </Link>
         <div className={styles.social}>
           <Link  href="https://www.linkedin.com/company/avantax-peru/?viewAsMember=true"><Image width={28} height={28} src={linkedinGold} /> </Link>
           <Link href="https://twitter.com/avantax_peru"><Image width={28} height={28} src={twitterGold} /></Link>

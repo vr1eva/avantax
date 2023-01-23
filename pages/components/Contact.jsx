@@ -3,7 +3,7 @@ import Button from "./Button"
 
 export default function Contact() {
   return (
-    <div className={styles.contact}>
+    <div className={styles.contact} id="contact">
       <div className={styles.contactModal}>
       <h2 className={styles.heading}>Empecemos a trabajar juntos</h2>
       <p className={styles.description}>Ponte en contacto con nosotros y te responderemos tan rápido como podamos</p>

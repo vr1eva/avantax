@@ -2,6 +2,7 @@ import styles from "./Hero.module.scss"
 import Image from 'next/image'
 import Button from "./Button"
 import heroImage from "../assets/hero.jpg"
+import Link from "next/link"
 
 export default function Hero() {
   return (
@@ -12,7 +13,7 @@ export default function Hero() {
         <h2 className={styles.heading}><b>Le damos propósito</b> a tus impuestos</h2>
         <p className={styles.subheading}>Somos una consultora especializada en la implementación de proyectos de inversión pública mediante el mecanismo de Obras por Impuestos</p>
         <div className={styles.cta}>
-          <Button variant="primary" name="¿Qué son las Obras por Impuestos?" onClick={() => { }}></Button>
+          <Link href="/faq#highlightedQuestion"><Button variant="primary" name="¿Qué son las Obras por Impuestos?" onClick={() => { }}></Button></Link>
         </div>
       </div>
     </div>

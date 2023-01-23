@@ -13,7 +13,7 @@ const headers = [
   {text:"Código SNIP", key: "snipCode"},
   {text: "Nombre del proyecto", key: "name" },
   {text: "Tipologia", key: "tipology"},
-  {text:"Monto de inversión referencial (S/M)", key: "investment"},
+  {text:"Monto de inversión referencial (en S/. M)", key: "investment"},
   {text: "Tope CIPRL 2021", key: "ciprlMax"}
 ]
 
@@ -66,7 +66,7 @@ export default function Table({ data }) {
   );
 
   const table = (
-    <table border="" className={styles.table}>
+    <table className={styles.table}>
       <thead>
         <tr>{headerRow}</tr>
       </thead>

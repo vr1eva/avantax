@@ -1,3 +1,4 @@
+
 .card {
   display: flex;
   gap:40px;
@@ -7,6 +8,23 @@
   padding-bottom: 74px;
   position: relative;
   border-radius: 10px;
+  flex-direction: column;
+  padding: 44px 40px;
+  position: relative;
+  height: 339px;
+  width: 100%;
+}
+
+.description {
+  display: flex;
+  position: absolute;
+}
+
+.details {
+  height: 93px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
 }
 
 .cardImage {
@@ -15,27 +33,6 @@
   border-radius: 15px;
 }
 
-.leftyCardImage {
-  position:absolute;
-  top: -18px;
-  left: -88px;
-}
-
-.rightyCardImage {
-  position:absolute;
-  top: -18px;
-  right: -95px;
-}
-
-
-.rightyCard  {
-  padding: 44px 198px 74px 40px;  
-  text-align: end;
-}
-
-.leftyCard  {
-  padding: 44px 40px 74px 198px;
-}
 
 .name {
   margin: 0;
@@ -44,15 +41,6 @@
   font-size: 21px;
   line-height: 32px;
   color: var(--dark);
-}
-
-.bio {
-  margin: 12px 0 0; 
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 28px;
-  max-width: 724px;
 }
 
 .role {
@@ -64,3 +52,41 @@
   margin: 0;
 }
 
+.bio {
+  margin: 12px 0 0; 
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  max-width: 724px;
+}
+
+@media only screen and (max-width: 400) {
+  .card {
+    display: flex;
+    align-items: center;
+    padding: 24px 20px;
+    flex-direction: column;
+  }
+
+  .cardImage {
+    margin-top: -140px;
+    margin-left: -100px;
+  }
+
+  .details {
+    align-self: flex-end;
+  }
+ 
+  .name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .role {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+  }
+}

@@ -3,6 +3,7 @@ import ray from "../assets/ray.png"
 import debora from "../assets/debora.png"
 import mirko from "../assets/mirko.png"
 import maria from "../assets/maria.png"
+import Carousel from 'nuka-carousel';
 
 import TeamCard from "./TeamCard"
 
@@ -37,11 +38,22 @@ export default function Teammates() {
     <div className={styles.teammates}>
       <h2 className={styles.heading}>Conoce a nuestro equipo</h2>
       <div className={styles.teamcards}>
+       <div className={styles.carousel} >
+        <Carousel renderCenterLeftControls={() => (null)} renderCenterRightControls={() => (null)}>
+        {
+            team.map(teammate => (
+              <TeamCard key={teammate.id} name={teammate.name} orientation={teammate.orientation} bio={teammate.bio} image={images[teammate.id]} role={teammate.role} color={teammate.color} />
+            ))
+          }
+        </Carousel>
+        </div>
+        <div className={styles.normalCards}>
         {
           team.map(teammate => (
             <TeamCard key={teammate.id} name={teammate.name} orientation={teammate.orientation} bio={teammate.bio} image={images[teammate.id]} role={teammate.role} color={teammate.color} />
           ))
         }
+        </div>
       </div>
     </div >
   )

@@ -7,11 +7,13 @@ export default function TeamCard({ name, orientation, bio, image, role, color })
 
   return (
     <li className={`${styles.card} ${cardClassName}`}>
-      <Image alt={`${name}'s picture`} height={290} width={253} src={image} className={`${styles.cardImage} ${imageCardClassName}`} />
       <div className={styles.description}>
-        <h3 className={styles.name}>{name}</h3>
-        <p style={{ color: color }} className={styles.role}>{role}</p>
-        <div className={styles.bio} dangerouslySetInnerHTML={{ __html: bio }}></div>
+        <Image alt={`${name}'s picture`} height={290} width={253} src={image} className={`${styles.cardImage} ${imageCardClassName}`} />
+          <div className={styles.details}>
+            <h3 className={styles.name}>{name}</h3>
+            <p style={{ color: color }} className={styles.role}>{role}</p>
+            <div className={styles.bio} dangerouslySetInnerHTML={{ __html: bio }}></div>
+          </div>
       </div>
     </li>
   )

@@ -5,7 +5,10 @@
   display: flex;
   flex-direction: column;
   padding: 120px 0 175px;
-  
+}
+
+.carousel {
+  display: none;
 }
 
 .heading {
@@ -16,8 +19,30 @@
   margin: 0 0 80px;
 }
 
-.teamcards {
+.normalCards{
   gap: 113px;
   flex-direction: column;
   display:flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .heading {
+    margin-bottom: 37px;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 32px;
+    text-align: center;
+  }
+
+  .carousel {
+    display: block;
+  }
+
+  .normalCards {
+    display:none
+  }
+
+  .teamcards {
+    gap: 28px;
+  }
 }
