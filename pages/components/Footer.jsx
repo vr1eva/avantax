@@ -48,7 +48,7 @@ function Details() {
   return (
     <div className={styles.details}>
       {details.map(det => (
-        <div key={det.label}>
+        <div className={styles.detail} key={det.label}>
           <p className={styles.detailLabel}>{det.label}</p>
           <p className={styles.detailValue}>{det.value}</p>
         </div>

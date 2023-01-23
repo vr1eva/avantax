@@ -15,7 +15,6 @@ export default function About() {
     <section className={styles.about} style={{
       backgroundImage: `url(${aboutImage.src})`,
       width: '100%',
-      height: '761px',
     }}>
       <div className={styles.modal}>
         <div className={styles.rowContainer}>

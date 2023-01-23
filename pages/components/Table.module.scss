@@ -2,6 +2,7 @@
  width: 100%;
  max-width: 1244px;
   margin: 0 auto;
+  overflow-x: scroll;
 }
 
 .table  {
@@ -41,13 +42,24 @@
   flex: none;
   order: 1;
   flex-grow: 0;
+
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-position-x: 92%;
+  background-position-y: 12px;
+  margin-right: 2rem;
+  padding: 1rem;
+  padding-right: 2rem;
+
 }
 
 .tableHeader{
   max-width: 223px;
   min-width: 112px;
   height: 35px;
-  font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -60,4 +72,25 @@
   &:first-letter {
       text-transform: uppercase;
   }
+}
+
+.tableRow {
+  height: 75px;
+}
+
+.tableData {
+  padding: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .select {
+    width: 100%;
+    padding: 8px 24px;
+    gap: 10px;
+  }
+  .dropdownMenu {
+    flex-direction: column;
+    width: 100%;
+  }
+  
 }

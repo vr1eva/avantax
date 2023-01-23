@@ -32,6 +32,13 @@
 .cards {
   display: flex;
   flex-direction: column;
+  max-width: 827px;
+  overflow-x: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
+    }
 }
 
 .card {
@@ -43,7 +50,11 @@
   color: white;
   position: relative;
   transition: all 0.5s ease;
- 
+}
+
+.cardsList {
+  display:flex;
+  gap: 25px;
 }
 
 .cardHeading {
@@ -72,20 +83,14 @@
   bottom: 24px;
 }
 
-.cardsList {
- display:flex;
-  max-width: 827px;
-  overflow-x: hidden;
-  gap: 25px;
-}
-
 .content {
   width: 437px;
 }
 
 .controls {
-  margin-top: 27px;
+  margin: 27px auto 0;
   display:flex;
+  width: 55px;
   gap: 38px;
 
   img:hover {

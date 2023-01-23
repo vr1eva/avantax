@@ -1,16 +1,31 @@
 import React, { useState } from 'react';
 import { DATA } from '../../constants/data.js';
 import styles from "./Table.module.scss";
+import arrowDown from "../assets/arrow-down.svg"
+import * as fs from "fs";
+import { readFile, set_fs } from "xlsx";
+import { read, writeFileXLSX } from "xlsx";
 
-export default function Table({ data = DATA }) {
+export async function getServerSideProps(context) {
+  set_fs(fs);
+
+  const workbook = readFile("../assets/projects.xlsx");
+
+  return {
+    props: {workbook}, // will be passed to the page component as props
+  }
+}
+
+export default function Table({ data = DATA , workbook}) {
   const [dropdown, setDropdown] = useState('');
   const [selectedOption, setSelectedOption] = useState('');
 
   const headers = Object.keys(data[0]);
+  
 
   const headerRow = headers.map((header, index) => {
     return (
-      <th className={styles.tableHeader} key={index} onClick={() => setDropdown(header)}>{header}</th>
+      <th className={`${styles.tableHeader} ${header}`} key={index} onClick={() => setDropdown(header)}>{header}</th>
     );
   });
 
@@ -19,12 +34,12 @@ export default function Table({ data = DATA }) {
   }).map((row, index) => {
     const rowData = headers.map((header, index) => {
       return (
-        <td key={index}>{row[header]}</td>
+        <td className={styles.tableData} key={index}><span>{row[header]}</span></td>
       );
     });
 
     return (
-      <tr key={index}>{rowData}</tr>
+      <tr className={styles.tableRow} key={index}>{rowData}</tr>
     );
   });
 
@@ -38,17 +53,16 @@ export default function Table({ data = DATA }) {
 
   const dropdownMenu = (
     <div className={styles.dropdownMenu}>
-      <p className={styles.filterLabel}>Selecciona una cabecera y filtra por categoría</p>
-      <select className={styles.select} onChange={(e) => setSelectedOption(e.target.value)}>
+      <p className={styles.filterLabel}><b>Selecciona</b> una cabecera y <b>filtra</b> por categoría</p>
+      <select style={{backgroundImage: `url(${arrowDown.src})`}} className={styles.select} onChange={(e) => setSelectedOption(e.target.value)}>
         <option hidden={dropdownOptions.length > 0 ? true : false}>Filtrar resultados</option>
-
         {dropdownOptions}
       </select>
     </div>
   );
 
   const table = (
-    <table className={styles.table}>
+    <table border="" className={styles.table}>
       <thead>
         <tr>{headerRow}</tr>
       </thead>

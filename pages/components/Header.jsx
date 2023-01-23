@@ -26,10 +26,16 @@ function Navbar() {
               />
             </Link>)
         })}
+        <Link href="/faq" className={`${styles.link} ${styles.faqAlias}`} > 
+          <Button
+            name="Preguntas frequents"
+            variant="default"
+          />
+        </Link>
         <div className={styles.social}>
-          <Image width={28} height={28} src={linkedinGold} />
-          <Image width={28} height={28} src={twitterGold} />
-          <Image width={28} height={28} src={instagramGold} />
+          <Link  href="https://www.linkedin.com/company/avantax-peru/?viewAsMember=true"><Image width={28} height={28} src={linkedinGold} /> </Link>
+          <Link href="https://twitter.com/avantax_peru"><Image width={28} height={28} src={twitterGold} /></Link>
+          <Link href="https://www.instagram.com/avantax.pe/"><Image width={28} height={28} src={instagramGold} /></Link>
         </div>
       </div>
       

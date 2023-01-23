@@ -61,7 +61,7 @@ export default function Faq() {
       <p>Aclaramos todas las dudas que tengas ¿Aún tienes preguntas? <b className={styles.highlight}>Ponte en contacto con nuestro equipo.</b></p>
       <div className={styles.faqs}>
         {faqs.map(faq => (
-          <div key={faq.question} className={styles.prompt} >
+          <div key={faq.question} className={`${faq.question === "¿Las empresas pueden proponer nuevos proyectos a las entidades públicas?"? styles.highlightedQuestion: ""} ${styles.prompt}`} id="highlightedQuestion">
             <div className={styles.row}>
               <h3 className={styles.question}>{faq.question}</h3>
               <Image alt="see answer button" onClick={() => dispatch({ type: "TOGGLE_FAQ", payload: faq.question })} className={styles.expandable} src={faq.expanded ? expanded : notExpanded} />

@@ -8,6 +8,7 @@ import arrowRight from "../assets/arrowRight.svg"
 import styles from "./Services.module.scss"
 import { colors } from "../../constants/colors"
 import Image from "next/image"
+import Button from "./Button"
 import { useState } from "react"
 
 const icons = {
@@ -53,6 +54,7 @@ const STAGES = [
 export default function Services() {
   const [position, setPosition] = useState(0)
   return (
+    <>
     <section className={styles.services}>
       <div className={styles.content} >
         <h2 className={styles.heading}>Nuestros servicios</h2>
@@ -67,12 +69,13 @@ export default function Services() {
         <div className={styles.cardsList}>{STAGES.slice(position).concat(STAGES.slice(0, position)).map(({ title, items, color, icon, background }) => (
           <Card key={title} title={title} items={items} color={color} icon={icons[icon]} background={background} />
         ))}</div >
-        <div className={styles.controls}>
-          <Image onClick={() => setPosition((position - 1) % STAGES.length)} src={arrowLeft} alt="boton para girar a la izquierda" />
-          <Image onClick={() => setPosition((position + 1) % STAGES.length)} src={arrowRight} alt="boton para girar a la derecha" />
-        </div>
       </div>
     </section>
+     <div className={styles.controls}>
+     <Button variant="light" onClick={() => setPosition((position - 1) % STAGES.length)}><Image   src={arrowLeft} alt="boton para girar a la izquierda" /> </Button>
+    <Button variant="light" onClick={() => setPosition((position + 1) % STAGES.length)}><Image  src={arrowRight} alt="boton para girar a la derecha" /></Button> 
+   </div>
+   </>
   );
 }
 

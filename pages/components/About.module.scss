@@ -102,7 +102,7 @@
     width: 100%;
     height: 761px;
     padding: 50px 15px;
-    
+    margin-bottom: 66px;
   }
 
   .modal {
@@ -147,14 +147,18 @@
   }
 
   .cta {
-    margin: 44px auto -30px;
+    margin: 44px auto -40px;
 
     button {
       width: 100%;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 22px;
     }
   }
 
   .estimation {
+    font-style: normal;
     font-weight: 800;
     font-size: 40px;
     line-height: 51px;

@@ -29,23 +29,60 @@
   overflow-x: scroll;
 }
 
-.callToAction {
+.cta {
   padding: 42px 0;
   display: flex;
   align-items: center;
   flex-direction: column;
   max-width: 1221px;
-  margin: 82px auto;
+  margin: 82px auto 0;
 }
 
 .heading {
   margin: 0;
-    font-style: normal;
+  font-style: normal;
   font-weight: 600;
   font-size: 34px;
   line-height: 51px;
+  color: var(--green);
 }
 
-.button {
+.ctaHeading {
+  margin: 0;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 51px;
+  font-style: normal;
+  color: var(--dark);
+  text-align: center;
+}
+
+.ctaButton {
   margin: 47px auto 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .proyectos {
+    padding: 40px 15px 72px;
+  }
+
+  .heading {
+    font-style: normal;
+    font-size: 40px;
+    line-height: 51px;
+  }
+
+  .cta {
+    margin-top: 68px;
+    padding: 42px 15px;
+  }
+
+  .ctaHeading {
+    font-size: 22px;
+    line-height: 32px; 
+  }
+
+  .ctaButton, .ctaButton button {
+    width: 100%;
+  }
 }

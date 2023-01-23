@@ -1,12 +1,18 @@
 .contact {
-  width: 878px;
-  background: var(--light);
   display: flex;
   flex-direction: column;
-  padding: 65px;
   margin: 175px auto 175px;
-  border-radius: 30px;
+  width: 100%;
+  max-width: 878px;
   
+}
+
+.contactModal {
+  border-radius: 30px;
+  width: 878px;
+  background: var(--light);
+  padding: 65px;
+
 }
 
 .heading {
@@ -80,6 +86,18 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .contact {
+    width: 100%;
+    margin-top: 66px;
+    padding: 0 15px;
+    margin-bottom: 84px;
+  }
+
+  .contactModal {
+    padding: 24px 20px;
+    width: 100%;  
+  }
+  
   .heading {
     font-style: normal;
     font-weight: 600;
@@ -97,9 +115,6 @@
     margin: 20px 0 0;
   }
 
-  .contact {
-    width: 100%;
-  }
 
   .form {
     margin-top:32px;
@@ -107,6 +122,7 @@
   }
 
   .row {
-    flex-direction: column
+    flex-direction: column;
+    gap: 18px;
   }
 }
