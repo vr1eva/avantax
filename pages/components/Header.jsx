@@ -17,7 +17,7 @@ function Navbar() {
   const router = useRouter();
   return (
     <>
-      <Image onClick={() => setMenuOpen(!menuOpen)} className={styles.menu} src={menuOpen? menuExpanded: menu} width={30} height={18} /> 
+      <Image alt="open menu" onClick={() => setMenuOpen(!menuOpen)} className={styles.menu} src={menuOpen? menuExpanded: menu} width={30} height={18} /> 
       <div className={`${styles.nav} ${menuOpen? styles.expandedNav: null}`}>
         {LINKS.map((link) => {
           return (
@@ -30,9 +30,9 @@ function Navbar() {
             </Link>)
         })}
         <div className={styles.social}>
-          <Link  href="https://www.linkedin.com/company/avantax-peru/?viewAsMember=true"><Image width={28} height={28} src={linkedinGold} /> </Link>
-          <Link href="https://twitter.com/avantax_peru"><Image width={28} height={28} src={twitterGold} /></Link>
-          <Link href="https://www.instagram.com/avantax.pe/"><Image width={28} height={28} src={instagramGold} /></Link>
+          <Link  href="https://www.linkedin.com/company/avantax-peru/?viewAsMember=true"><Image alt="linkedin" width={28} height={28} src={linkedinGold} /> </Link>
+          <Link href="https://twitter.com/avantax_peru"><Image alt="twitter" width={28} height={28} src={twitterGold} /></Link>
+          <Link href="https://www.instagram.com/avantax.pe/"><Image alt="instagram" width={28} height={28} src={instagramGold} /></Link>
         </div>
       </div>
       

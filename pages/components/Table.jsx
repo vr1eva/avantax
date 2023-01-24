@@ -1,30 +1,24 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState} from 'react';
 import styles from "./Table.module.scss";
 import arrowDown from "../assets/arrow-down.svg"
 
-const headers = [
-  {text: "Nº", key: "id"},
-  {text: "Estado", key: "status"},
-  {text: "Nivel", key: "level"},
-  {text: "Departamento", key: "department"},
-  {text: "Provincia", key: "province"},
-  {text: "Distrito", key: "district" },
-  {text: "Entidad Pública", key: "entity"},
-  {text:"Código SNIP", key: "snipCode"},
-  {text: "Nombre del proyecto", key: "name" },
-  {text: "Tipologia", key: "tipology"},
-  {text:"Monto de inversión referencial (en S/. M)", key: "investment"},
-  {text: "Tope CIPRL 2021", key: "ciprlMax"}
-]
-
-
-export default function Table({ data }) {
+export default function Table({ data = [] }) {
   const [dropdown, setDropdown] = useState('');
   const [selectedOption, setSelectedOption] = useState('');
-
-  useEffect(() => {
-    setSelectedOption(headers[4].key)
-  }, [])
+  const headers = [
+    {text: "Nº", key: "id"},
+    {text: "Estado", key: "status"},
+    {text: "Nivel", key: "level"},
+    {text: "Departamento", key: "department"},
+    {text: "Provincia", key: "province"},
+    {text: "Distrito", key: "district" },
+    {text: "Entidad Pública", key: "entity"},
+    {text:"Código SNIP", key: "snipCode"},
+    {text: "Nombre del proyecto", key: "name" },
+    {text: "Tipologia", key: "tipology"},
+    {text:"Monto de inversión referencial (en S/. M)", key: "investment"},
+    {text: "Tope CIPRL 2021", key: "ciprlMax"}
+  ]
 
   const headerRow = headers.map((header, index) => {
     return (
