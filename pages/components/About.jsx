@@ -2,8 +2,7 @@ import Image from "next/image"
 import Button from "./Button"
 import styles from "./About.module.scss"
 import aboutImage from "../assets/about.jpg"
-
-
+import Link from "next/link"
 
 const KPIs = [
   { estimation: "+30", legend: "Proyectos" },
@@ -34,7 +33,7 @@ export default function About() {
           </div>
         </div>
         <div className={styles.cta}>
-          <Button className={styles.button} variant="primary" name="Conoce más sobre nosotros" onClick={() => { }} />
+          <Link href="/nosotros"><Button className={styles.button} variant="primary" name="Conoce más sobre nosotros" onClick={() => { }} /></Link>
         </div>
       </div>
     </section>

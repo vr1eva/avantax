@@ -1,30 +1,55 @@
-
 .card {
   display: flex;
-  gap:40px;
+  gap: 40px;
   background: var(--light);
   max-width: 962px;
   margin: 0 auto;
-  padding-bottom: 74px;
   position: relative;
   border-radius: 10px;
   flex-direction: column;
   padding: 44px 40px;
   position: relative;
-  height: 339px;
+  min-height: 339px;
   width: 100%;
+}
+
+
+.rightyCard {
+
+  .bio {
+    align-self: flex-start;
+    text-align: right;
+  }
+  section {
+    left: unset;
+    right: -95px;
+    top: -36px;
+    text-align: end;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  img {
+    order: 1;
+    height:290px; 
+    width:253px;
+  }
 }
 
 .description {
   display: flex;
+  gap: 40px;
   position: absolute;
+  left: -95px;
+  top: -36px;
 }
 
 .details {
-  height: 93px;
   display: flex;
   flex-direction: column;
-  padding: 0 20px;
+  padding: 80px 20px 0 0;
 }
 
 .cardImage {
@@ -53,29 +78,53 @@
 }
 
 .bio {
-  margin: 12px 0 0; 
+  margin: 50px 0 0; 
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 28px;
+  align-self: flex-end;
   max-width: 724px;
 }
 
-@media only screen and (max-width: 400) {
+@media only screen and (max-width: 600px) {
   .card {
     display: flex;
     align-items: center;
-    padding: 24px 20px;
-    flex-direction: column;
+    padding: 24px 20px 50px;
+    gap: 0;
+    flex-direction: column; 
   }
 
+  .rightyCard {
+    section {
+      left: unset;
+      right: unset;
+      top: unset;
+      margin-right: -10px;
+    }
+
+    img {
+      order: 1;
+    }
+
+    .details {
+      padding-right: 0;
+    }
+
+    .description{
+      margin-left: unset;
+      margin-right: -10px;
+    }
+}
+
   .cardImage {
-    margin-top: -140px;
-    margin-left: -100px;
+    margin: unset
   }
 
   .details {
-    align-self: flex-end;
+    align-self: flex;
+    align-items: unset;
   }
  
   .name {
@@ -84,9 +133,25 @@
     line-height: 27px;
   }
 
+  .bio {
+    margin-top: 0;
+
+    p {
+      margin: 0;
+    }
+  }
+
   .role {
     font-weight: 400;
     font-size: 16px;
     line-height: 26px;
+  }
+
+  .description {
+    gap: 14px;
+    position: relative;
+    left:0;
+    top: 0;
+    margin-left: -50px;
   }
 }

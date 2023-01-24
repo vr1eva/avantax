@@ -17,6 +17,7 @@
   font-size: 34px;
   line-height: 51px;
   margin: 0 0 80px;
+  padding: 0 15px;
 }
 
 .normalCards{
@@ -45,4 +46,9 @@
   .teamcards {
     gap: 28px;
   }
+
+  .description{
+    position: relative;
+   
+   }
 }

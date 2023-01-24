@@ -21,6 +21,14 @@
   align-items: center;
 }
 
+.linkButton {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--dark);
+}
+
 .faqAlias {
   display: none;
 }
@@ -33,6 +41,17 @@
 
 .social{
   display: none;
+}
+
+.logo {
+   width: 149px; 
+   height: 27px;
+}
+
+.activeLink {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -90,4 +109,10 @@
       width: 100%;
     }
   }
+
+  .logo {
+    width: 111px; 
+    height: 22px;
+    margin: 0;
+ }
 }

@@ -1,5 +1,10 @@
 import styles from "./Contact.module.scss"
 import Button from "./Button"
+import { Poppins } from '@next/font/google'
+const poppins = Poppins({
+  weight: ['400', '500', '600', "900"],
+  subsets: ['latin']
+})
 
 export default function Contact() {
   return (
@@ -49,7 +54,7 @@ function Form() {
 const TextField = ({ label, placeholder, name, type = "text" }) => (
   <div className={styles.textField}>
     <label htmlFor={name}>{label}</label>
-    <input type={type} placeholder={placeholder} />
+    <input className={styles.input} type={type} placeholder={placeholder} />
   </div>
 );
 
@@ -58,6 +63,6 @@ const TextField = ({ label, placeholder, name, type = "text" }) => (
 const TextArea = ({ label, placeholder, name }) => (
   <div className={styles.textArea}>
     <label htmlFor={name}>{label}</label>
-    <textarea placeholder={placeholder} rows="5" />
+    <textarea className={styles.textArea} placeholder={placeholder} rows="5" />
   </div>
 );

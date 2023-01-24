@@ -10,9 +10,11 @@ import {useState} from "react"
 import linkedinGold from  "../assets/linkedin-gold.svg"
 import instagramGold from  "../assets/instagram-gold.svg"
 import twitterGold from  "../assets/twitter-gold.svg"
+import { useRouter } from "next/router";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const router = useRouter();
   return (
     <>
       <Image onClick={() => setMenuOpen(!menuOpen)} className={styles.menu} src={menuOpen? menuExpanded: menu} width={30} height={18} /> 
@@ -21,6 +23,7 @@ function Navbar() {
           return (
               <Link className={`${styles.link} ${link.path == HIGHLIGHTED_PATH ? styles.specialButton : null}`} key={link.name} href={link.path} >
               <Button
+                className={`${router.asPath == link.path ? styles.activeLink : null}`}
                 name={link.name}
                 variant={link.path == HIGHLIGHTED_PATH ? "primary" : "default"}
               />
@@ -38,10 +41,9 @@ function Navbar() {
 }
 
 function Logo() {
-  const logoDimensions = { width: 149, height: 27 }
   return (
-    <h1>
-      <Image alt="Avantax Logo" src={logo} {...logoDimensions} />
+    <h1 className={styles.logoContainer}>
+      <Image alt="Avantax Logo" src={logo} className={styles.logo} />
     </h1>
   )
 }

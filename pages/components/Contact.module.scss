@@ -60,7 +60,7 @@
     color: var(--dark);
   }
 
-  input, textarea {
+  .input, .textArea {
     border-radius: 29px; 
     padding: 10px 24px;
     font-style: normal;
@@ -69,13 +69,8 @@
     line-height: 28px;
     border: none;
     
-
     &::placeholder {
-      color: #7D7D7D;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 28px;
+      color: #6C6C6C;
     }
   }
 }
