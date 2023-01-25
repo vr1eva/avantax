@@ -32,13 +32,13 @@ function Footer() {
 
 function Social() {
   return (
-    <div className={styles.social}>
+    <div className={styles.social}> 
       <Image alt="avantax logo" src={logo} />
       <div className={styles.socialDivider} />
       <div className={styles.socialMediaLinks}>
-        <a target="_blank" href="https://www.linkedin.com/company/avantax-peru/?viewAsMember=true"><Image alt="linkedin logo" width={24} height={24} src={linkedin} /></a>
-        <a target="_blank" href="https://twitter.com/avantax_peru"><Image alt="twitter logo" width={24} height={19.5} src={twitter} /></a>
-        <a target="_blank" href="https://www.instagram.com/avantax.pe"><Image alt="instagram logo" width={24} height={24} src={instagram} /></a>
+        <a target="_blank" rel="noreferrer"  href="https://www.linkedin.com/company/avantax-peru/?viewAsMember=true"><Image alt="linkedin logo" width={24} height={24} src={linkedin} /></a>
+        <a target="_blank" rel="noreferrer" href="https://twitter.com/avantax_peru"><Image alt="twitter logo" width={24} height={19.5} src={twitter} /></a>
+        <a target="_blank" rel="noreferrer" href="https://www.instagram.com/avantax.pe"><Image alt="instagram logo" width={24} height={24} src={instagram} /></a>
       </div>
     </div>
   )
