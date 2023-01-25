@@ -7,20 +7,31 @@
   line-height: 30px;
   font-weight: 500;
   border: none;
-
-  &:hover {
   cursor: pointer;
-  }
 }
 
 .primary {
   background-color: var(--indigo);
   color: white;
   font-weight: 500;
+
+  &:hover {
+    box-shadow: 0px 37px 15px rgba(0, 0, 0, 0.04), 0px 21px 12px rgba(0, 0, 0, 0.13), 0px 9px 9px rgba(0, 0, 0, 0.21), 0px 2px 5px rgba(0, 0, 0, 0.25), 0px 0px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  &:focus, &:active {
+    background-color: #3A3B7F;
+  }
+}
+
+.secondary {
+  border: 2px solid var(--dark);
+  background-color: transparent;
+  
 }
 
 .light {
-  color: var(--indigo);
+  color: var(--dark);
   background: none;
   font-style: normal;
   font-weight: 500;
@@ -28,11 +39,17 @@
   line-height: 30px;
 }
 
-
 .default {
   background-color: white;
   font-weight: 400;
+  color: var(--dark);
+
+  &:hover {
+    color: var(--purple);
+    box-shadow: none;
+  }
 }
+
 
 @media only screen and (max-width: 600px) {
   .button {

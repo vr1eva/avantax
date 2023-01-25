@@ -40,9 +40,11 @@
     &::-webkit-scrollbar {
       display: none;
     }
+  height: 400px;
 }
 
 .card {
+  cursor: grab;
   padding: 28px 22px 84px;
   min-width: 350px;
   height: 357px;
@@ -51,11 +53,6 @@
   color: white;
   position: relative;
   transition: all 0.5s ease;
-}
-
-.cardsList {
-  display:flex;
-  gap: 25px;
 }
 
 .cardHeading {
@@ -89,10 +86,11 @@
 }
 
 .controls {
-  margin: 27px auto 0;
   display:flex;
   width: 55px;
-  gap: 38px;
+  position: absolute;
+  top: 360px;
+  left: 0;
 
   img:hover {
     cursor: pointer;
@@ -122,10 +120,18 @@
     line-height: 26px;
  }
 
+  .card {
+    min-width: 100%;
+  }
+
  .services {
     flex-direction: column;
     gap: 44px;
     padding: 0 15px;
+ }
+
+ .controls {
+    display: none;
  }
 }
 

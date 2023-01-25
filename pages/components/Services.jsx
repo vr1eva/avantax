@@ -10,6 +10,7 @@ import { colors } from "../../constants/colors"
 import Image from "next/image"
 import Button from "./Button"
 import { useState } from "react"
+import Carousel from 'nuka-carousel';
 
 const icons = {
   board, tasks, verified, user, approval
@@ -66,15 +67,23 @@ export default function Services() {
           con la entrega del CIPRL. </p>
       </div>
       <div className={styles.cards}>
-        <div className={styles.cardsList}>{STAGES.slice(position).concat(STAGES.slice(0, position)).map(({ title, items, color, icon, background }) => (
-          <Card key={title} title={title} items={items} color={color} icon={icons[icon]} background={background} />
-        ))}</div >
+        <div className={styles.cardsList}>
+          <Carousel scrollMode="remainder" adaptiveHeight renderBottomCenterControls={({nextSlide, previousSlide}) => {
+            return (
+            <div className={styles.controls}>
+                <Button variant="light" onClick={previousSlide}><Image src={arrowLeft} alt="boton para girar a la izquierda" /> </Button>
+                <Button variant="light" onClick={nextSlide}><Image src={arrowRight} alt="boton para girar a la derecha" /></Button> 
+              </div>
+            )
+          }} cellSpacing={25} disableEdgeSwiping slidesToShow={1} renderCenterLeftControls={() => (null)} renderCenterRightControls={() => (null)} >
+            {STAGES.slice(position).concat(STAGES.slice(0, position)).map(({ title, items, color, icon, background }) => (
+              <Card key={title} title={title} items={items} color={color} icon={icons[icon]} background={background} />
+            ))}
+          </Carousel>
+        </div >
       </div>
     </section>
-     <div className={styles.controls}>
-     <Button variant="light" onClick={() => setPosition((position - 1) % STAGES.length)}><Image   src={arrowLeft} alt="boton para girar a la izquierda" /> </Button>
-    <Button variant="light" onClick={() => setPosition((position + 1) % STAGES.length)}><Image  src={arrowRight} alt="boton para girar a la derecha" /></Button> 
-   </div>
+     
    </>
   );
 }

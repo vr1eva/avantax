@@ -39,6 +39,10 @@
   flex-direction: column;
   border-bottom: 2.5px solid #696969;
   padding-bottom:  50px;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
 }
 
 .row {
