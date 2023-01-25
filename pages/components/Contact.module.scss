@@ -46,6 +46,10 @@
   gap: 12px;
 }
 
+.input::placeholder, .textArea::placeholder{
+  font-family: var(--poppins);
+}
+
 .textField, .textArea {
   display: flex;
   flex-direction: column;

@@ -6,7 +6,8 @@ import Layout from "./components/Layout"
 const poppins = Poppins({
   weight: ['400', '500', '600', "800", "900"],
   style: ['normal'],
-  subsets: ['latin']
+  subsets: ['latin'],
+  display: "swap",
 })
 
 function MyApp({ Component, pageProps }: AppProps) {
