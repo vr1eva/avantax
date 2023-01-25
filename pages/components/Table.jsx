@@ -26,7 +26,6 @@ export default function Table({ data = [] }) {
     );
   });
 
- 
   const rows = data.filter((row) => {
     return row[dropdown] === selectedOption;
   }).map((row, index) => {

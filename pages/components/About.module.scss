@@ -3,7 +3,9 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 142px;
-  background-size: cover
+  background-size: cover;
+  height: 372px;
+  position: relative;
 }
 
 .highlight {
@@ -27,7 +29,8 @@
   width: 100%;
   max-width: 1244px;
   margin: -173px auto 0;
-  position: relative;
+  position: absolute;
+  top: 402px;
 }
 
 .content {

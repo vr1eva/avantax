@@ -1,9 +1,12 @@
 .faq {
-  margin: 120px auto 0;
+  margin: 290px auto 0;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-size: cover;
+  position: relative;
+  height: 372px;
 }
 
 .card {
@@ -15,6 +18,7 @@
   border-radius: 16px;
   position: relative;
   padding: 43px 65px 74px;
+  top: -180px;
 }
 
 .heading {

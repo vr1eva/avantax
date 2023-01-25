@@ -3,6 +3,7 @@ import Button from "./components/Button.jsx"
 import styles from "./proyectos.module.scss"
 import Link from "next/link"
 import useSWR from 'swr'
+import Head from "next/head"
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
@@ -12,6 +13,12 @@ export default function Proyectos() {
   if (error) return <div>Falló la carga.</div>
   if (!data) return <div className={styles.loadingMessage}>Cargando proyectos...</div>
   return (
+    <>
+    <Head>
+    <title>Avantax / Proyectos</title>
+    <meta name="description" content="Solucion de impuestos" />
+    <link rel="icon" href="/favicon.ico" />
+  </Head>
     <div className={styles.proyectos}>
       <h2 className={styles.heading}><b>Cartera de </b> proyectos</h2>
       <p>Aquí encontrarás los proyectos de todas las entidades públicas a nivel nacional viabilizados a través de obras por impuestos y listos para su ejecución.</p>
@@ -24,5 +31,6 @@ export default function Proyectos() {
         <Link className={styles.ctaButton} href="/faq#highlightedQuestion"><Button variant="primary" name="Haz click aquí" /></Link>
       </div>
     </div>
+    </>
   )
 }

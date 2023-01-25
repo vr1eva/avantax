@@ -3,10 +3,11 @@ import Button from "./Button"
 import styles from "./About.module.scss"
 import aboutImage from "../assets/about.jpg"
 import Link from "next/link"
+import CountUp from 'react-countup'
 
 const KPIs = [
-  { estimation: "+30", legend: "Proyectos" },
-  { estimation: "+250M", legend: "Soles Invertidos" },
+  {count:30, symbol: "+", sufix: "", legend: "Proyectos" },
+  { count: 250, symbol: "+", sufix: "M", legend: "Soles Invertidos" },
 ]
 
 export default function About() {
@@ -18,8 +19,8 @@ export default function About() {
       <div className={styles.modal}>
         <div className={styles.rowContainer}>
           <div className={styles.kpis}>
-            {KPIs.map(({ estimation, legend }) => (
-              <KPI key={legend} estimation={estimation} legend={legend} />))}
+            {KPIs.map(({ count, symbol, sufix, legend }) => (
+              <KPI key={legend} count={count} symbol={symbol} sufix={sufix} legend={legend} />))}
           </div>
           <div className={styles.content}>
             <h2 className={styles.heading}>Sobre Nosotros</h2>
@@ -40,10 +41,23 @@ export default function About() {
   )
 }
 
-function KPI({ estimation, legend }) {
+function KPI({ count, symbol, sufix, legend }) {
   return (
     <div className={styles.kpi}>
-      <h1 className={styles.estimation}>{estimation} <p className={styles.legend}>{legend}</p></h1>
+      <h1 className={styles.estimation}>
+        <span>{symbol}</span>
+        <CountUp
+          start={0}
+          delay={0}
+          end={count}
+          duration={2.5}
+          enableScrollSpy
+          scrollSpyOnce
+          onEnd={() => console.log('Ended! 👏')}
+          onStart={() => console.log('Started! 💨')} />
+          <span>{sufix}</span>
+        <p className={styles.legend}>{legend}</p>
+      </h1>
     </div>
   )
 }

@@ -4,6 +4,7 @@ import Link from "next/link"
 import expanded from "./assets/expanded.svg"
 import notExpanded from "./assets/notExpanded.svg"
 import { useReducer } from "react"
+import Head from "next/head"
 
 const initialState = [
   {
@@ -50,12 +51,18 @@ const reducer = (state, action) => {
 export default function Faq() {
   const [faqs, dispatch] = useReducer(reducer, initialState)
   return (
+    <> <Head>
+    <title>Avantax / FAQ</title>
+    <meta name="description" content="Solucion de impuestos" />
+    <link rel="icon" href="/favicon.ico" />
+  </Head>
     <div className={styles.faq}>
       <h2 className={styles.heading}>Preguntas Frecuentes</h2>
       <p>Aclaramos todas las dudas que tengas ¿Aún tienes preguntas? <Link href="/#contact"><b className={styles.highlight}>Ponte en contacto con nuestro equipo.</b></Link></p>
       <div className={styles.faqs}>
         {faqs.map(faq => {
           const highlightedQuestion = faq.question === "¿Las empresas pueden proponer nuevos proyectos a las entidades públicas?"
+          
           return (
             <div key={faq.question} className={`${highlightedQuestion ? styles.highlightedQuestion: ""} ${styles.prompt}`} id={highlightedQuestion ? "highlightedQuestion": ""}>
               <div className={styles.row}>
@@ -68,5 +75,6 @@ export default function Faq() {
         })}
       </div>
     </div>
+    </>
   )
 }

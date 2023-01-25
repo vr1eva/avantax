@@ -36,25 +36,33 @@ function Social() {
       <Image alt="avantax logo" src={logo} />
       <div className={styles.socialDivider} />
       <div className={styles.socialMediaLinks}>
-        <a href="#"><Image alt="linkedin logo" width={24} height={24} src={linkedin} /></a>
-        <a href="#"><Image alt="twitter logo" width={24} height={19.5} src={twitter} /></a>
-        <a href="#"><Image alt="instagram logo" width={24} height={24} src={instagram} /></a>
+        <a target="_blank" href="https://www.linkedin.com/company/avantax-peru/?viewAsMember=true"><Image alt="linkedin logo" width={24} height={24} src={linkedin} /></a>
+        <a target="_blank" href="https://twitter.com/avantax_peru"><Image alt="twitter logo" width={24} height={19.5} src={twitter} /></a>
+        <a target="_blank" href="https://www.instagram.com/avantax.pe"><Image alt="instagram logo" width={24} height={24} src={instagram} /></a>
       </div>
     </div>
   )
 }
 
 function Details() {
+
   return (
     <div className={styles.details}>
-      {details.map(det => (
-        <div className={styles.detail} key={det.label}>
-          <p className={styles.detailLabel}>{det.label}</p>
-          <p className={styles.detailValue}>{det.value}</p>
+      <div className={styles.column}>
+        {details.slice(0,2).map(det => (
+          <div className={styles.detail} key={det.label}>
+            <p className={styles.detailLabel}>{det.label}</p>
+            <p className={styles.detailValue}>{det.value}</p>
+          </div>
+        ))}
+      </div>
+      <div className={styles.column}>
+        <div className={styles.detail}>
+          <p className={styles.detailLabel}>{details[2].label}</p>
+          <p className={styles.detailValue}>{details[2].value}</p>
         </div>
-      ))}
+      </div>
     </div>
-
   )
 }
 

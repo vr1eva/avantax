@@ -34,12 +34,24 @@
 
 .details {
   display: flex;
-  flex-direction: column;
   gap: 39px;
-  align-items: center;
-  flex-wrap: wrap;
   width: 525px;
   gap: 7px;
+}
+
+.row {
+  display: flex;
+  gap: 44px;
+  justify-content: space-between;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail {
+  width: 301px;
 }
 
 .detailLabel {
@@ -102,16 +114,22 @@
     gap: 39px;
     text-align:center;
   }
+  
+  .column {
+    gap: 39px;
+  }
 
   .details {
     align-items: initial;
     gap: 39px;
     width: unset;
+    flex-direction: column;
   }
   
   .detail {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: unset;
   }
 }

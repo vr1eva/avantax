@@ -3,9 +3,16 @@ import placeholders from "./assets/placeholders.jpg"
 import Image from "next/image"
 import FaqCard from "./components/FaqCard"
 import Teammates from "./components/Teammates"
+import Head from "next/head"
 
 export default function Nosotros() {
   return (
+<>
+    <Head>
+        <title>Avantax / Nosotros</title>
+        <meta name="description" content="Solucion de impuestos" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
     <div className={styles.nosotros}>
       <div className={styles.hero}>
         <h1 className={styles.heading}><b>Conoce más</b> sobre nosotros</h1>
@@ -20,6 +27,6 @@ export default function Nosotros() {
 
       <Teammates />
 
-    </div>)
+    </div></>)
 }
 
