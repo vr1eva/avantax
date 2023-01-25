@@ -17,13 +17,14 @@ function Navbar() {
   const router = useRouter();
 
   useEffect(() => {
-    const handleRouteChange = (url) => {
-      setMenuOpen(false)
+    const handleRouteChange = () => {
+      setMenuOpen(false)  
     }
     router.events.on('routeChangeStart', handleRouteChange)
     return () => {
       router.events.off('routeChangeStart', handleRouteChange)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
 

@@ -28,16 +28,13 @@ function Form() {
         <TextField name="surname" label="Apellido" placeholder="Tu apellido" />
       </div>
       <div className={styles.row}>
-        <TextField name="email" label="Correo" placeholder="Correo" />
+        <TextField name="email" label="Correo electrónico" placeholder="tunombre@correo.com" />
       </div>
-      <TextField name="email" label="Correo electrónico" placeholder="tunombre@corre.com" />
       <div className={styles.row}>
         <TextField name="tel" type="tel" label="Número de teléfono" placeholder="+51 999 999 999" />
       </div>
       <div className={styles.row}>
         <TextField name="company" label="Empresa" placeholder="El nombre de la empresa" />
-      </div>
-      <div className={styles.row}>
         <TextField name="role" label="Puesto" placeholder="Tu puesto" />
       </div>
       <div className={styles.row}>
