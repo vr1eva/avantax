@@ -26,6 +26,29 @@
   display:flex;
 }
 
+.ellipsis {
+ width: 11px;
+ height: 11px;
+ border-radius: 50px;
+ background: var(--light);
+ content: "";
+}
+
+.ellipsisActive {
+  background: var(--purple);
+}
+
+.controls {
+  display: flex;
+  gap:8px;
+  margin-left: -28px;
+  position: absolute;
+  bottom: -28px;
+}
+
+.teamCardContainer {
+  padding: 0 15px;
+}
 @media only screen and (max-width: 600px) {
   .heading {
     margin-bottom: 37px;

@@ -36,6 +36,7 @@ function Navbar() {
           return (
               <Link scroll={false} className={`${styles.link} ${link.path == HIGHLIGHTED_PATH ? styles.specialButton : null}`} key={link.name} href={link.path} >
               <Button
+                onClick={() => setMenuOpen(!menuOpen)}
                 className={`${styles.linkButton} ${router.asPath == link.path ? styles.activeLink : null}`}
                 name={link.name}
                 variant={link.path == HIGHLIGHTED_PATH ? "primary" : "default"}
