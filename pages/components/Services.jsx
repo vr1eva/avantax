@@ -11,6 +11,7 @@ import Image from "next/image"
 import Button from "./Button"
 import { useState } from "react"
 import Carousel from 'nuka-carousel';
+import useDeviceSize from "../utiles/useDeviceSize"
 
 const icons = {
   board, tasks, verified, user, approval
@@ -52,8 +53,13 @@ const STAGES = [
     items: ["Obtención del CIPRL. "]
   },
 ]
+
 export default function Services() {
   const [position, setPosition] = useState(0)
+  const [width] = useDeviceSize();
+
+  const isMobile = width <= 768;
+
   return (
     <>
     <section className={styles.services}>
@@ -68,19 +74,18 @@ export default function Services() {
       </div>
       <div className={styles.cards}>
         <div className={styles.cardsList}>
-          <Carousel c scrollMode="remainder" adaptiveHeight renderBottomCenterControls={({nextSlide, previousSlide}) => {
+            <Carousel scrollMode="remainder" adaptiveHeight={true} renderBottomCenterControls={({nextSlide, previousSlide}) => {
             return (
             <div className={styles.controls}>
                 <Button variant="light" onClick={previousSlide}><Image src={arrowLeft} alt="boton para girar a la izquierda" /> </Button>
                 <Button variant="light" onClick={nextSlide}><Image src={arrowRight} alt="boton para girar a la derecha" /></Button> 
               </div>
             )
-          }} cellSpacing={25} disableEdgeSwiping slidesToShow={1} renderCenterLeftControls={() => (null)} renderCenterRightControls={() => (null)} >
+          }} cellSpacing={25} disableEdgeSwiping slidesToShow={isMobile? 1 : 2.2}   renderCenterLeftControls={() => (null)} renderCenterRightControls={() => (null)} >
             {STAGES.slice(position).concat(STAGES.slice(0, position)).map(({ title, items, color, icon, background }) => (
               <Card key={title} title={title} items={items} color={color} icon={icons[icon]} background={background} />
             ))}
-          </Carousel>
-          
+            </Carousel>
         </div >
       </div>
     </section>

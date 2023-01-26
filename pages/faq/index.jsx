@@ -59,8 +59,6 @@ export default function Faq() {
     }
     return {...question}
   }))
-  
-  
 
   return (
     <> <Head>
@@ -71,7 +69,7 @@ export default function Faq() {
     <div className={styles.faq}>
       <h2 className={styles.heading}>Preguntas Frecuentes</h2>
       <p>Aclaramos todas las dudas que tengas ¿Aún tienes preguntas? <Link href="/#contact"><b className={styles.highlight}>Ponte en contacto con nuestro equipo.</b></Link></p>
-      <div id="faqs" className={styles.faqs}>
+      <div className={styles.faqs}>
         {faqs.map((faq)=> {
           const highlightedQuestion = faq.question === "¿Las empresas pueden proponer nuevos proyectos a las entidades públicas?"
           return (
