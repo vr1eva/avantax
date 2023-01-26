@@ -1,10 +1,12 @@
 import styles from "./faq.module.scss"
 import Image from "next/image"
 import Link from "next/link"
-import expanded from "./assets/expanded.svg"
-import notExpanded from "./assets/notExpanded.svg"
-import { useReducer } from "react"
+import expanded from "../assets/expanded.svg"
+import notExpanded from "../assets/notExpanded.svg"
+import { useReducer} from "react"
 import Head from "next/head"
+import { useRouter } from "next/router";
+import { useEffect } from "react"
 
 const initialState = [
   {
@@ -34,7 +36,8 @@ const initialState = [
   },
 ]
 
-const reducer = (state, action) => {
+
+const reducer =(state, action) => {
   switch (action.type) {
     case "TOGGLE_FAQ":
       return state.map(faq => {
@@ -49,7 +52,15 @@ const reducer = (state, action) => {
 }
 
 export default function Faq() {
-  const [faqs, dispatch] = useReducer(reducer, initialState)
+  const router = useRouter();
+  const { openedQuestionIndex } = router.query
+  const [faqs, dispatch] = useReducer(reducer, initialState.map((question, questionIndex)=> {
+    if(questionIndex == openedQuestionIndex) {
+      return {...question, expanded: true }
+    }
+    return {...question}
+  }))
+
   return (
     <> <Head>
     <title>Avantax / FAQ</title>
@@ -60,9 +71,8 @@ export default function Faq() {
       <h2 className={styles.heading}>Preguntas Frecuentes</h2>
       <p>Aclaramos todas las dudas que tengas ¿Aún tienes preguntas? <Link href="/#contact"><b className={styles.highlight}>Ponte en contacto con nuestro equipo.</b></Link></p>
       <div className={styles.faqs}>
-        {faqs.map(faq => {
+        {faqs.map((faq)=> {
           const highlightedQuestion = faq.question === "¿Las empresas pueden proponer nuevos proyectos a las entidades públicas?"
-          
           return (
             <div key={faq.question} className={`${highlightedQuestion ? styles.highlightedQuestion: ""} ${styles.prompt}`} id={highlightedQuestion ? "highlightedQuestion": ""}>
               <div className={styles.row}>

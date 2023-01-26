@@ -28,7 +28,7 @@ export default function Proyectos() {
       <div className={styles.cta}>
         <h2 className={styles.ctaHeading}>¿No encuentras
           proyectos de tu interés?</h2>
-        <Link className={styles.ctaButton} href="/faq#highlightedQuestion"><Button variant="primary" name="Haz click aquí" /></Link>
+        <Link className={styles.ctaButton} href="/faq/6"><Button variant="primary" name="Haz click aquí" /></Link>
       </div>
     </div>
     </>

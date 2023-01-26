@@ -68,7 +68,7 @@ export default function Services() {
       </div>
       <div className={styles.cards}>
         <div className={styles.cardsList}>
-          <Carousel scrollMode="remainder" adaptiveHeight renderBottomCenterControls={({nextSlide, previousSlide}) => {
+          <Carousel c scrollMode="remainder" adaptiveHeight renderBottomCenterControls={({nextSlide, previousSlide}) => {
             return (
             <div className={styles.controls}>
                 <Button variant="light" onClick={previousSlide}><Image src={arrowLeft} alt="boton para girar a la izquierda" /> </Button>
@@ -80,6 +80,7 @@ export default function Services() {
               <Card key={title} title={title} items={items} color={color} icon={icons[icon]} background={background} />
             ))}
           </Carousel>
+          
         </div >
       </div>
     </section>

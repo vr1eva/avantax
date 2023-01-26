@@ -12,7 +12,7 @@ function doNothing() { }
 
 const Button = ({ onClick = doNothing, type = "button", name, variant = "default", children, className, disabled }) => {
   const buttonStyle = `${styles.button} ${styles[variant]} ${[poppins.className]} ${className}`
-  return <button type={type} className={buttonStyle} onClick={onClick} disabled={disabled}>{children}{name}</button>
+  return <button type={type} className={`${buttonStyle} ${className}`} onClick={onClick} disabled={disabled}>{children}{name}</button>
 };
 
 export default Button;
