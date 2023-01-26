@@ -46,13 +46,13 @@ export default function Teammates() {
           <Carousel renderBottomCenterControls={({currentSlide, pagingDotsIndices}) => (
             <div className={styles.controls}>
               {pagingDotsIndices.map(indice => (
-             <Image src={indice === currentSlide? ActiveEllipse: Ellipse}  />
+             <Image key={indice} src={indice === currentSlide? ActiveEllipse: Ellipse}  />
           ))}
             </div>
           )} renderCenterLeftControls={() => (null)} renderCenterRightControls={() => (null)}>
             {team.map(teammate => (
-                  <div className={styles.teamCardContainer}>
-                    <TeamCard key={teammate.id} name={teammate.name} orientation={teammate.orientation} bio={teammate.bio} image={images[teammate.id]} role={teammate.role} color={teammate.color} />
+                  <div key={teammate.id} className={styles.teamCardContainer}>
+                    <TeamCard  name={teammate.name} orientation={teammate.orientation} bio={teammate.bio} image={images[teammate.id]} role={teammate.role} color={teammate.color} />
                   </div>
                 ))}
           </Carousel>
