@@ -53,7 +53,7 @@ function Form() {
 const TextField = ({ label, placeholder, name, type = "text" }) => (
   <div className={`${styles.textField} ${poppins.variable}`}>
     <label htmlFor={name}>{label}</label>
-    <input className={styles.input} type={type} placeholder={placeholder} />
+    <input name={name} className={styles.input} type={type} placeholder={placeholder} />
   </div>
 );
 
