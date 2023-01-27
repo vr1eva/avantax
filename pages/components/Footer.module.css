@@ -23,6 +23,7 @@
   display: flex;
   gap: 32px;
   width: 136px;
+  align-items:center;
 }
 
 .socialDivider {
@@ -47,6 +48,7 @@
 .column {
   display: flex;
   flex-direction: column;
+  gap:9px;
 }
 
 .detail {

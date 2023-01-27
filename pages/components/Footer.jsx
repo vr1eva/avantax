@@ -5,15 +5,16 @@ import linkedin from "../assets/linkedin.svg"
 import twitter from "../assets/twitter.svg"
 import instagram from "../assets/instagram.svg"
 import { Inter } from '@next/font/google'
+import Link from "next/link"
 
 const inter = Inter({ subsets: ['latin'] })
 
 const details = [{ label: "Número de contacto", value: "+51 944 060 980" }, { label: "Correo electrónico", value: "rtorres@avantax.pe" }, { label: "Dirección", value: "Pasaje Mártir Olaya 129,  Oficinas 1905 - Miraflores, Lima - Perú" }]
 
 const links = [
-  { title: "Preguntas frecuentes", href: "#" },
-  { title: "Sobre Nosotros", href: "#" },
-  { title: "Saca una cita con nosotros", href: "#" },
+  { title: "Preguntas frecuentes", path: "/faq" },
+  { title: "Sobre Nosotros", path: "/nosotros" },
+  { title: "Saca una cita con nosotros", path: "/#contact" },
 ]
 
 function Footer() {
@@ -70,7 +71,7 @@ function Links() {
   return (
     <div className={styles.links}>
       {links.map(link => (
-        <a key={link.path} className={styles.link} href={link.href}>{link.title}</a>
+        <Link key={link.path} className={styles.link} href={link.path}>{link.title}</Link>
       ))}
     </div>
   )
