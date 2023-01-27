@@ -74,7 +74,7 @@ export default function Table({ data = [] }) {
   }, [firstOption]);
 
   const table = (
-    <table className={styles.table}>
+    <table cellPadding={0} className={styles.table}>
       <thead>
         <tr>{headerRow}</tr>
       </thead>

@@ -9,6 +9,7 @@
   width: 1256px;
   min-height: 927px;
   margin-top: 35px;
+  border-collapse: collapse;
 }
 
 .dropdownMenu {
@@ -53,7 +54,6 @@
   margin-right: 2rem;
   padding: 1rem;
   padding-right: 2rem;
-
 }
 
 .tableHeader{
@@ -73,15 +73,19 @@
     text-transform: uppercase;
   }
   cursor: pointer;
+  padding: 16px 25px;
 }
 
 .tableRow {
-  height: 75px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tableData {
-  padding: 24px;
+  padding: 36px 24px;
   border-top: 1px solid #757575;
+  text-align: center;
+
 }
 
 @media only screen and (max-width: 600px) {
