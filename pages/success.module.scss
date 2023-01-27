@@ -1,0 +1,22 @@
+.container {
+    height: 100vh;
+}
+
+.message{
+    text-align: center;
+    padding-top: 40px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 51px;
+    color: var(--dark);
+}
+
+.redirectNote {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    color: var(--dark);   
+}
