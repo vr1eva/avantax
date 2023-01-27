@@ -13,8 +13,8 @@
 }
 
 
-.rightyCard {
 
+.rightyCard {
   .bio {
     align-self: flex-start;
     text-align: right;
@@ -27,14 +27,17 @@
 
     p {
       margin: 0;
-      
     }
   }
 
   img {
     order: 1;
     height:290px; 
-    width:253px;
+    width: auto;
+  }
+
+  .details {
+    padding-right: 0;
   }
 }
 
@@ -54,7 +57,7 @@
 
 .cardImage {
   height: 290px;
-  width: 253px;
+  width: auto;
   border-radius: 15px;
 }
 
@@ -85,6 +88,10 @@
   line-height: 28px;
   align-self: flex-end;
   max-width: 724px;
+
+  p {
+    padding-left: 20px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -120,7 +127,8 @@
 }
 
   .cardImage {
-    margin: unset
+    margin: unset;
+    height: 215px;
   }
 
   .details {
