@@ -2,7 +2,6 @@ import styles from "./FaqCard.module.scss"
 import Button from "./Button"
 import Link from "next/link"
 import faqCardImage from "../assets/faqCardImage.jpg"
-import { Stint_Ultra_Condensed } from "@next/font/google"
 
 export default function FaqCard() {
   return (

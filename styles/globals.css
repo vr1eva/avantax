@@ -15,6 +15,10 @@ a {
   box-sizing: border-box;
 }
 
+b { 
+  font-weight: 600 !important;
+}
+
 :root {
     --dark: #212121;
     --orange: #D57315;
