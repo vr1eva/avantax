@@ -56,6 +56,18 @@
   padding-right: 2rem;
 }
 
+.option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 24px;
+
+  &:hover {
+    background-color: var(--light);
+    color: var(--dark);
+  }
+}
+
 .tableHeader{
   max-width: 223px;
   min-width: 112px;
@@ -87,6 +99,7 @@
   text-align: center;
 
 }
+
 
 @media only screen and (max-width: 600px) {
   .select {

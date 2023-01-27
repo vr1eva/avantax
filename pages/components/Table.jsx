@@ -45,7 +45,7 @@ export default function Table({ data = [] }) {
     return self.indexOf(value) === index;
   }).map((value, index) => {
     return (
-      <option key={index}>{value}</option>
+      <option className={styles.option} key={index}>{value}</option>
     );
   });
 
