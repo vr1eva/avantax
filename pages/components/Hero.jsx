@@ -1,5 +1,4 @@
 import styles from "./Hero.module.scss"
-import Image from 'next/image'
 import Button from "./Button"
 import heroImage from "../assets/hero.jpg"
 import Link from "next/link"

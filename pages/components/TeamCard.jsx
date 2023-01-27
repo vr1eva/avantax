@@ -6,7 +6,7 @@ export default function TeamCard({ name, orientation, bio, image, role, color })
   return (
     <li className={`${styles.card} ${cardClassName}`}>
       <section className={styles.description}>
-        <Image align="right" alt={`${name}'s picture`}  src={image} className={`${styles.cardImage}`} />
+        <Image priority align="right" alt={`${name}'s picture`}  src={image} className={`${styles.cardImage}`} />
           <div className={styles.details}>
             <h3 className={styles.name}>{name}</h3>
             <p style={{ color: color }} className={styles.role}>{role}</p>

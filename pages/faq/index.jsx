@@ -76,7 +76,7 @@ export default function Faq() {
             <div key={faq.question} className={`${highlightedQuestion ? styles.highlightedQuestion: ""} ${styles.prompt}`} id={highlightedQuestion ? "highlightedQuestion": ""}>
               <div className={styles.row}>
                 <h3 className={styles.question}>{faq.question}</h3>
-                <Image alt="see answer button" onClick={() => dispatch({ type: "TOGGLE_FAQ", payload: faq.question })} className={styles.expandable} src={faq.expanded ? expanded : notExpanded} />
+                <Image prority alt="see answer button" onClick={() => dispatch({ type: "TOGGLE_FAQ", payload: faq.question })} className={styles.expandable} src={faq.expanded ? expanded : notExpanded} />
               </div>
               {faq.expanded ? <p className={styles.answer}>{faq.answer}</p> : null}
             </div>
