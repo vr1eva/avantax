@@ -5,7 +5,7 @@ import styles from "./success.module.scss"
 export default function Success() {
     const router = useRouter();
     useEffect(() => {
-        const delay  = 50000
+        const delay  = 2200
         const timer = setTimeout(() => {
             router.push("/")
         }, delay)
