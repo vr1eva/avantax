@@ -21,7 +21,7 @@ export default function Proyectos() {
   </Head>
     <div className={styles.proyectos}>
       <h2 className={styles.heading}><b>Cartera de </b> proyectos</h2>
-      <p>Aquí encontrarás los proyectos de todas las entidades públicas a nivel nacional viabilizados a través de obras por impuestos y listos para su ejecución.</p>
+      <p className={styles.note}>Aquí encontrarás los proyectos de todas las entidades públicas a nivel nacional viabilizados a través de obras por impuestos y listos para su ejecución.</p>
       <Table data={data.workbook} />
 
 
