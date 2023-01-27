@@ -13,7 +13,7 @@ export default function Hero() {
         <h2 className={styles.heading}><b>Le damos propósito</b> a tus impuestos</h2>
         <p className={styles.subheading}>Somos una consultora especializada en la implementación de proyectos de inversión pública mediante el mecanismo de Obras por Impuestos</p>
         <div className={styles.cta}>
-          <Link href="/faq#oxiQuestion"><Button variant="primary" name="¿Qué son las Obras por Impuestos?" onClick={() => { }}></Button></Link>
+          <Link href="/faq/0#oxiQuestion"><Button variant="primary" name="¿Qué son las Obras por Impuestos?" onClick={() => { }}></Button></Link>
         </div>
       </div>
     </div>
