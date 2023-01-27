@@ -23,7 +23,7 @@
   margin-bottom: 70px;
 }
 
-.buttonRow {
+.cta {
   width: 100%;
   max-width: 255px;
   margin: 0 auto;
@@ -60,5 +60,10 @@
   .image {
     width: 62px;
     height: 62px;
+  }
+
+  .cta {
+        display: flex;
+    align-items: center;
   }
 }

@@ -11,6 +11,7 @@ import award from "../assets/award.svg"
 import money from "../assets/money.svg"
 import Image from "next/image"
 const icons = { buildings, convert, cupheart, status, medal, ranking, award, money }
+import Link from "next/link"
 
 export default function Benefits() {
   return (
@@ -123,8 +124,8 @@ function CompanyBenefits() {
 function CallToAction() {
   const buttonName = "Comienza a invertir"
   return (
-    <div className={styles.buttonRow}>
+    <Link href="/#contact" className={styles.cta}>
       <Button variant="primary" onClick={() => { }} name={buttonName} />
-    </div>
+    </Link>
   )
 }
