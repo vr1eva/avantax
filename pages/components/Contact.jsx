@@ -25,6 +25,7 @@ function doNothing() { }
 function Form() {
   return (
     <form className={styles.form} onSubmit={doNothing} id="contacto" name="contact" method="POST" data-netlify="true" action="/success">
+      <input type="hidden" name="form-name" value="contact" />
       <div className={styles.row}>
         <TextField name="name" label="Nombre" placeholder="Tu nombre" />
         <TextField name="surname" label="Apellido" placeholder="Tu apellido" />

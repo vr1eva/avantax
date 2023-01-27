@@ -8,9 +8,7 @@
   position: relative;
 }
 
-.highlight {
-  color: var(--indigo);
-}
+
 
 .image {
   background-attachment: fixed;
@@ -86,6 +84,11 @@
   line-height: 28px;
   margin: 25px 0 0 0;
   color: var(--dark);
+
+  .highlight {
+    font-weight: 700;
+    color: var(--indigo);
+  }
 }
 
 .cta {

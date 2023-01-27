@@ -103,7 +103,7 @@ function Card({ title, items, color, background, icon }) {
         {items.map(item => (
           <li className={styles.cardItem} key={item}>{item}</li>
         ))}</ul>
-      <Image alt="service" key={title} src={icon} className={styles.cardImage} />
+      <Image priority alt="service" key={title} src={icon} className={styles.cardImage} />
     </div>
   )
 }

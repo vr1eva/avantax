@@ -1,10 +1,11 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import styles from "./Table.module.scss";
 import arrowDown from "../assets/arrow-down.svg"
 
 export default function Table({ data = [] }) {
-  const [dropdown, setDropdown] = useState('');
+  const [dropdown, setDropdown] = useState('name');
   const [selectedOption, setSelectedOption] = useState('');
+  const [firstOption, setFirstOption] = useState('');
   const headers = [
     {text: "Nº", key: "id"},
     {text: "Estado", key: "status"},
@@ -49,14 +50,28 @@ export default function Table({ data = [] }) {
   });
 
   const dropdownMenu = (
+    <>
     <div className={styles.dropdownMenu}>
       <p className={styles.filterLabel}><b>Selecciona</b> una cabecera y <b>filtra</b> por categoría</p>
-      <select style={{backgroundImage: `url(${arrowDown.src})`}} className={styles.select} onChange={(e) => setSelectedOption(e.target.value)}>
+      <select style={{backgroundImage: `url(${arrowDown.src})`}} className={styles.select} onChange={(e) => setSelectedOption(e.target.value)} value={selectedOption}>
         <option hidden={dropdownOptions.length > 0 ? true : false}>Filtrar resultados</option>
         {dropdownOptions}
       </select>
     </div>
+    </>
   );
+
+  useEffect(() => {
+    if (dropdownOptions.length > 0) {
+      setFirstOption(dropdownOptions[0].props.children);
+    }
+  }, [dropdownOptions]);
+
+  useEffect(() => {
+    if (firstOption !== '') {
+      setSelectedOption(firstOption);
+    }
+  }, [firstOption]);
 
   const table = (
     <table className={styles.table}>

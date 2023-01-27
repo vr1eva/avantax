@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Button from "./Button"
 import styles from "./About.module.scss"
 import aboutImage from "../assets/about.jpg"
