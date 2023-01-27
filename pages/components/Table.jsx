@@ -85,10 +85,12 @@ export default function Table({ data = [] }) {
   );
 
   return (
-    <div className={styles.tableContainer}>
+    <>
       {dropdownMenu}
+    <div className={styles.tableContainer}>
       {table}
     </div>
+    </>
   );
 
 }
