@@ -114,6 +114,7 @@
 
     img {
       order: 1;
+      height: 215px;
     }
 
     .details {
@@ -129,11 +130,13 @@
   .cardImage {
     margin: unset;
     height: 215px;
+    
   }
 
   .details {
     align-self: flex;
     align-items: unset;
+    padding-top: 30px;
   }
  
   .name {
@@ -147,6 +150,7 @@
 
     p {
       margin: 0;
+      padding-left: 0;
     }
 
     
