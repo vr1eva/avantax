@@ -99,6 +99,19 @@
 
 
 @media only screen and (max-width: 600px) {
+  .cards {
+    display: flex;
+    flex-direction: column;
+    max-width: 827px;
+    overflow-x: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    height: 413px;
+  }
+
   .heading {
     font-style: normal;
     font-weight: 600;

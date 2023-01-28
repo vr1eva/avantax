@@ -74,14 +74,14 @@ export default function Services() {
       </div>
       <div className={styles.cards}>
         <div className={styles.cardsList}>
-            <Carousel scrollMode="remainder" adaptiveHeight={true} renderBottomCenterControls={({nextSlide, previousSlide}) => {
+            <Carousel adaptiveHeight={true} renderBottomCenterControls={({nextSlide, previousSlide}) => {
             return (
             <div className={styles.controls}>
                 <Button variant="light" onClick={previousSlide}><Image src={arrowLeft} alt="boton para girar a la izquierda" /> </Button>
                 <Button variant="light" onClick={nextSlide}><Image src={arrowRight} alt="boton para girar a la derecha" /></Button> 
               </div>
             )
-          }} cellSpacing={25} disableEdgeSwiping slidesToShow={isMobile? 1 : 2.2}   renderCenterLeftControls={() => (null)} renderCenterRightControls={() => (null)} >
+          }} cellSpacing={25} disableEdgeSwiping slidesToShow={isMobile? 1 : 2}   renderCenterLeftControls={() => (null)} renderCenterRightControls={() => (null)} >
             {STAGES.slice(position).concat(STAGES.slice(0, position)).map(({ title, items, color, icon, background }) => (
               <Card key={title} title={title} items={items} color={color} icon={icons[icon]} background={background} />
             ))}
@@ -103,7 +103,7 @@ function Card({ title, items, color, background, icon }) {
         {items.map(item => (
           <li className={styles.cardItem} key={item}>{item}</li>
         ))}</ul>
-      <Image priority alt="service" key={title} src={icon} className={styles.cardImage} />
+      <Image priority={true} alt="service" key={title} src={icon} className={styles.cardImage} />
     </div>
   )
 }
