@@ -25,7 +25,7 @@ const initialState = [
     question: "¿Qué empresas pueden participar en OxI?", answer: `Podrán participar las personas jurídicas de derecho privado, nacionales o extranjeras, que no estén sujetas a los sistemas administrativos del sector público financiero (Presupuesto Público, Endeudamiento Público), cuyo capital sea cien por ciento (100%) privado, incluidas aquéllas que hayan suscrito contratos o convenios de estabilidad con el Estado peruano.`, expanded: false
   },
   {
-    question: "¿Cuáles son las fases de un proyecto de obras por impuestos?", answer: `Son 5. FASE 1: Priorización del proyecto a financiarse FASE 2: Actos previos al proceso de licitación (Informe Previo Contraloría) FASE 3: Licitación FASE 4: Ejecución de obra FASE 5: Obtención del CIPRL`, expanded: false
+    question: "¿Cuáles son las fases de un proyecto de obras por impuestos?", expanded: false
   },
   {
     question: "¿Qué entidades públicas pueden aplicar en OxI?", answer: `Pueden aplicar las entidades públicas del gobierno nacional (Ministerios), los gobiernos regionales, los gobiernos locales (Municipios Provinciales y Distritales), las juntas de coordinación interregional, las mancomunidades regionales, las mancomunidades municipales y las universidades públicas.`, expanded: false
@@ -74,13 +74,25 @@ export default function Faq() {
       <div id="faqs" className={styles.faqs}>
         {faqs.map((faq)=> {
           const highlightedQuestion = faq.question === "¿Las empresas pueden proponer nuevos proyectos a las entidades públicas?"
+          const phasesQuestion = faq.question ===  `¿Cuáles son las fases de un proyecto de obras por impuestos?`
           return (
             <div key={faq.question} className={`${highlightedQuestion ? styles.highlightedQuestion: ""} ${styles.prompt}`} id={highlightedQuestion ? "highlightedQuestion": ""}>
               <div className={styles.row}>
                 <h3 className={styles.question}>{faq.question}</h3>
                 <Image prority  alt="see answer button" onClick={() => dispatch({ type: "TOGGLE_FAQ", payload: faq.question })} className={styles.expandable} src={faq.expanded ? expanded : notExpanded} />
               </div>
-              {faq.expanded ? <p className={styles.answer}>{faq.answer}</p> : null}
+              {faq.expanded ? <div className={styles.answer}>{ phasesQuestion? 
+              (<>
+                <span>Son 5.</span> 
+                <ul>
+                  <li>FASE 1: Priorización del proyecto a financiarse</li>
+                  <li>FASE 2: Actos previos al proceso de licitación (Informe Previo Contraloría)</li>
+                  <li>FASE 3: Licitación</li>
+                  <li>FASE 4: Ejecución de obra FASE 5: Obtención del CIPRL</li>
+                </ul>
+              </>):faq.answer
+                }
+                </div> : null}
             </div>
           )
         })}
