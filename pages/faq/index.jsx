@@ -86,7 +86,8 @@ export default function Faq() {
                   <li>FASE 1: Priorización del proyecto a financiarse</li>
                   <li>FASE 2: Actos previos al proceso de licitación (Informe Previo Contraloría)</li>
                   <li>FASE 3: Licitación</li>
-                  <li>FASE 4: Ejecución de obra FASE 5: Obtención del CIPRL</li>
+                  <li>FASE 4: Ejecución de obra </li>
+                  <li>FASE 5: Obtención del CIPRL</li>
                 </ul>
               </>):faq.answer
                 }
