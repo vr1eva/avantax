@@ -3,7 +3,7 @@ import styles from "./Table.module.scss";
 import arrowDown from "../assets/arrow-down.svg"
 
 export default function Table({ data = [] }) {
-  const [dropdown, setDropdown] = useState('name');
+  const [dropdown, setDropdown] = useState('department');
   const [selectedOption, setSelectedOption] = useState('');
   const [firstOption, setFirstOption] = useState('');
   const headers = [
@@ -18,12 +18,12 @@ export default function Table({ data = [] }) {
     {text: "Nombre del proyecto", key: "name" },
     {text: "Tipologia", key: "tipology"},
     {text:"Monto de inversión referencial (en S/. M)", key: "investment"},
-    {text: "Tope CIPRL 2021", key: "ciprlMax"}
+    {text: "Tope CIPRL 2022", key: "ciprlMax"}
   ]
 
   const headerRow = headers.map((header, index) => {
     return (
-      <th className={`${styles.tableHeader}`} key={index} onClick={() => setDropdown(header.key)}>{header.text}</th>
+      <th className={`${styles.tableHeader} `} key={index} onClick={() => setDropdown(header.key)}>{header.text}</th>
     );
   });
 

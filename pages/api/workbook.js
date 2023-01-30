@@ -16,11 +16,12 @@ function processRow(row) {
         district: row[7],
         entity: row[8],
         snipCode: row[9],
-        name: row[10],
+        name: row[10].slice(0, 30) + "...",
         tipology: row[11],
-        investment: row[12],
-        ciprlMax: row[13]
+        investment:  new Intl.NumberFormat('es-PE', { style: 'currency', currency: 'PEN' }).format(row[12]),
+        ciprlMax: (row[13] === "No corresponde")? "No corresponde": new Intl.NumberFormat('es-PE', { style: 'currency', currency: 'PEN' }).format(row[13]) 
     }
+    
 }
 
 export default async function handler(req, res) {
