@@ -49,9 +49,8 @@ function KPI({ count, symbol, sufix, legend }) {
           start={0}
           delay={0}
           end={count}
-          duration={2.5}
-          enableScrollSpy
-          scrollSpyOnce
+          duration={2}
+          enableScrollSpy={true}
           onEnd={() => console.log('Ended! 👏')}
           onStart={() => console.log('Started! 💨')} />
           <span>{sufix}</span>
