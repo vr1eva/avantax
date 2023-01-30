@@ -30,7 +30,6 @@ export default async function handler(req, res) {
     const workbookReader = new ExcelJS.stream.xlsx.WorkbookReader(xlsxDirectory + '/projects.xlsx', 'utf8');
     for await (const worksheetReader of workbookReader) {
         for await (const row of worksheetReader) {
-            console.log(row.number)
             if(row.number > 11) {
                 goodRow(row.values) && rows.push(processRow(row.values))
             } else continue

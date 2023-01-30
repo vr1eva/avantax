@@ -50,9 +50,7 @@ function KPI({ count, symbol, sufix, legend }) {
           delay={0}
           end={count}
           duration={2}
-          enableScrollSpy={true}
-          onEnd={() => console.log('Ended! 👏')}
-          onStart={() => console.log('Started! 💨')} />
+          enableScrollSpy={true}/>
           <span>{sufix}</span>
         <p className={styles.legend}>{legend}</p>
       </h1>
