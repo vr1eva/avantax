@@ -27,7 +27,7 @@ export default function About() {
               de infraestructura en el país. <br /> <br />
               Brindamos asesoría especializada en el mecanismo de
               <span className={styles.highlight}> Obras por Impuestos (OxI)</span>,
-              donde las empresas participan a través del canje de susx
+              donde las empresas participan a través del canje de sus
               impuestos por el financiamiento y ejecución de proyectos de construcción o mejora de infraestructura en la comunidad, como la construcción de carreteras, escuelas o
               parques públicos.</p>
           </div>
