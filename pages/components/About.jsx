@@ -40,7 +40,7 @@ export default function About() {
   )
 }
 
-function KPI({ count, symbol, sufix, legend }) {
+function KPI({ count=0, symbol, sufix, legend }) {
   return (
     <div className={styles.kpi}>
       <h1 className={styles.estimation}>
@@ -49,8 +49,8 @@ function KPI({ count, symbol, sufix, legend }) {
           start={0}
           delay={0}
           end={count}
-          duration={2}
-          enableScrollSpy={true}/>
+          duration={6}
+          enableScrollSpy={true} />
           <span>{sufix}</span>
         <p className={styles.legend}>{legend}</p>
       </h1>
