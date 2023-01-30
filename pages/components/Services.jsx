@@ -81,7 +81,7 @@ export default function Services() {
                 <Button variant="light" onClick={nextSlide}><Image src={arrowRight} alt="boton para girar a la derecha" /></Button> 
               </div>
             )
-          }} cellSpacing={25} disableEdgeSwiping slidesToShow={isMobile? 1 : 2}   renderCenterLeftControls={() => (null)} renderCenterRightControls={() => (null)} >
+          }} cellSpacing={25} disableEdgeSwiping slidesToShow={isMobile? 1 : 2.2}   renderCenterLeftControls={() => (null)} renderCenterRightControls={() => (null)} >
             {STAGES.slice(position).concat(STAGES.slice(0, position)).map(({ title, items, color, icon, background }) => (
               <Card key={title} title={title} items={items} color={color} icon={icons[icon]} background={background} />
             ))}
