@@ -12,6 +12,8 @@ import Button from "./Button"
 import { useState } from "react"
 import Carousel from 'nuka-carousel';
 import useDeviceSize from "../utiles/useDeviceSize"
+import Ellipse from "../assets/ellipse.svg"
+import ActiveEllipse from "../assets/activeEllipse.svg"
 
 const icons = {
   board, tasks, verified, user, approval
@@ -74,12 +76,19 @@ export default function Services() {
       </div>
       <div className={styles.cards}>
         <div className={styles.cardsList}>
-            <Carousel adaptiveHeight={true} renderBottomCenterControls={({nextSlide, previousSlide}) => {
+            <Carousel adaptiveHeight={true} renderBottomCenterControls={({nextSlide, previousSlide, pagingDotsIndices, currentSlide}) => {
             return (
-            <div className={styles.controls}>
-                <Button variant="light" onClick={previousSlide}><Image src={arrowLeft} alt="boton para girar a la izquierda" /> </Button>
-                <Button variant="light" onClick={nextSlide}><Image src={arrowRight} alt="boton para girar a la derecha" /></Button> 
-              </div>
+              <>
+                <div className={styles.controls}>
+                  <Button variant="light" onClick={previousSlide}><Image src={arrowLeft} alt="boton para girar a la izquierda" /> </Button>
+                  <Button variant="light" onClick={nextSlide}><Image src={arrowRight} alt="boton para girar a la derecha" /></Button> 
+                </div>
+                <div className={styles.dotControls}>
+                  {pagingDotsIndices.map(indice => (
+                    <Image key={indice} src={indice === currentSlide? ActiveEllipse: Ellipse}  />))
+                  }
+                </div>
+            </>
             )
           }} cellSpacing={25} disableEdgeSwiping slidesToShow={isMobile? 1 : 2.2}   renderCenterLeftControls={() => (null)} renderCenterRightControls={() => (null)} >
             {STAGES.slice(position).concat(STAGES.slice(0, position)).map(({ title, items, color, icon, background }) => (

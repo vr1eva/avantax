@@ -97,12 +97,15 @@
   }
 }
 
+.dotControls {
+  display: none;
+}
 
 @media only screen and (max-width: 600px) {
   .cards {
     display: flex;
     flex-direction: column;
-    max-width: 827px;
+    max-width: unset;
     overflow-x: none;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -146,6 +149,14 @@
 
  .controls {
     display: none;
+ }
+
+ .dotControls {
+    display: flex;
+    gap:8px;
+    margin-left: -28px;
+    position: absolute;
+    bottom: -28px;
  }
 }
 
