@@ -11,7 +11,7 @@ const Home: NextPage = () => {
     <div>
       <Head>
         <title>Avantax / Homepage</title>
-        <meta name="description" content="Solucion de impuestos" />
+        <meta name="description" content="Solución de obras por impuestos" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
