@@ -105,7 +105,6 @@
   .cards {
     display: flex;
     flex-direction: column;
-    max-width: unset;
     overflow-x: none;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -113,6 +112,9 @@
         display: none;
       }
     height: 413px;
+    padding: 0;
+    width: unset;
+    max-width: 100%;
   }
 
   .heading {
@@ -145,6 +147,7 @@
     flex-direction: column;
     gap: 44px;
     padding: 0 15px;
+    
  }
 
  .controls {
