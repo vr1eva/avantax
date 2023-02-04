@@ -56,9 +56,9 @@ function Navbar() {
 
 function Logo() {
   return (
-    <h1 className={styles.logoContainer}>
+    <Link href="/" className={styles.logoContainer}>
       <Image alt="Avantax Logo" src={logo} className={styles.logo} />
-    </h1>
+    </Link>
   )
 }
 
