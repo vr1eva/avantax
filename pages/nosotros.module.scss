@@ -58,9 +58,9 @@
   }
 
   .image {
-    width: calc(100% - 30px);
-    margin: 0 auto;
     height: unset;
+    margin: 0;
+    width: 100%;
   }
 
   .heading {
