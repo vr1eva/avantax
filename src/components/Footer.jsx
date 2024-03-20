@@ -6,6 +6,7 @@ import twitter from "../assets/twitter.svg"
 import instagram from "../assets/instagram.svg"
 import { Inter } from 'next/font/google'
 import Link from "next/link"
+import variables from '@/variables.module.scss'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -79,7 +80,7 @@ function Links() {
 
 function Copyright() {
   return (
-    <p className={`${inter.className} ${styles.disclaimer}`}>Avantax © Todos los derechos reservados 2023</p>)
+    <p style={{ color: variables.beige }} className={`${inter.className} ${styles.disclaimer}`}>Avantax © Todos los derechos reservados 2023</p>)
 }
 
 
