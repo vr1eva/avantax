@@ -28,7 +28,7 @@ export const CONTACT_ACTIONS = [
 
 export const CONTACT_ITEMS = [
     { title: "Número de contacto", value: "+51 944 060 980" },
-    { title: "Correo electrónico", value: "rtorres@avantax.pe" },
+    { title: "Correo electrónico", value: "info@avantax.pe" },
     { title: "Dirección", value: "Pasaje Mártir Olaya 129,  Oficinas 1905 - Miraflores, Lima - Perú" },
 ]
 
