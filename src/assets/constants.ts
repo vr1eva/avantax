@@ -46,11 +46,11 @@ export const initialState: Faq[] = [
         question: "¿Qué es el CIPRL?", answer: `El Certificado de Inversión Pública Regional y Local (CIPRL), es un documento emitido por el Ministerio de Economía y Finanzas, a través de la Dirección Nacional del Tesoro Público, que tiene por finalidad la cancelación del monto que invierta la empresa privada en la ejecución de los proyectos de obras por impuestos. Este certificado se utiliza para el pago a cuenta o regularización del impuesto a la renta.`, expanded: false
     },
     {
-        question: "¿El CIPRL puede ser negociable?", answer: `Sí. El CIPRL tiene carácter de NEGOCIABLE siempre y cuando la empresa que financia la obra no se encarga directamente de la ejecución de la misma, es decir, contrata a una empresa constructora para ello. De esta manera el CIPRL se hace NEGOCIABLE y puede ser o bien utilizado por la empresa o vendido a otras empresas.
+        question: "¿El CIPRL puede ser negociable?", answer: `Sí. El CIPRL puede ser negociable a solicitud de la empresa.
         `, expanded: false
     },
     {
-        question: "¿El CIPRL puede fraccionarse?", answer: `Sí. La empresa privada, de acuerdo a sus necesidades, puede solicitar a la Dirección Nacional del Tesoro Público el fraccionamiento de su CIPRL por montos iguales o menores al 50% del impuesto a la renta pagado en el ejercicio anterior. Posteriormente, si el CIPRL tiene carácter de NEGOCIABLE, el saldo puede ser comercializado.`, expanded: false
+        question: "¿El CIPRL puede fraccionarse?", answer: `Sí. La empresa privada, de acuerdo a sus necesidades, puede solicitar a la Dirección Nacional del Tesoro Público el fraccionamiento de su CIPRL por montos iguales o menores al 80% del impuesto a la renta pagado en el ejercicio anterior. Posteriormente, si el CIPRL tiene carácter de NEGOCIABLE, el saldo puede ser comercializado.`, expanded: false
     },
     {
         question: "¿Qué empresas pueden participar en OxI?", answer: `Podrán participar las personas jurídicas de derecho privado, nacionales o extranjeras, que no estén sujetas a los sistemas administrativos del sector público financiero (Presupuesto Público, Endeudamiento Público), cuyo capital sea cien por ciento (100%) privado, incluidas aquéllas que hayan suscrito contratos o convenios de estabilidad con el Estado peruano.`, expanded: false
