@@ -222,7 +222,7 @@ export const LINKS = [
 export const HIGHLIGHTED_PATH = "/#contacto"
 
 export const QUICK_REPLIES = [
-    { label: "Solicitar cotizacion" },
-    { label: "Agendar cita" },
-    { label: "Realizar consulta" },
+    { label: "Solicitar cotizacion", href: "/contacto", type: "cotizacion" },
+    { label: "Agendar cita", href: "/contacto", type: "cita" },
+    { label: "Realizar consulta", href: "/contacto", type: "consulta" },
 ]

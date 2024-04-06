@@ -8,6 +8,9 @@ import { Button } from "@/components/ui/button"
 import { QUICK_REPLIES } from "@/assets/constants"
 import { useState } from "react"
 import { Separator } from "@radix-ui/react-separator"
+import Link from "next/link"
+import { Input } from "@/components/ui/input"
+
 export default function Chat() {
   const [chatIsVisible, setChatIsVisible] = useState(true)
   if (!chatIsVisible) {
@@ -45,11 +48,41 @@ export default function Chat() {
           </div>
           {QUICK_REPLIES.map(reply => (
             <div key={reply.label} className="rounded-xl bg-gray-100 dark:bg-gray-800 p-4 max-w-xs cursor-pointer hover:bg-beige">
-              <div className="mt-2">{reply.label}</div>
+              <QuickReply reply={reply} />
             </div>
           ))}
         </div>
       </div>
     </div>
   )
+}
+
+function QuickReply({ reply }) {
+  const [formMode, setFormMode] = useState(false)
+  if (reply.type === "consulta") {
+    return (
+      <div>
+        <Link href={reply.href} className="mt-2">{reply.label}</Link>
+      </div>
+    )
+  } else if (reply.type === "cotizacion") {
+    return (
+      <div>
+        {formMode ? <form>
+          <Input placeholder="Razón social" />
+          <Input placeholder="RUC" />
+          <Input placeholder="Correo electronico" />
+          <Input placeholder="Nombre" />
+          <Input placeholder="Monto interesado en financiar" />
+        </form> : <div onClick={() => setFormMode(true)} className="mt-2">{reply.label}</div>}
+      </div>
+    )
+  } else if (reply.type === "cita") {
+    return (
+      <div>
+        <Link href={reply.href} className="mt-2">{reply.label}</Link>
+      </div>
+    )
+  }
+
 }
