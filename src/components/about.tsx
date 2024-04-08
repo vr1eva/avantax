@@ -64,8 +64,8 @@ function Kpi({ kpi }: KpiProps) {
                     start={0}
                     delay={0}
                     end={count}
-                    duration={6}
-                    enableScrollSpy={true} />
+                    duration={2.1}
+                    scrollSpyOnce={true} />
                 <span>{sufix}</span>
                 <p className={classNames.legend}>{legend}</p>
             </h1>

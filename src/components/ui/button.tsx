@@ -15,7 +15,11 @@ const buttonVariants = cva(
         secondary: `border-1 border-solid border-dark`,
         tertiary: `text-indigo `,
         light: `text-dark`,
-        default: `bg-white font-normal hover:text-purple`
+        default: `bg-white font-normal hover:text-purple`,
+        beige: `border-1 border-solid border-dark leading-7 text-gray-500 text-sm`,
+        quickReply: `bg-white hover:bg-mintGreen hover:text-white border-1 border-solid border-dark leading-7 text-gray-500 text-sm`,
+        table: `text-dark`,
+        tablePageControl: "bg-white hover:bg-mintGreen hover:text-white border-1 border-solid border-dark leading-7 text-gray-500 text-sm"
       },
       size: {
         default: "h-[50px] py-[10px] px-[29px] rounded-[32px]",

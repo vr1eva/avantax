@@ -28,7 +28,7 @@ function BenefitsList() {
     }
     const heading = "¿Qué beneficios brindan las Obras por Impuestos al país?"
     return (
-        <div className={classNames.benefit}>
+        <div className={classNames.benefit} id="beneficios">
             <h2 className={classNames.heading}>{heading}</h2>
             <div className={classNames.cards}>
                 {BENEFITS.map(item => (

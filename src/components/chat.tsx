@@ -10,79 +10,272 @@ import { useState } from "react"
 import { Separator } from "@radix-ui/react-separator"
 import Link from "next/link"
 import { Input } from "@/components/ui/input"
+import { ActionPromptProps, MessageBubbleProps, QuickReplyProps, QuickReplyType, StatusLabelProps, StatusLedProps } from "@/types"
+import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form"
+import { TypographyP } from "./ui/typography"
+import ChatIcon from "@/assets/chat.svg"
+import Image from "next/image"
+import CalendlyForm from "./calendly-form"
+
+const formSchema = z.object({
+  razon: z.string(),
+  ruc: z.string().min(11).max(11),
+  correo: z.string(),
+  nombre: z.string(),
+  monto: z.string()
+})
+
+function ContactForm() {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      ruc: "",
+      razon: "",
+      correo: "",
+      nombre: "",
+      monto: ""
+    },
+  })
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+    console.log(values)
+  }
+
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col space-y-8 justify-start">
+        <FormField
+          control={form.control}
+          name="razon"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Razón social</FormLabel>
+              <FormControl>
+                <Input placeholder="Razón social" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="ruc"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>RUC</FormLabel>
+              <FormControl>
+                <Input placeholder="RUC" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="correo"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Correo</FormLabel>
+              <FormControl>
+                <Input placeholder="Correo" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="nombre"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Nombre y apellidos</FormLabel>
+              <FormControl>
+                <Input placeholder="Nombre y apellidos" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="monto"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Monto interesado en financiar</FormLabel>
+              <FormControl>
+                <Input placeholder="Monto" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button type="submit" variant="primary" className="text-base mx-auto">Enviar</Button>
+      </form>
+    </Form>
+  )
+}
+
+function StatusLed({ active, mini }: StatusLedProps) {
+  const classNames = {
+    status: `flex gap-1.5 items-center`,
+    statusLed: `animate-pulse  ${active ? 'bg-green' : 'bg-gray'} ${mini ? "w-2 h-2" : "w-4 h-4"} rounded-full`,
+  }
+
+  return (
+    <div className={classNames.status}>
+      <span className={classNames.statusLed}></span>
+    </div>
+  )
+}
+
+
+function StatusLabel({ prompt }: StatusLabelProps) {
+  const classNames = {
+    statusLabel: `font-light text-[14px] leading-[31px]`
+  }
+  return (
+    <p className={classNames.statusLabel}>{prompt}</p>
+  )
+}
 
 export default function Chat() {
   const [chatIsVisible, setChatIsVisible] = useState(true)
   if (!chatIsVisible) {
     const classNames = {
-      closedChat: `bg-light fixed bottom-10 right-[10px] max-w-[400px] px-[29px] py-[11px] rounded-5 cursor-pointer rounded-[20px] hover:bg-beige`
+      closedChat: `flex items-center gap-x-2  fixed bottom-10 right-[10px] max-w-[400px] px-[29px] py-[11px] rounded-5 cursor-pointer rounded-[20px] animate-pulse`
     }
-    return <div onClick={() => setChatIsVisible(true)} className={classNames.closedChat}>Agendar una cita</div>
+    return <div onClick={() => setChatIsVisible(true)} className={classNames.closedChat}><Image src={ChatIcon} width={70} height={70} alt="chat support button" /></div>
   }
   const classNames = {
-    chat: `bg-light fixed bottom-10 right-[10px] max-w-[400px]`,
-    status: `flex gap-2 items-center`,
-    statusLed: `w-4 h-4 bg-green rounded-full`,
-    statusLabel: `font-light text-[14px] leading-[31px]`
+    chat: `bg-light fixed bottom-10 right-[10px] w-[352px]`,
   }
   return (
-    <div className={`${classNames.chat} flex flex-col h-[500px] rounded-lg border`}>
+    <div className={`${classNames.chat} flex flex-col h-[500px] overflow-y-scroll rounded-lg border`}>
       <div className="flex flex-col flex-1 border-b">
         <div className="flex items-center p-4 space-x-4 border-b">
           <div className="flex-1">
             <h1 className="text-xl font-semibold">AvantaxGPT</h1>
-            <div className={classNames.status}>
-              <span className={classNames.statusLed}></span><p className={classNames.statusLabel}>Disponible ahora</p>
+            <div className="flex items-center gap-x-2">
+              <StatusLed active />
+              <StatusLabel prompt="Disponible ahora" />
             </div>
           </div>
           <Button onClick={() => setChatIsVisible(false)}>Cerrar</Button>
         </div>
-        <div className="p-4 flex-1 flex flex-col gap-4 items-end">
-          <div className="rounded-xl bg-gray-100 dark:bg-gray-800 p-4 max-w-xs self-start">
-            <div className="text-sm font-semibold">AvantaxGPT</div>
-            <div className="mt-2">Hola! Como puedo ayudarte hoy?</div>
-            <Separator className="bg-light" />
-            <div className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-              <div />
-            </div>
-          </div>
-          {QUICK_REPLIES.map(reply => (
-            <div key={reply.label} className="rounded-xl bg-gray-100 dark:bg-gray-800 p-4 max-w-xs cursor-pointer hover:bg-beige">
-              <QuickReply reply={reply} />
-            </div>
-          ))}
+        <div className="p-4 flex-1 flex flex-col gap-4 items-end overflow-y-auto">
+          <MessageBubble><TypographyP>Hola! Como puedo ayudarte hoy?</TypographyP></MessageBubble>
+          <QuickReplies />
         </div>
       </div>
     </div>
   )
 }
 
-function QuickReply({ reply }) {
-  const [formMode, setFormMode] = useState(false)
-  if (reply.type === "consulta") {
-    return (
-      <div>
-        <Link href={reply.href} className="mt-2">{reply.label}</Link>
+function MessageBubble({ author = "AvantaxGPT", children }: MessageBubbleProps) {
+  return (
+    <div className="rounded-xl bg-white dark:bg-gray-800 p-4 max-w-xs self-start">
+      <div className="flex gap-2"><StatusLed active mini /><h3 className="text-sm font-semibold">{author}</h3></div>
+      <Separator className="bg-light" />
+      <div className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+        {children}
+        <div />
       </div>
+    </div>
+  )
+}
+
+function QuickReply({ type, saveCurrentProgress }: QuickReplyProps) {
+  if (type === "consulta") {
+    return (
+      <Button onClick={saveCurrentProgress} variant="quickReply">
+        <Link href="/#contacto" className="flex items-center">Realizar consulta gratuita</Link>
+      </Button>
+
     )
-  } else if (reply.type === "cotizacion") {
+  } else if (type === "cotizacion") {
     return (
-      <div>
-        {formMode ? <form>
-          <Input placeholder="Razón social" />
-          <Input placeholder="RUC" />
-          <Input placeholder="Correo electronico" />
-          <Input placeholder="Nombre" />
-          <Input placeholder="Monto interesado en financiar" />
-        </form> : <div onClick={() => setFormMode(true)} className="mt-2">{reply.label}</div>}
-      </div>
+      <Button onClick={saveCurrentProgress} variant={"quickReply"}>
+        Solicitar cotizacion
+      </Button>
     )
-  } else if (reply.type === "cita") {
+  } else if (type === "cita") {
     return (
-      <div>
-        <Link href={reply.href} className="mt-2">{reply.label}</Link>
-      </div>
+      <Button onClick={saveCurrentProgress} variant={"quickReply"}>
+        Agendar cita
+      </Button>
     )
   }
+
+  return null
+}
+
+function ActionPrompt({ prompt, clearProgress }: ActionPromptProps) {
+  if (prompt === "cotizacion") {
+    return <>
+      <MessageBubble>
+        <TypographyP>Por favor, rellena este formulario para  solicitar una cotización.</TypographyP>
+      </MessageBubble>
+      <MessageBubble>
+        <>
+          <ContactForm />
+          <Button className="mx-auto block" variant="beige" onClick={clearProgress} >Cancelar</Button>
+        </>
+      </MessageBubble>
+    </>
+  } else if (prompt === "cita") {
+    return (
+      <>
+        <MessageBubble>
+          <TypographyP>Por favor rellena este formulario para agendar una cita.</TypographyP>
+        </MessageBubble>
+        <MessageBubble>
+          <>
+            <CalendlyForm />
+            <Button className="mx-auto block" variant="beige" onClick={clearProgress} >Cancelar</Button>
+          </>
+        </MessageBubble>
+      </>
+    )
+  }
+
+  else if (prompt === "consulta") {
+    return (
+      <>
+        <MessageBubble><><TypographyP>Puedes contactarnos a través del formulario en nuestra página de inicio.</TypographyP> <Link href="/#contacto"><span className="text-indigo">Haz click aquí para llevarte hacia él.</span></Link></></MessageBubble>
+        <Button className="mx-auto block" variant="beige" onClick={clearProgress} >Regresar</Button>
+      </>
+    )
+  }
+}
+
+function QuickReplies() {
+  const [prompt, setPrompt] = useState("")
+
+  if (prompt) {
+    return <ActionPrompt prompt={prompt} clearProgress={() => setPrompt("")} />
+  }
+  return (
+    <ul className="flex flex-col gap-y-2">
+      {QUICK_REPLIES.map(reply => (
+        <QuickReply key={reply.type} type={reply.type as QuickReplyType} saveCurrentProgress={() => setPrompt(reply.type)} />
+      ))}
+    </ul>
+  )
 
 }

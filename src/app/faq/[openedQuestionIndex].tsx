@@ -57,7 +57,6 @@ export default function FaqList() {
         return <p>Error</p>
     }
 
-
     return (
         <div className={classNames.faqList}>
             <h2 className={classNames.heading}>Preguntas Frecuentes</h2>

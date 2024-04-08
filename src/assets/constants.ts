@@ -1,4 +1,4 @@
-import { Faq, Teammate, WorkbookRowHeader, Kpi, BenefitIcons, ServiceIcons, Colors } from "@/types";
+import { Faq, Teammate, WorkbookRowHeader, Kpi, BenefitIcons, ServiceIcons, Colors, Project } from "@/types";
 import buildings from "../assets/buildings.svg"
 import convert from "../assets/convert.svg"
 import cupheart from "../assets/cupheart.svg"
@@ -19,11 +19,12 @@ import mirko from "@/assets/mirko.png"
 import ray from "@/assets/ray.png"
 import maria from "@/assets/maria.png"
 import debora from "@/assets/debora.png"
+import { z } from "zod";
 
 export const CONTACT_ACTIONS = [
     { label: "Preguntas frecuentes", url: "/#faq" },
     { label: "Sobre Nosotros", url: "/#about" },
-    { label: "Sacar una cita", url: "/#contact" },
+    { label: "Sacar una cita con nosotros", url: "/#contact" },
 ]
 
 export const CONTACT_ITEMS = [
@@ -38,31 +39,31 @@ export const SOCIAL_LINKS = [
     { alt: "instagram", url: "https://www.instagram.com/avantax.pe", icon: instagram },
 ]
 
-export const initialState: Faq[] = [
+export const FAQS: Faq[] = [
     {
-        question: "¿Qué son las OxI?", answer: `Son una forma de pago del impuesto a la renta de tercera categoría a través del financiamiento de obras públicas de envergadura nacional, regional o local, reguladas por la Ley 29230. Esta modalidad de inversión público-privada genera un gran impacto en la vida de las personas, permitiéndoles acceder a nueva infraestructura y servicios públicos de calidad en tiempo récord, debido a su agilidad. De este modo, las empresas siendo socialmente responsables, contribuyen al cierre de brechas mientras mejoran su reputación y posicionamiento.`, expanded: false
+        question: "¿Qué son las OxI?", answer: `Son una forma de pago del impuesto a la renta de tercera categoría a través del financiamiento de obras públicas de envergadura nacional, regional o local, reguladas por la Ley 29230. Esta modalidad de inversión público-privada genera un gran impacto en la vida de las personas, permitiéndoles acceder a nueva infraestructura y servicios públicos de calidad en tiempo récord, debido a su agilidad. De este modo, las empresas siendo socialmente responsables, contribuyen al cierre de brechas mientras mejoran su reputación y posicionamiento.`, expanded: true
     },
     {
-        question: "¿Qué es el CIPRL?", answer: `El Certificado de Inversión Pública Regional y Local (CIPRL), es un documento emitido por el Ministerio de Economía y Finanzas, a través de la Dirección Nacional del Tesoro Público, que tiene por finalidad la cancelación del monto que invierta la empresa privada en la ejecución de los proyectos de obras por impuestos. Este certificado se utiliza para el pago a cuenta o regularización del impuesto a la renta.`, expanded: false
+        question: "¿Qué es el CIPRL?", answer: `El Certificado de Inversión Pública Regional y Local (CIPRL), es un documento emitido por el Ministerio de Economía y Finanzas, a través de la Dirección Nacional del Tesoro Público, que tiene por finalidad la cancelación del monto que invierta la empresa privada en la ejecución de los proyectos de obras por impuestos. Este certificado se utiliza para el pago a cuenta o regularización del impuesto a la renta.`, expanded: true
     },
     {
         question: "¿El CIPRL puede ser negociable?", answer: `Sí. El CIPRL puede ser negociable a solicitud de la empresa.
-        `, expanded: false
+        `, expanded: true
     },
     {
-        question: "¿El CIPRL puede fraccionarse?", answer: `Sí. La empresa privada, de acuerdo a sus necesidades, puede solicitar a la Dirección Nacional del Tesoro Público el fraccionamiento de su CIPRL por montos iguales o menores al 80% del impuesto a la renta pagado en el ejercicio anterior. Posteriormente, si el CIPRL tiene carácter de NEGOCIABLE, el saldo puede ser comercializado.`, expanded: false
+        question: "¿El CIPRL puede fraccionarse?", answer: `Sí. La empresa privada, de acuerdo a sus necesidades, puede solicitar a la Dirección Nacional del Tesoro Público el fraccionamiento de su CIPRL por montos iguales o menores al 80% del impuesto a la renta pagado en el ejercicio anterior. Posteriormente, si el CIPRL tiene carácter de NEGOCIABLE, el saldo puede ser comercializado.`, expanded: true
     },
     {
-        question: "¿Qué empresas pueden participar en OxI?", answer: `Podrán participar las personas jurídicas de derecho privado, nacionales o extranjeras, que no estén sujetas a los sistemas administrativos del sector público financiero (Presupuesto Público, Endeudamiento Público), cuyo capital sea cien por ciento (100%) privado, incluidas aquéllas que hayan suscrito contratos o convenios de estabilidad con el Estado peruano.`, expanded: false
+        question: "¿Qué empresas pueden participar en OxI?", answer: `Podrán participar las personas jurídicas de derecho privado, nacionales o extranjeras, que no estén sujetas a los sistemas administrativos del sector público financiero (Presupuesto Público, Endeudamiento Público), cuyo capital sea cien por ciento (100%) privado, incluidas aquéllas que hayan suscrito contratos o convenios de estabilidad con el Estado peruano.`, expanded: true
     },
     {
-        question: "¿Cuáles son las fases de un proyecto de obras por impuestos?", expanded: false
+        question: "¿Cuáles son las fases de un proyecto de obras por impuestos?", expanded: true
     },
     {
-        question: "¿Qué entidades públicas pueden aplicar en OxI?", answer: `Pueden aplicar las entidades públicas del gobierno nacional (Ministerios), los gobiernos regionales, los gobiernos locales (Municipios Provinciales y Distritales), las juntas de coordinación interregional, las mancomunidades regionales, las mancomunidades municipales y las universidades públicas.`, expanded: false
+        question: "¿Qué entidades públicas pueden aplicar en OxI?", answer: `Pueden aplicar las entidades públicas del gobierno nacional (Ministerios), los gobiernos regionales, los gobiernos locales (Municipios Provinciales y Distritales), las juntas de coordinación interregional, las mancomunidades regionales, las mancomunidades municipales y las universidades públicas.`, expanded: true
     },
     {
-        question: "¿Las empresas pueden proponer nuevos proyectos a la entidades públicas?", answer: `Sí. Si una empresa identifica que un servicio público no se está brindando por la inexistencia de un proyecto, puede proponer a las entidades públicas ideas de proyectos para su desarrollo mediante el mecanismo OxI. A través de una carta de iniciativa privada la empresa hace llegar a la entidad pública su intención de formular y ejecutar un determinado proyecto de inversión bajo la modalidad de OxI. La entidad pública en cuestión es la encargada de evaluar dicha solicitud y emitir una respuesta.`, expanded: false
+        question: "¿Las empresas pueden proponer nuevos proyectos a la entidades públicas?", answer: `Sí. Si una empresa identifica que un servicio público no se está brindando por la inexistencia de un proyecto, puede proponer a las entidades públicas ideas de proyectos para su desarrollo mediante el mecanismo OxI. A través de una carta de iniciativa privada la empresa hace llegar a la entidad pública su intención de formular y ejecutar un determinado proyecto de inversión bajo la modalidad de OxI. La entidad pública en cuestión es la encargada de evaluar dicha solicitud y emitir una respuesta.`, expanded: true
     },
 ]
 
@@ -104,7 +105,6 @@ export const headers: WorkbookRowHeader[] = [
     { text: "Monto de inversión referencial (en S/. M)", key: "investment" },
     { text: "Tope CIPRL 2022", key: "ciprlMax" }
 ]
-
 
 export const COMPANY_BENEFITS = [
     {
@@ -222,7 +222,25 @@ export const LINKS = [
 export const HIGHLIGHTED_PATH = "/#contacto"
 
 export const QUICK_REPLIES = [
-    { label: "Solicitar cotizacion", href: "/contacto", type: "cotizacion" },
-    { label: "Agendar cita", href: "/contacto", type: "cita" },
-    { label: "Realizar consulta", href: "/contacto", type: "consulta" },
+    { type: "consulta" },
+    { type: "cotizacion" },
+    { type: "cita" },
 ]
+
+export const contactFormSchema = z.object({
+    razon: z.string(),
+    ruc: z.string().min(11).max(11),
+    correo: z.string(),
+    nombre: z.string(),
+    monto: z.string()
+})
+
+export const calendlyFormSchema = z.object({
+    firstName: z.string(),
+    lastName: z.string(),
+    email: z.string(),
+    razon: z.string(),
+    ruc: z.string().min(11).max(11),
+})
+
+export const CALENDLY_EVENT_URL = `https://calendly.com/brunogonzales/15-minutos`

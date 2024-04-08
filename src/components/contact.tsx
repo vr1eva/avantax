@@ -34,8 +34,8 @@ function Form() {
             <input type="hidden" name="subject"
                 value="Mensaje nuevo en avantax.pe" />
             <div className={classNames.row}>
-                <TextField name="name" label="Nombre" placeholder="Tu nombre" />
-                <TextField name="surname" label="Apellido" placeholder="Tu apellido" />
+                <TextField type="number" name="razonSocial" label="Razón social" placeholder="Razón social" />
+                <TextField type="number" name="ruc" label="RUC" placeholder="RUC" />
             </div>
             <div className={classNames.row}>
                 <TextField name="email" label="Correo electrónico" placeholder="tunombre@correo.com" />
@@ -66,7 +66,7 @@ const TextField = ({ label, placeholder, name, type = "text" }: TextFieldProps) 
     return (
         <div className={classNames.textField}>
             <label className={classNames.label} htmlFor={name}>{label}</label>
-            <input name={name} className={classNames.input} type={type} placeholder={placeholder} />
+            <input required name={name} className={classNames.input} type={type} placeholder={placeholder} />
         </div>
     );
 }

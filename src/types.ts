@@ -1,4 +1,4 @@
-import { ReactElement } from "react"
+import { ReactElement, ReactNode } from "react"
 
 export type Faq = {
     question: string,
@@ -168,4 +168,53 @@ export interface DropdownMenuProps {
 export type LogoProps = {
     className?: string,
     inversed?: boolean
+}
+
+export enum QuickReplyType {
+    cita = "cita",
+    consulta = "consulta",
+    cotizacion = "cotizacion"
+}
+
+export interface QuickReplyProps {
+    type: QuickReplyType,
+    saveCurrentProgress: React.Dispatch<React.SetStateAction<any>>
+}
+
+export interface ActionPromptProps {
+    prompt: string,
+    clearProgress: React.Dispatch<React.SetStateAction<any>>,
+}
+
+export interface MessageBubbleProps {
+    children: ReactElement,
+    author?: string
+}
+
+export interface StatusLedProps {
+    active: boolean
+    mini?: boolean
+}
+
+export interface StatusLabelProps {
+    prompt: string,
+}
+
+export interface TypographyProp {
+    children: ReactNode
+}
+
+export type Project = {
+    id: number,
+    status: string,
+    level: string,
+    department: string,
+    province: string,
+    district: string,
+    entity: string,
+    snipCode: number,
+    name: string,
+    tipology: string,
+    investment: string,
+    ciprlMax: string
 }
