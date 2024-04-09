@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import {
-    ColumnDef,
     ColumnFiltersState,
     SortingState,
     VisibilityState,
@@ -13,18 +12,12 @@ import {
     getSortedRowModel,
     useReactTable,
 } from "@tanstack/react-table"
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
 import {
     DropdownMenu,
     DropdownMenuCheckboxItem,
     DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import {
@@ -37,6 +30,12 @@ import {
 } from "@/components/ui/table"
 import { Project } from "@/types"
 import workbook from "@/assets/workbook.json"
+
+interface ColumnDef<T> {
+    accessorKey: keyof T;
+    header: string;
+    cell: (props: { row: { getValue: (key: keyof T) => string } }) => JSX.Element;
+}
 
 export const columns: ColumnDef<Project>[] = [
     {
@@ -96,10 +95,10 @@ export const columns: ColumnDef<Project>[] = [
         ),
     },
     {
-        accessorKey: "tipología",
+        accessorKey: "tipology",
         header: "Tipología",
         cell: ({ row }) => (
-            <div className="capitalize">{row.getValue("tipología")}</div>
+            <div className="capitalize">{row.getValue("tipology")}</div>
         ),
     },
     {
@@ -114,6 +113,13 @@ export const columns: ColumnDef<Project>[] = [
         header: "Tope CIPRL 2022",
         cell: ({ row }) => (
             <div className="capitalize">{row.getValue("ciprlMax")}</div>
+        ),
+    },
+    {
+        accessorKey: "district",
+        header: "Distrito",
+        cell: ({ row }) => (
+            <div className="capitalize">{row.getValue("district")}</div>
         ),
     },
 ]

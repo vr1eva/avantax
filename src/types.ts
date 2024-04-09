@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image"
 import { ReactElement, ReactNode } from "react"
 
 export type Faq = {
@@ -22,7 +23,7 @@ export type Teammate = {
     bio: string,
     orientation: string,
     color: string,
-    image: string,
+    image: StaticImageData,
 }
 
 export type WorkbookRowHeader = {

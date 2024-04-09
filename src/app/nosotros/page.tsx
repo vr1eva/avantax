@@ -8,6 +8,7 @@ import Carousel from 'nuka-carousel';
 import Ellipse from "@/assets/ellipse.svg"
 import ActiveEllipse from "@/assets/activeEllipse.svg"
 import { team } from "@/assets/constants"
+import { Teammate } from "@/types"
 
 export default function NosotrosPage() {
     const classNames = {
@@ -113,7 +114,7 @@ function Team() {
 }
 
 
-function TeamCard({ teammate }) {
+function TeamCard({ teammate }: { teammate: Teammate }) {
     const classNames = {
         leftyCard: ``,
         rightyCard: ``,
