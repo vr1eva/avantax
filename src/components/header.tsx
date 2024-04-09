@@ -27,7 +27,7 @@ function Navbar() {
         menu: `flex md:hw-full md:hidden cursor-pointer md:ml-auto md:order-2`,
         link: `text-[20px] leading-[32px] *:p-0 last-of-type:h-[50px] flex items-center`,
         linkButton: `font-normal text-[20px] leading-[30px] py-[10px] px-[29px]`,
-        activeLink: `font-medium text-[20px] leading-[30px]`,
+        activeLink: `font-medium text-[20px] leading-[30px] text-indigo`,
         social: `flex gap-[47px] w-[178px] items-center mt-[278px] md:hidden`
     }
 
