@@ -109,7 +109,7 @@ export default function CalendlyForm() {
 
                     <Button type="submit" variant="primary" className="text-base">Enviar</Button>
                 </form>
-            </Form> : <Link href={calendlyUrl} className="text-indigo">Confirmar reserva</Link>}
+            </Form> : <Link href={calendlyUrl} className="text-indigo" target="_blank">Confirmar reserva</Link>}
         </>
     )
 }

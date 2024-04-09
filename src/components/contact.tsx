@@ -1,27 +1,34 @@
 
+"use client"
 import { Button } from "@/components/ui/button"
 import { TextAreaProps, TextFieldProps } from "@/types"
+import { useForm, ValidationError } from "@formspree/react";
 
 export default function Contact() {
+    const [state, handleSubmit] = useForm("mkndpgek");
+
     const classNames = {
         contact: ` flex flex-col mt-[125px] mx-auto mb-[175px] w-full max-w-[878px]`,
         contactModal: `md:py-6 md:px-5 rounded-[30px] w-[878px] bg-light xl:p-[65px]`,
         heading: `md:text-[22px] md:leading-8 text-center font-semibold xl:text-[34px] xl:leading-[51px] m-0`,
         description: `md:text-[14px] md:leading-[21px] md:mt-5 text-center font-normal text-[16px] leading-6`,
+        successNote: `md:text-[22px] md:leading-8 text-center font-semibold xl:text-[34px] xl:leading-[51px] m-0`
     }
 
     return (
         <div className={classNames.contact} id="contacto">
             <div className={classNames.contactModal}>
-                <h2 className={classNames.heading}>Empecemos a trabajar juntos</h2>
-                <p className={classNames.description}>Ponte en contacto con nosotros y te responderemos tan rápido como podamos</p>
-                <Form />
+                {state.succeeded ? <p className={classNames.successNote}>Mensaje enviado!.</p> : <>
+                    <h2 className={classNames.heading}>Empecemos a trabajar juntos</h2>
+                    <p className={classNames.description}>Ponte en contacto con nosotros y te responderemos tan rápido como podamos</p>
+                    <Form onSubmit={handleSubmit} />
+                </>}
             </div>
         </div>
     )
 }
 
-function Form() {
+function Form({ onSubmit }: { onSubmit: React.FormEventHandler<HTMLFormElement> }) {
     const classNames = {
         form: `md:mt-8 mt-[35px] flex flex-col gap-7`,
         row: `md:flex-col xl:flex-row md:gap-[18px] w-full flex gap-3`,
@@ -29,12 +36,12 @@ function Form() {
     }
 
     return (
-        <form className={classNames.form} id="contacto" name="contact" method="POST" data-netlify="true" action="/success">
+        <form onSubmit={onSubmit} className={classNames.form} id="contacto" name="contact" method="POST" >
             <input type="hidden" name="form-name" value="contact" />
             <input type="hidden" name="subject"
                 value="Mensaje nuevo en avantax.pe" />
             <div className={classNames.row}>
-                <TextField type="number" name="razonSocial" label="Razón social" placeholder="Razón social" />
+                <TextField type="text" name="razonSocial" label="Razón social" placeholder="Razón social" />
                 <TextField type="number" name="ruc" label="RUC" placeholder="RUC" />
             </div>
             <div className={classNames.row}>

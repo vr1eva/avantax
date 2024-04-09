@@ -11,125 +11,57 @@ import { Separator } from "@radix-ui/react-separator"
 import Link from "next/link"
 import { Input } from "@/components/ui/input"
 import { ActionPromptProps, MessageBubbleProps, QuickReplyProps, QuickReplyType, StatusLabelProps, StatusLedProps } from "@/types"
-import { z } from "zod"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
 import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form"
+  Label,
+} from "@/components/ui/label"
 import { TypographyP } from "./ui/typography"
 import ChatIcon from "@/assets/chat.svg"
 import Image from "next/image"
 import CalendlyForm from "./calendly-form"
-
-const formSchema = z.object({
-  razon: z.string(),
-  ruc: z.string().min(11).max(11),
-  correo: z.string(),
-  nombre: z.string(),
-  monto: z.string()
-})
+import { useForm, ValidationError } from "@formspree/react";
 
 function ContactForm() {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      ruc: "",
-      razon: "",
-      correo: "",
-      nombre: "",
-      monto: ""
-    },
-  })
+  const [state, handleSubmit] = useForm("mkndpgek");
+  const classNames = {
+    field: `flex flex-col gap-2`
+  }
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values)
+  if (state.succeeded) {
+    return <TypographyP>Mensaje enviado!</TypographyP>
   }
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col space-y-8 justify-start">
-        <FormField
-          control={form.control}
-          name="razon"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Razón social</FormLabel>
-              <FormControl>
-                <Input placeholder="Razón social" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+    <form onSubmit={handleSubmit} className="flex flex-col space-y-8 justify-start">
+      <div className={classNames.field}>
+        <Label>Razón social</Label>
+        <Input name="razonSocial" placeholder="Razón social" />
 
-        <FormField
-          control={form.control}
-          name="ruc"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>RUC</FormLabel>
-              <FormControl>
-                <Input placeholder="RUC" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+      </div>
+      <div className={classNames.field}>
+        <Label>RUC</Label>
+        <Input name="ruc" placeholder="RUC" />
+      </div>
 
-        <FormField
-          control={form.control}
-          name="correo"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Correo</FormLabel>
-              <FormControl>
-                <Input placeholder="Correo" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+      <div className={classNames.field}>
+        <Label>Correo</Label>
+        <Input name="email" placeholder="Correo" />
+      </div>
 
-        <FormField
-          control={form.control}
-          name="nombre"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Nombre y apellidos</FormLabel>
-              <FormControl>
-                <Input placeholder="Nombre y apellidos" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+      <div className={classNames.field}>
+        <Label>Nombre y apellidos</Label>
+        <Input name="name" placeholder="Nombre y apellidos" />
+      </div>
 
-        <FormField
-          control={form.control}
-          name="monto"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Monto interesado en financiar</FormLabel>
-              <FormControl>
-                <Input placeholder="Monto" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit" variant="primary" className="text-base mx-auto">Enviar</Button>
-      </form>
-    </Form>
+      <div className={classNames.field}>
+        <Label>Monto interesado en financiar</Label>
+        <Input name="amount" placeholder="Monto en S/" />
+      </div>
+
+      <Button variant="primary">Enviar</Button>
+    </form >
   )
 }
+
 
 function StatusLed({ active, mini }: StatusLedProps) {
   const classNames = {
@@ -234,7 +166,7 @@ function ActionPrompt({ prompt, clearProgress }: ActionPromptProps) {
       <MessageBubble>
         <>
           <ContactForm />
-          <Button className="mx-auto block" variant="beige" onClick={clearProgress} >Cancelar</Button>
+          <Button className="mx-auto block" variant="beige" onClick={clearProgress} >Regresar</Button>
         </>
       </MessageBubble>
     </>
@@ -247,7 +179,7 @@ function ActionPrompt({ prompt, clearProgress }: ActionPromptProps) {
         <MessageBubble>
           <>
             <CalendlyForm />
-            <Button className="mx-auto block" variant="beige" onClick={clearProgress} >Cancelar</Button>
+            <Button className="mx-auto block" variant="beige" onClick={clearProgress} >Regresar</Button>
           </>
         </MessageBubble>
       </>

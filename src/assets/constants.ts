@@ -243,4 +243,4 @@ export const calendlyFormSchema = z.object({
     ruc: z.string().min(11).max(11),
 })
 
-export const CALENDLY_EVENT_URL = `https://calendly.com/brunogonzales/15-minutos`
+export const CALENDLY_EVENT_URL = `https://calendly.com/rtorres-nvow/30min`

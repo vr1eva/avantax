@@ -26,7 +26,7 @@ export default async function Proyectos() {
             <div className={classNames.cta}>
                 <h2 className={classNames.ctaHeading}>¿No encuentras
                     proyectos de tu interés?</h2>
-                <Link className={`${classNames.ctaButton} ${buttonVariants({ variant: "primary" })}`} href="/faq/7#highlightedQuestion">Haz click aquí</Link>
+                <Link className={`${classNames.ctaButton} ${buttonVariants({ variant: "primary" })}`} href="/faq#highlightedQuestion">Haz click aquí</Link>
             </div>
         </div>
     )
