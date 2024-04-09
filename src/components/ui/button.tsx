@@ -11,7 +11,7 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         link: "text-primary underline-offset-4 hover:underline",
-        primary: `bg-indigo text-white hover:bg-eastBay max-[600px]:w-full max-[600px]:py-[10px] max-[600px]:px-[16px]`,
+        primary: `flex items-center justify-center bg-indigo text-white hover:bg-eastBay max-[600px]:w-full max-[600px]:py-[10px] max-[600px]:px-[16px]`,
         secondary: `border-1 border-solid border-dark`,
         tertiary: `text-indigo `,
         light: `text-dark`,
