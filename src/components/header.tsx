@@ -51,8 +51,6 @@ function Navbar() {
     )
 }
 
-
-
 export default function Header() {
     const classNames = {
         header: `bg-white relative z-[200] shadow-md px-[24px] py-[18px] flex md:px-[55px] mx-auto w-full items-center sticky top-0`
@@ -60,7 +58,9 @@ export default function Header() {
     return (
         <header className={classNames.header}>
             <Logo />
-            <Navbar />
+            <div className="ml-auto">
+                <Navbar />
+            </div>
         </header>
     );
 }

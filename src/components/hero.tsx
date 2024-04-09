@@ -4,11 +4,11 @@ import Link from "next/link"
 
 export default function Hero() {
     const classNames = {
-        hero: `max-[600px]:h-[631px] max-[600px]:w-full max-[600px]:p-[251px 15px 0]
+        hero: `max-[600px]:h-[631px] max-[600px]:w-full max-[600px]:p-[251px_15px_0]
         max-[600px]:pt-[251px] max-[600px]:px-[15px] max-[600px]:pb-0 relative w-full h-[678px] my-0 mx-auto bg-cover bg-[right 35% bottom 45%] `,
-        description: `max-[600px]:relative max-[600px]:z-10 max-[600px]:w-unset max-[600px]:top-unset max-[600px]:left-unset absolute top-[171px] left-[85px] w-[740px] flex flex-col items-start`,
+        description: `max-[600px]:relative max-[600px]:z-10 max-[600px]:w-unset max-[600px]:top-unset max-[600px]:left-unset absolute md:top-[171px] top-[10px] left-[15px] xl:max-w-[770px] md:left-[85px]  flex flex-col items-start`,
         heading: `max-[600px]:text-[40px] max-[600px]:leading-[51px] font-medium text-[72px] leading-[95px] text-white m-0 *:font-extrabold`,
-        subheading: `max-[600px]:text-[15px] max-[600px]:leading-[22px] max-[600px]:m-[12px 0 32px] text-[22px] text-white mt-2.5 mb-[45px] max-w-[659px]`,
+        subheading: `max-[600px]:text-[15px] max-[600px]:leading-[22px] max-[600px]:m-[12px 0 32px] text-[22px] text-white mt-2.5 mb-[45px] md:max-w-[659px]`,
         cta: `max-[600px]: flex flex-col items-center`
     }
 
