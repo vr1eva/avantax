@@ -32,7 +32,7 @@ export default function CalendlyForm() {
     })
 
     function onSubmit(values: z.infer<typeof calendlyFormSchema>) {
-        setCalendlyUrl(`${CALENDLY_EVENT_URL}?first_name=${values.firstName}&last_name=${values.lastName}&email=${values.email}&razon=${values.razon}&ruc=${values.ruc}`)
+        setCalendlyUrl(`${CALENDLY_EVENT_URL}?first_name=${values.firstName}&last_name=${values.lastName}&email=${values.email}&a1=${values.razon}&a2=${values.ruc}`)
     }
     return (
         <>
