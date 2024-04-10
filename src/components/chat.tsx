@@ -9,59 +9,13 @@ import { QUICK_REPLIES } from "@/assets/constants"
 import { useState } from "react"
 import { Separator } from "@radix-ui/react-separator"
 import Link from "next/link"
-import { Input } from "@/components/ui/input"
 import { ActionPromptProps, MessageBubbleProps, QuickReplyProps, QuickReplyType, StatusLabelProps, StatusLedProps } from "@/types"
-import {
-  Label,
-} from "@/components/ui/label"
 import { TypographyP } from "./ui/typography"
 import ChatIcon from "@/assets/chat.svg"
 import Image from "next/image"
 import CalendlyForm from "./calendly-form"
-import { useForm, ValidationError } from "@formspree/react";
-
-function ContactForm() {
-  const [state, handleSubmit] = useForm("mkndpgek");
-  const classNames = {
-    field: `flex flex-col gap-2`
-  }
-
-  if (state.succeeded) {
-    return <TypographyP>Mensaje enviado!</TypographyP>
-  }
-
-  return (
-    <form onSubmit={handleSubmit} className="flex flex-col space-y-8 justify-start">
-      <div className={classNames.field}>
-        <Label>Razón social</Label>
-        <Input name="razonSocial" placeholder="Razón social" />
-
-      </div>
-      <div className={classNames.field}>
-        <Label>RUC</Label>
-        <Input name="ruc" placeholder="RUC" />
-      </div>
-
-      <div className={classNames.field}>
-        <Label>Correo</Label>
-        <Input name="email" placeholder="Correo" />
-      </div>
-
-      <div className={classNames.field}>
-        <Label>Nombre y apellidos</Label>
-        <Input name="name" placeholder="Nombre y apellidos" />
-      </div>
-
-      <div className={classNames.field}>
-        <Label>Monto interesado en financiar</Label>
-        <Input name="amount" placeholder="Monto en S/" />
-      </div>
-
-      <Button variant="primary">Enviar</Button>
-    </form >
-  )
-}
-
+import QuotationForm from "@/components/quotation-form"
+import close from "@/assets/close.svg"
 
 function StatusLed({ active, mini }: StatusLedProps) {
   const classNames = {
@@ -98,9 +52,9 @@ export default function Chat() {
     chat: `bg-light fixed bottom-10 right-[10px] w-[352px]`,
   }
   return (
-    <div className={`${classNames.chat} flex flex-col h-[500px] overflow-y-scroll rounded-lg border`}>
-      <div className="flex flex-col flex-1 border-b">
-        <div className="flex items-center p-4 space-x-4 border-b">
+    <div className={`${classNames.chat} flex flex-col h-[420px] overflow-y-auto rounded-lg border`}>
+      <div className="flex flex-col flex-1 border-b overflow-y-scroll">
+        <div className="flex items-center p-4 space-x-4 border-b pb-0">
           <div className="flex-1">
             <h1 className="text-xl font-semibold">AvantaxGPT</h1>
             <div className="flex items-center gap-x-2">
@@ -108,9 +62,9 @@ export default function Chat() {
               <StatusLabel prompt="Disponible ahora" />
             </div>
           </div>
-          <Button onClick={() => setChatIsVisible(false)}>Cerrar</Button>
+          <Button size="vainilla" variant="closeChat" onClick={() => setChatIsVisible(false)}><Image alt="close icon" src={close} width={24} height={24} /></Button>
         </div>
-        <div className="p-4 flex-1 flex flex-col gap-4 items-end overflow-y-auto">
+        <div className="p-4 flex-1 flex flex-col gap-4 items-end">
           <MessageBubble><TypographyP>Hola! Como puedo ayudarte hoy?</TypographyP></MessageBubble>
           <QuickReplies />
         </div>
@@ -165,7 +119,7 @@ function ActionPrompt({ prompt, clearProgress }: ActionPromptProps) {
       </MessageBubble>
       <MessageBubble>
         <>
-          <ContactForm />
+          <QuotationForm />
           <Button className="mx-auto block" variant="beige" onClick={clearProgress} >Regresar</Button>
         </>
       </MessageBubble>

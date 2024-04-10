@@ -11,7 +11,7 @@ import { Separator } from "@/components/ui/separator"
 
 const classNames = {
     faqList: `w-full max-w-[1244px] mx-auto p-[71px]`,
-    heading: `font-semibold font-[34px] leading-[51px] m-0 text-indigo`,
+    heading: `font-semibold text-[34px] leading-[51px] m-0 text-indigo`,
     highlight: `text-indigo`,
     faqs: `mt-[73px] flex flex-col gap-[58px]`,
     highlightedQuestion: ``,

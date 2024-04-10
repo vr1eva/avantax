@@ -10,33 +10,46 @@ import {
 } from "@/components/ui/form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { CALENDLY_EVENT_URL, calendlyFormSchema } from "@/assets/constants"
+import { contactFormSchema, FORMSPREE_CONTACT_FORM_ID } from "@/assets/constants"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { useState } from "react"
-import Link from "next/link"
+import { useSubmit } from "@formspree/react";
+import { useForm } from 'react-hook-form';
 
-export default function CalendlyForm() {
-    const [calendlyUrl, setCalendlyUrl] = useState("")
-    const form = useForm<z.infer<typeof calendlyFormSchema>>({
-        resolver: zodResolver(calendlyFormSchema),
+export default function ContactForm() {
+    const form = useForm<z.infer<typeof contactFormSchema>>({
+        resolver: zodResolver(contactFormSchema),
         defaultValues: {
             razon: "",
             ruc: "",
             correo: "",
             telefono: "",
             nombre: "",
+            monto: "",
+            mensaje: ""
         },
     })
 
-    function onSubmit(values: z.infer<typeof calendlyFormSchema>) {
-        setCalendlyUrl(`${CALENDLY_EVENT_URL}?name=${values.nombre}&email=${values.correo}&a1=${values.razon}&a2=${values.ruc}`)
+    const {
+        formState: { errors, isSubmitSuccessful, isSubmitting },
+        handleSubmit,
+        register,
+        setError,
+    } = form
+
+    const submit = useSubmit<z.infer<typeof contactFormSchema>>(FORMSPREE_CONTACT_FORM_ID)
+
+    if (isSubmitSuccessful) {
+        return <div>
+            <h2 className="md:text-[22px] md:leading-8 text-center font-semibold xl:text-[34px] xl:leading-[51px] m-0">Tu mensaje ha sido enviado correctamente!</h2>
+        </div>
     }
     return (
         <>
-            {!calendlyUrl ? <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col space-y-4 justify-start">
+            <h2 className="md:text-[22px] md:leading-8 text-center font-semibold xl:text-[34px] xl:leading-[51px] m-0">Empecemos a trabajar juntos</h2>
+            <p className="md:text-[14px] md:leading-[21px] md:mt-5 text-center font-normal text-[16px] leading-6">Ponte en contacto con nosotros y te responderemos tan rápido como podamos</p>
+            <Form {...form}>
+                <form onSubmit={handleSubmit(submit)} className="flex flex-col space-y-6 justify-start pt-6">
                     <FormField
                         control={form.control}
                         name="razon"
@@ -44,7 +57,7 @@ export default function CalendlyForm() {
                             <FormItem>
                                 <FormLabel>Razón social</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Razón social" {...field} />
+                                    <Input required placeholder="Razón social" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -58,42 +71,40 @@ export default function CalendlyForm() {
                             <FormItem>
                                 <FormLabel>RUC</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="RUC" {...field} />
+                                    <Input required placeholder="RUC" {...field} />
                                 </FormControl>
                                 <FormMessage />
+
                             </FormItem>
                         )}
                     />
-
 
                     <FormField
                         control={form.control}
                         name="correo"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Correo</FormLabel>
+                                <FormLabel>Correo electrónico</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Correo" {...field} />
+                                    <Input required placeholder="ejemplo@correo.com" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
-
                     <FormField
                         control={form.control}
                         name="telefono"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Teléfono</FormLabel>
+                                <FormLabel>Número de teléfono</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Teléfono" {...field} />
+                                    <Input required type="tel" placeholder="+51 921 788 942" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
-
 
                     <FormField
                         control={form.control}
@@ -102,16 +113,30 @@ export default function CalendlyForm() {
                             <FormItem>
                                 <FormLabel>Nombres y apellidos</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Nombres y apellidos" {...field} />
+                                    <Input required placeholder="Nombre" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
 
+                    <FormField
+                        control={form.control}
+                        name="mensaje"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Mensaje</FormLabel>
+                                <FormControl>
+                                    <Input className="py-10" required placeholder="Escribe tu mensaje aquí..." {...field} />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
                     <Button type="submit" variant="primary" className="text-base">Enviar</Button>
                 </form>
-            </Form> : <Link href={calendlyUrl} className="text-indigo" target="_blank">Confirmar reserva</Link>}
+            </Form>
         </>
+
     )
 }

@@ -11,18 +11,21 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         link: "text-primary underline-offset-4 hover:underline",
-        primary: `flex items-center justify-center bg-indigo text-white hover:bg-eastBay max-[600px]:w-full max-[600px]:py-[10px] max-[600px]:px-[16px]`,
+        primary: `flex items-center justify-center bg-indigo text-white hover:bg-eastBay hover:text-white max-[600px]:w-full max-[600px]:py-[10px] max-[600px]:px-[16px]`,
         secondary: `border-1 border-solid border-dark`,
+        navLink: `text-[20px] max-[600px]:w-full max-[600px]:py-[10px] max-[600px]:px-[16px]`,
         tertiary: `text-indigo `,
         light: `text-dark`,
         default: `bg-white font-normal hover:text-purple`,
         beige: `border-1 border-solid border-dark leading-7 text-gray-500 text-sm`,
         quickReply: `bg-white hover:bg-mintGreen hover:text-white border-1 border-solid border-dark leading-7 text-gray-500 text-sm`,
+        closeChat: `hover:text-mintGreen  border-1 border-solid border-dark leading-7 text-gray-500 text-sm py-0 px-0`,
         table: `text-dark`,
-        tablePageControl: "bg-white hover:bg-mintGreen hover:text-white border-1 border-solid border-dark leading-7 text-gray-500 text-sm"
+        tablePageControl: "bg-white hover:text-mintGreen border-1 border-solid border-dark leading-7 text-gray-500 text-sm"
       },
       size: {
         default: "h-[50px] py-[10px] px-[29px] rounded-[32px]",
+        vainilla: ""
       },
     },
     defaultVariants: {

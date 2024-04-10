@@ -228,19 +228,34 @@ export const QUICK_REPLIES = [
 ]
 
 export const contactFormSchema = z.object({
-    razon: z.string(),
-    ruc: z.string().min(11).max(11),
-    correo: z.string(),
-    nombre: z.string(),
-    monto: z.string()
+    razon: z.string({ required_error: "El campo de razón social es obligatorio." }),
+    ruc: z.string({ required_error: "El campo de RUC es obligatorio." }).length(11, { message: "El número de RUC deben ser exactamente 11 dígitos." }),
+    correo: z.string({ required_error: "El campo de correo electrónico es obligatorio." }),
+    nombre: z.string({ required_error: "El campo de nombre y apellidos es obligatorio." }),
+    monto: z.string({ required_error: "El campo de monto a financiar es obligatorio." }),
+    telefono: z.string({ required_error: "El campo de teléfono es obligatorio." }),
+    mensaje: z.string({ required_error: "El mensaje es obligatorio." })
+})
+
+export const quotationFormSchema = z.object({
+    razon: z.string({ required_error: "El campo de razón social es obligatorio." }),
+    ruc: z.string({ required_error: "El campo de RUC es obligatorio." }).length(11, { message: "El número de RUC deben ser exactamente 11 dígitos." }),
+    correo: z.string({ required_error: "El campo de correo electrónico es obligatorio." }),
+    nombre: z.string({ required_error: "El campo de nombre y apellidos es obligatorio." }),
+    monto: z.string({ required_error: "El campo de monto a financiar es obligatorio." }),
+    telefono: z.string({ required_error: "El campo de teléfono es obligatorio." })
 })
 
 export const calendlyFormSchema = z.object({
-    firstName: z.string(),
-    lastName: z.string(),
-    email: z.string(),
-    razon: z.string(),
-    ruc: z.string().min(11).max(11),
+    razon: z.string({ required_error: "El campo de razón social es obligatorio." }),
+    ruc: z.string({ required_error: "El campo de RUC es obligatorio." }).length(11, { message: "El número de RUC deben ser exactamente 11 dígitos." }),
+    correo: z.string({ required_error: "El campo de correo electrónico es obligatorio." }),
+    telefono: z.string({ required_error: "El campo de teléfono es obligatorio." }),
+    nombre: z.string({ required_error: "El campo de nombre y apellidos es obligatorio." }),
 })
 
 export const CALENDLY_EVENT_URL = `https://calendly.com/rtorres-nvow/30min`
+
+export const FORMSPREE_CONTACT_FORM_ID = 'xzbnkvdq'
+export const FORMSPREE_QUOTATION_FORM_ID = 'mkndpgek'
+export const FORMSPREE_TEST_ID = 'xjvnprll'

@@ -11,6 +11,8 @@ import {
     NavigationMenuList,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import { buttonVariants } from "./ui/button"
+import { usePathname } from "next/navigation"
 
 const components: { title: string; href: string; description: string }[] = [
     {
@@ -42,16 +44,23 @@ const components: { title: string; href: string; description: string }[] = [
         description:
             "Preguntas frecuentes.",
     },
+    {
+        title: "Contáctanos",
+        href: "/#contacto",
+        description:
+            "Contáctanos",
+    },
 ]
 
 export default function Menu({ className }: { className: string }) {
+    const pathname = usePathname();
     return (
         <NavigationMenu className={className}>
-            <NavigationMenuList>
-                {components.map(item => (
+            <NavigationMenuList className="flex gap-2">
+                {components.map((item, index, array) => (
                     <NavigationMenuItem key={item.title}>
-                        <Link href={item.href} legacyBehavior passHref>
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <Link href={item.href} legacyBehavior passHref >
+                            <NavigationMenuLink className={` ${navigationMenuTriggerStyle()} ${pathname === item.href ? "font-bold" : "font-normal"} ${index === array.length - 1 ? buttonVariants({ variant: "primary" }) : buttonVariants({ variant: "navLink" })} `} >
                                 {item.title}
                             </NavigationMenuLink>
                         </Link>

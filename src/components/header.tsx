@@ -10,8 +10,21 @@ import { buttonVariants } from "@/components/ui/button"
 import Logo from "@/components/logo"
 import Menu from "@/components/menu"
 
+export default function Header() {
+    const classNames = {
+        header: `justify-between bg-white relative z-[200] shadow-md px-[24px] py-[18px] flex md:px-[55px] mx-auto w-full items-center sticky top-0`
+    }
+    return (
+        <header className={classNames.header}>
+            <Logo />
+            <Navbar />
+        </header>
+    );
+}
+
 function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false)
+
     const classNames = {
         nav: `absolute right-0 bg-white w-full top-[57px] text-right p-[45px_35px] flex flex-col gap-[30px]`,
         link: `text-[20px] leading-[32px] flex flex-col items-end`,
@@ -28,25 +41,14 @@ function Navbar() {
             {menuOpen ?
                 <nav className={classNames.nav}>
                     {LINKS.map((link, index, array) => (
-                        <Link onClick={() => setMenuOpen(false)} passHref className={`${classNames.link} ${index === array.length - 1 ? buttonVariants({ variant: "primary" }) : ""} `} key={link.name} href={link.path}  >
+                        <Link onClick={() => setMenuOpen(false)} passHref className={`${classNames.link} ${index === array.length - 1 ? buttonVariants({ variant: "primary" }) : ""}`} key={link.name} href={link.path}  >
                             {link.name}
                         </Link>
                     ))}
-
                 </nav >
                 : null}
         </>
     )
 }
 
-export default function Header() {
-    const classNames = {
-        header: `justify-between bg-white relative z-[200] shadow-md px-[24px] py-[18px] flex md:px-[55px] mx-auto w-full items-center sticky top-0`
-    }
-    return (
-        <header className={classNames.header}>
-            <Logo />
-            <Navbar />
-        </header>
-    );
-}
+
