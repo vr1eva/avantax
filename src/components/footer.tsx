@@ -7,7 +7,7 @@ import Link from "next/link"
 
 export default function Footer() {
     const classNames = {
-        footer: `py-8 bg-[#222222] px-[52px] flex gap-[174px] md:flex-col xl:flex-row items-start w-full mx-auto`,
+        footer: `py-8 bg-[#222222] px-[52px] flex gap-[174px] flex-col md:flex-row items-start w-full mx-auto`,
         column: `flex flex-col gap-5 pt-[26px]`
     }
 
@@ -42,7 +42,7 @@ function ContactItems() {
     const classNames = {
         title: `font-semibold text-[18px] leading-[28px] text-beige`,
         description: `text-beige leading-[35px] text-[18px]`,
-        items: `gap-[7px] flex flex-col flex-wrap gap-x-[55px] h-[152px]`,
+        items: `gap-[7px] flex flex-col flex-wrap gap-x-[55px] h-auto md:h-[152px]`,
         item: `min-h-[65px] max-w-[300px]`
 
     }

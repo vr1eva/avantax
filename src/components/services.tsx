@@ -13,7 +13,7 @@ import { colors } from "@/assets/constants"
 export default function Services() {
 
     const classNames = {
-        services: `md:flex-col md:gap-[44px] md:px-[15px] xl:flex-row flex gap-[42px] max-w-[1306px] w-full my-0 mx-auto overflow-y-hidden pt-[292px]`,
+        services: `md:flex-col md:gap-[44px] md:px-[15px] xl:flex-row flex gap-[42px] max-w-[1306px] w-full my-0 mx-auto overflow-y-hidden p-[700px_15px_0] md:pt-[292px]`,
         content: `md:w-unset w-[437px]`,
         heading: `md:text-[22px] md:leading-8 font-semibold text-[34px] leading-[51px] m-0`,
         description: `md:text-[16px] md:leading-[26px] md:mt-5 md:w-auto text-[18px] leading-7 mt-[35px] w-[437px] xl:text-[18px] xl:leading-[28px]`,

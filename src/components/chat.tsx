@@ -49,7 +49,7 @@ export default function Chat() {
     return <div onClick={() => setChatIsVisible(true)} className={classNames.closedChat}><Image src={ChatIcon} width={70} height={70} alt="chat support button" /></div>
   }
   const classNames = {
-    chat: ` z-[300] bg-light fixed bottom-10 md:right-[10px] right-[10px] md:w-[352px]  flex flex-col md:h-[420px] h-auto overflow-y-auto rounded-lg border`,
+    chat: ` z-[300] bg-light fixed bottom-10 right-[10px] md:w-[352px]  flex flex-col md:h-[420px] h-auto overflow-y-auto rounded-lg border`,
   }
   return (
     <div className={classNames.chat}>
