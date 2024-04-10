@@ -65,7 +65,7 @@ export default function Chat() {
           <Button size="vainilla" variant="closeChat" onClick={() => setChatIsVisible(false)}><Image alt="close icon" src={close} width={24} height={24} /></Button>
         </div>
         <div className="p-4 flex-1 flex flex-col gap-4 items-end">
-          <MessageBubble><TypographyP>Hola! Como puedo ayudarte hoy?</TypographyP></MessageBubble>
+          <MessageBubble><TypographyP>¡Hola! ¡Cómo puedo ayudarte hoy?</TypographyP></MessageBubble>
           <QuickReplies />
         </div>
       </div>
