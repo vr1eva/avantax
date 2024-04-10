@@ -46,10 +46,10 @@ export default function ContactForm() {
     }
     return (
         <>
-            <h2 className="md:text-[22px] md:leading-8 text-center font-semibold xl:text-[34px] xl:leading-[51px] m-0">Empecemos a trabajar juntos</h2>
+            <h2 className="mt-[90px] md:text-[22px] md:leading-8 text-center font-semibold xl:text-[34px] xl:leading-[51px] m-0">Empecemos a trabajar juntos</h2>
             <p className="md:text-[14px] md:leading-[21px] md:mt-5 text-center font-normal text-[16px] leading-6">Ponte en contacto con nosotros y te responderemos tan rápido como podamos</p>
             <Form {...form}>
-                <form onSubmit={handleSubmit(submit)} className="flex flex-col space-y-6 justify-start pt-6">
+                <form onSubmit={handleSubmit(submit)} className="flex flex-col space-y-6 justify-start pt-6 px-2">
                     <FormField
                         control={form.control}
                         name="razon"

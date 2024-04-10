@@ -44,15 +44,15 @@ export default function Chat() {
   const [chatIsVisible, setChatIsVisible] = useState(true)
   if (!chatIsVisible) {
     const classNames = {
-      closedChat: `flex items-center gap-x-2  fixed bottom-10 right-[10px] max-w-[400px] px-[29px] py-[11px] rounded-5 cursor-pointer rounded-[20px] animate-pulse`
+      closedChat: `flex items-center gap-x-2 fixed bottom-10 md:right-[10px] right-0 max-w-[400px] px-[29px] py-[11px] rounded-5 cursor-pointer rounded-[20px] animate-pulse`
     }
     return <div onClick={() => setChatIsVisible(true)} className={classNames.closedChat}><Image src={ChatIcon} width={70} height={70} alt="chat support button" /></div>
   }
   const classNames = {
-    chat: `bg-light fixed bottom-10 right-[10px] w-[352px]`,
+    chat: ` z-[300] bg-light fixed bottom-10 md:right-[10px] right-[10px] md:w-[352px]  flex flex-col md:h-[420px] h-auto overflow-y-auto rounded-lg border`,
   }
   return (
-    <div className={`${classNames.chat} flex flex-col h-[420px] overflow-y-auto rounded-lg border`}>
+    <div className={classNames.chat}>
       <div className="flex flex-col flex-1 border-b overflow-y-scroll">
         <div className="flex items-center p-4 space-x-4 border-b pb-0">
           <div className="flex-1">

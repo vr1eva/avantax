@@ -22,7 +22,7 @@ export default function Benefits() {
 function BenefitsList() {
     const classNames = {
         benefit: ``,
-        heading: `text-[34px] leading-[51px] font-semibold text-center pt-20 max-w-[1000px] mx-auto`,
+        heading: `text-[34px] leading-[51px] font-semibold text-center pt-20 max-w-[1000px] mx-auto px-4`,
         cards: `pt-[55px] flex md:flex-row flex-col flex-nowrap gap-5 items-center justify-center w-full `,
         image: `mb-5`
     }
@@ -68,7 +68,7 @@ function BenefitCard({ title, description, children }: BenefitCardProps) {
 
 function CompanyBenefitsList() {
     const classNames = {
-        heading: `text-[34px] leading-[51px] font-semibold text-center pt-[70px] max-w-[860px] mx-auto`,
+        heading: `text-[34px] leading-[51px] font-semibold text-center pt-[70px] max-w-[860px] mx-auto px-4`,
         companyBenefits: ``,
         cards: `pt-[55px] flex flex-col md:flex-row  gap-5 justify-center items-center`,
         image: `mb-5`

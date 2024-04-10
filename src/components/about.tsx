@@ -10,7 +10,7 @@ export default function About() {
     const classNames = {
         about: `md:w-full md:h-[761px] md:pt-[50px] md:px-[15px] md:mb-[66px] flex flex-col items-center mb-[142px] bg-cover h-[372px] relative bg-center bg-contain bg-no-repeat`,
         modal: `md:py-[24px] md:px-[20px] md:w-full md:m-0  rounded-[20px] bg-light xl:py-[50px] xl:px-[65px] w-full max-w-[1244px] mx-auto my-0 absolute top-2/3 max-w-[1244px]`,
-        rowContainer: `md:gap-[30px] flex gap-55 p-4`,
+        rowContainer: `md:gap-[30px] flex gap-55 p-8`,
         kpiList: `order-1 flex flex-col gap-[23px] md:order-1 md:font-semibold md:text-[22px] md:leading-[32px] md:gap-[44px] md:justify-center`,
         content: `order-2 max-w-[800px] `,
         heading: `text-[22px] leading-[32px] font-semibold xl:text-[34px] xl:leading-[51px] m-0 text-dark `,
