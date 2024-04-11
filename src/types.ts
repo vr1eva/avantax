@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image"
-import { ReactElement, ReactNode } from "react"
+import { MouseEventHandler, ReactElement, ReactNode } from "react"
 
 export type Faq = {
     question: string,
@@ -180,6 +180,7 @@ export enum QuickReplyType {
 export interface QuickReplyProps {
     type: QuickReplyType,
     saveCurrentProgress: React.Dispatch<React.SetStateAction<any>>
+    closeChat: MouseEventHandler
 }
 
 export interface ActionPromptProps {
@@ -218,4 +219,8 @@ export type Project = {
     tipology: string,
     investment: string,
     ciprlMax: string
+}
+
+export interface QuickRepliesProps {
+    closeChat: MouseEventHandler
 }

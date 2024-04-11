@@ -9,7 +9,7 @@ import { QUICK_REPLIES } from "@/assets/constants"
 import { useState } from "react"
 import { Separator } from "@radix-ui/react-separator"
 import Link from "next/link"
-import { ActionPromptProps, MessageBubbleProps, QuickReplyProps, QuickReplyType, StatusLabelProps, StatusLedProps } from "@/types"
+import { ActionPromptProps, MessageBubbleProps, QuickRepliesProps, QuickReplyProps, QuickReplyType, StatusLabelProps, StatusLedProps } from "@/types"
 import { TypographyP } from "./ui/typography"
 import ChatIcon from "@/assets/chat.svg"
 import Image from "next/image"
@@ -66,7 +66,7 @@ export default function Chat() {
         </div>
         <div className="p-4 flex-1 flex flex-col gap-4 items-end">
           <MessageBubble><TypographyP>¡Hola! ¡Cómo puedo ayudarte hoy?</TypographyP></MessageBubble>
-          <QuickReplies />
+          <QuickReplies closeChat={() => setChatIsVisible(false)} />
         </div>
       </div>
     </div>
@@ -86,10 +86,10 @@ function MessageBubble({ author = "AvantaxGPT", children }: MessageBubbleProps) 
   )
 }
 
-function QuickReply({ type, saveCurrentProgress }: QuickReplyProps) {
+function QuickReply({ type, saveCurrentProgress, closeChat }: QuickReplyProps) {
   if (type === "consulta") {
     return (
-      <Button onClick={saveCurrentProgress} variant="quickReply">
+      <Button onClick={closeChat} variant="quickReply">
         <Link href="/#contacto" className="flex items-center">Realizar consulta gratuita</Link>
       </Button>
 
@@ -150,7 +150,7 @@ function ActionPrompt({ prompt, clearProgress }: ActionPromptProps) {
   }
 }
 
-function QuickReplies() {
+function QuickReplies({ closeChat }: QuickRepliesProps) {
   const [prompt, setPrompt] = useState("")
 
   if (prompt) {
@@ -159,7 +159,7 @@ function QuickReplies() {
   return (
     <ul className="flex flex-col gap-y-2">
       {QUICK_REPLIES.map(reply => (
-        <QuickReply key={reply.type} type={reply.type as QuickReplyType} saveCurrentProgress={() => setPrompt(reply.type)} />
+        <QuickReply closeChat={closeChat} key={reply.type} type={reply.type as QuickReplyType} saveCurrentProgress={() => setPrompt(reply.type)} />
       ))}
     </ul>
   )
