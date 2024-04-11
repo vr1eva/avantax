@@ -7,8 +7,8 @@ import Link from "next/link"
 
 export default function Footer() {
     const classNames = {
-        footer: `py-8 bg-[#222222] px-[52px] flex gap-[174px] flex-col md:flex-row items-start w-full mx-auto`,
-        column: `flex flex-col gap-5 pt-[26px]`
+        footer: `items-center py-8 bg-[#222222] px-[52px] flex gap-[174px] flex-col md:flex-row items-start w-full mx-auto`,
+        column: `flex flex-col gap-5 pt-[26px] items-center`
     }
 
     return <>
@@ -42,7 +42,7 @@ function ContactItems() {
     const classNames = {
         title: `font-semibold text-[18px] leading-[28px] text-beige`,
         description: `text-beige leading-[35px] text-[18px]`,
-        items: `gap-[7px] flex flex-col flex-wrap gap-x-[55px] h-auto md:h-[152px]`,
+        items: `text-center md:text-left gap-[7px] flex flex-col flex-wrap gap-x-[55px] h-auto md:h-[152px]`,
         item: `min-h-[65px] max-w-[300px]`
 
     }
@@ -61,7 +61,7 @@ function ContactActions() {
         link: `text-beige font-semibold text-[21px]`
     }
     return (
-        <ul className="ml-auto flex flex-col gap-[26px]">
+        <ul className="ml-auto flex flex-col gap-[26px] text-center md:text-left">
             {CONTACT_ACTIONS.map(action => (
                 <Link className={classNames.link} key={action.url} href={action.url}>{action.label}</Link>
             ))}
@@ -71,6 +71,6 @@ function ContactActions() {
 
 function CopyrightNotice() {
     return (
-        <p className="text-center pt-[35px] pb-[32px] text-[18px] bg-[#222222] text-beige">Avantax © Todos los derechos reservados 2023</p>
+        <p className="px-[15px] text-center pt-[35px] pb-[32px] text-[18px] bg-[#222222] text-beige">Avantax © Todos los derechos reservados 2023</p>
     )
 }

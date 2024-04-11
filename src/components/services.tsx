@@ -13,10 +13,10 @@ import { colors } from "@/assets/constants"
 export default function Services() {
 
     const classNames = {
-        services: `md:flex-col md:gap-[44px] md:px-[15px] xl:flex-row flex gap-[42px] max-w-[1306px] w-full my-0 mx-auto overflow-y-hidden p-[700px_15px_0] md:pt-[292px]`,
-        content: `md:w-unset w-[437px]`,
+        services: `flex-col md:gap-[44px] md:px-[15px] md:flex-row flex gap-[42px] max-w-[1306px] w-full my-0 mx-auto overflow-y-hidden p-[600px_15px_0] md:pt-[292px]`,
+        content: `w-full md:w-[437px]`,
         heading: `md:text-[22px] md:leading-8 font-semibold text-[34px] leading-[51px] m-0`,
-        description: `md:text-[16px] md:leading-[26px] md:mt-5 md:w-auto text-[18px] leading-7 mt-[35px] w-[437px] xl:text-[18px] xl:leading-[28px]`,
+        description: `md:text-[16px] md:leading-[26px] md:mt-5 md:w-auto text-[18px] leading-7 mt-[35px] md:w-[437px] xl:text-[18px] xl:leading-[28px] w-full`,
         highlight: `md:font-bold md:text-[16px] md:leading-[26px] text-indigo font-extrabold`,
         cards: ` md:overflow-x-hidden md:p-0 md:w-unset md:w-full flex flex-col max-w-[827px] overflow-x-scroll h-[413px]`,
         controls: `md:hidden flex w-[55px] absolute top-[360px] -left-[13px] cursor-pointer`,
@@ -49,7 +49,7 @@ export default function Services() {
                             </div>
                         </>
                     )
-                }} cellSpacing={25} disableEdgeSwiping slidesToShow={2.5} renderCenterLeftControls={() => (null)} renderCenterRightControls={() => (null)} >
+                }} cellSpacing={20} disableEdgeSwiping slidesToShow={1.1} renderCenterLeftControls={() => (null)} renderCenterRightControls={() => (null)} >
                     {SERVICE_STAGES.slice(0).concat(SERVICE_STAGES.slice(0, 0)).map(({ title, items, color, icon, background }) => (
                         <ServiceCard key={title} title={title} items={items} color={color} icon={serviceIcons[icon as ServiceIconKey]} background={background} />
                     ))}

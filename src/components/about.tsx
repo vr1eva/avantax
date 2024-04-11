@@ -8,11 +8,11 @@ import { buttonVariants } from "@/components/ui/button"
 
 export default function About() {
     const classNames = {
-        about: `md:w-full md:h-[761px] md:pt-[50px] md:px-[15px] md:mb-[66px] flex flex-col items-center mb-[142px] bg-cover h-[372px] relative bg-center bg-contain bg-no-repeat`,
-        modal: `md:py-[24px] md:px-[20px] md:w-full md:m-0  rounded-[20px] bg-light xl:py-[50px] xl:px-[65px] w-full max-w-[1244px] mx-auto my-0 absolute top-2/3 max-w-[1244px]`,
+        about: `p-[50px_15px] md:w-full md:h-[761px] md:pt-[50px] md:px-[15px] md:mb-[66px] flex flex-col items-center mb-[142px] bg-cover h-[372px] relative bg-center bg-contain bg-no-repeat mt-[52px]`,
+        modal: `md:py-[24px] md:px-[20px] md:w-full md:m-0  rounded-[20px] bg-light xl:py-[50px] xl:px-[65px] w-full max-w-[1244px] mx-auto my-0 max-w-[1244px]`,
         rowContainer: `md:gap-[30px] flex gap-55 p-8 flex-col md:flex-row`,
-        kpiList: `order-1 flex flex-col gap-[23px] md:order-1 md:font-semibold md:text-[22px] md:leading-[32px] md:gap-[44px] md:justify-center`,
-        content: `order-2 max-w-[800px] `,
+        kpiList: `mt-[30px] md:mt-0 flex-row order-2 flex md:flex-col gap-[23px] md:order-1 md:font-semibold md:text-[22px] md:leading-[32px] md:gap-[44px] md:justify-center justify-between`,
+        content: `order-1 max-w-[800px] `,
         heading: `text-[22px] leading-[32px] font-semibold xl:text-[34px] xl:leading-[51px] m-0 text-dark `,
         description: `md:text-[16px] md:leading-[26px] md:mt-5 mt-[25px] font-normal text-[18px] leading-[28px]`,
         highlight: `font-bold text-indigo`,
@@ -52,21 +52,22 @@ export default function About() {
 function Kpi({ kpi }: KpiProps) {
     const { symbol, count, sufix, legend } = kpi
     const classNames = {
-        kpi: `md:flex md:flex-col items-center xl:items-end md:w-unset w-[246px] justify-center`,
+        kpi: `md:flex md:flex-col items-center xl:items-end md:w-unset md:w-[246px] justify-center`,
         estimation: `text-[40px] leading-[51px] xl:font-extrabold text-orange xl:text-7xl`,
         legend: `md:text-[15px] md:leading-[22px] font-normal text-[22px] leading-[33px] xl:text-right text-dark`
     }
     return (
         <div className={classNames.kpi}>
             <h1 className={classNames.estimation}>
-                <span>{symbol}</span>
+                <span className="font-extrabold">{symbol}</span>
                 <CountUp
+                    className="font-extrabold"
                     start={0}
                     delay={0}
                     end={count}
-                    duration={2.1}
-                    scrollSpyOnce={true} />
-                <span>{sufix}</span>
+                    duration={2.4}
+                    enableScrollSpy={true} />
+                <span className="font-extrabold">{sufix}</span>
                 <p className={classNames.legend}>{legend}</p>
             </h1>
         </div>

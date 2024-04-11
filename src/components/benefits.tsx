@@ -21,9 +21,9 @@ export default function Benefits() {
 
 function BenefitsList() {
     const classNames = {
-        benefit: ``,
-        heading: `text-[34px] leading-[51px] font-semibold text-center pt-20 max-w-[1000px] mx-auto px-4`,
-        cards: `pt-[55px] flex md:flex-row flex-col flex-nowrap gap-5 items-center justify-center w-full `,
+        benefit: ` px-4`,
+        heading: `text-[22px] leading-[32px] md:text-[34px] md:leading-[51px] font-semibold text-center pt-20 max-w-[1000px] mx-auto px-4`,
+        cards: `overflow-x-auto pt-[55px] flex flex-row flex-nowrap gap-5 items-center md:justify-center w-full `,
         image: `mb-5`
     }
     const heading = "¿Qué beneficios brindan las Obras por Impuestos al país?"
@@ -68,9 +68,9 @@ function BenefitCard({ title, description, children }: BenefitCardProps) {
 
 function CompanyBenefitsList() {
     const classNames = {
-        heading: `text-[34px] leading-[51px] font-semibold text-center pt-[70px] max-w-[860px] mx-auto px-4`,
-        companyBenefits: ``,
-        cards: `pt-[55px] flex flex-col md:flex-row  gap-5 justify-center items-center`,
+        companyBenefits: `px-4`,
+        heading: `text-[22px] leading-[32px] md:text-[34px] md:leading-[51px] font-semibold text-center pt-[70px] max-w-[860px] mx-auto px-4`,
+        cards: `overflow-x-auto  pt-[55px] flex flex-row  gap-5 md:justify-center items-center`,
         image: `mb-5`
     }
     const heading = "¿Qué beneficios brindan las Obras por Impuestos para las empresas que las financian?"
@@ -100,7 +100,7 @@ function CompanyBenefitsList() {
 
 function CallToAction() {
     const classNames = {
-        cta: `mt-[70px] pb-[120px] flex justify-center text-center px-[15px]`,
+        cta: `mt-[70px] pb-[60px] flex justify-center text-center px-[15px]`,
         button: `font-normal`
     }
     const buttonName = "Comienza a invertir"
