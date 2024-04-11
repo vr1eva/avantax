@@ -86,7 +86,7 @@ function Faq() {
 function Team() {
     const classNames = {
         team: `flex flex-col items-start w-full max-w-[1206px] pb-[204px] `,
-        cards: ` flex flex-col gap-[104px] pt-[80px] px-[15px]`,
+        cards: `mt-[37px] flex flex-col gap-[104px] pt-[80px] px-[15px]`,
         heading: ` text-[21px] leading-[31px] xl:text-[34px] font-semibold xl:leading-[51px] mx-auto`,
         carousel: `mt-[80px] px-[117px] xl:hidden`,
         controls: ``,
@@ -109,13 +109,13 @@ function TeamCard({ teammate }: { teammate: Teammate }) {
     const classNames = {
         leftyCard: ``,
         rightyCard: ``,
-        card: `relative list-none flex  bg-light rounded-[10px] py-[44px] px-[40px]`,
+        card: `relative list-none flex  bg-light rounded-[10px] xl:py-[44px] xl:px-[40px] px-[20px] py-[24px]`,
         description: `xl:pl-[240px]`,
         cardImage: ``,
-        details: `pl-[120px]`,
+        details: `pl-[120px] min-w-[280px] min-h-[79px]`,
         name: `text-[21px] font-semibold `,
-        role: `text-indigo text-[20px]`,
-        bio: ``,
+        role: `text-indigo xl:text-[20px] text-[]`,
+        bio: `mt-2`,
         image: `w-[131px] h-[165px] absolute -top-[66px] left-0`
     }
     const cardClassName = teammate.orientation == "left" ? classNames.leftyCard : classNames.rightyCard
