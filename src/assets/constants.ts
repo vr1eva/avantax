@@ -20,6 +20,11 @@ import ray from "@/assets/ray.png"
 import maria from "@/assets/maria.png"
 import debora from "@/assets/debora.png"
 import { z } from "zod";
+import nosotros1 from "@/assets/nosotros-1.png"
+import nosotros2 from "@/assets/nosotros-2.png"
+import nosotros3 from "@/assets/nosotros-3.png"
+
+export const NOSOTROS_IMAGES = [nosotros1, nosotros2, nosotros3]
 
 export const CONTACT_ACTIONS = [
     { label: "Preguntas frecuentes", url: "/#faq" },

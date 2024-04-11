@@ -10,7 +10,7 @@ import { Faq, ReducerAction, ReducerActionType } from "@/types"
 import { Separator } from "@/components/ui/separator"
 
 const classNames = {
-    faqList: `w-full max-w-[1244px] mx-auto p-[71px]`,
+    faqList: `w-full max-w-[1244px] mx-auto px-[15px] py-[40px] md:p-[71px]`,
     heading: `font-semibold text-[34px] leading-[51px] m-0 text-indigo`,
     highlight: `text-indigo`,
     faqs: `mt-[73px] flex flex-col gap-[58px]`,
@@ -58,7 +58,7 @@ export default function FaqList() {
                                 {faq.expanded ? <div className={classNames.answer}>{phasesQuestion ?
                                     (<>
                                         <span>Son 5:</span>
-                                        <ul className="list-disc">
+                                        <ul>
                                             <li>FASE 1: Priorización del proyecto a financiarse</li>
                                             <li>FASE 2: Actos previos al proceso de licitación (Informe Previo Contraloría)</li>
                                             <li>FASE 3: Licitación</li>
