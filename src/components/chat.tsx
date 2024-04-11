@@ -41,10 +41,10 @@ function StatusLabel({ prompt }: StatusLabelProps) {
 }
 
 export default function Chat() {
-  const [chatIsVisible, setChatIsVisible] = useState(true)
+  const [chatIsVisible, setChatIsVisible] = useState(false)
   if (!chatIsVisible) {
     const classNames = {
-      closedChat: `flex items-center gap-x-2 fixed bottom-10 md:right-[10px] right-0 max-w-[400px] px-[29px] py-[11px] rounded-5 cursor-pointer rounded-[20px] animate-pulse`
+      closedChat: `z-[3000] flex items-center gap-x-2 fixed bottom-10 md:right-[10px] right-0 max-w-[400px] px-[29px] py-[11px] rounded-5 cursor-pointer rounded-[20px] animate-pulse`
     }
     return <div onClick={() => setChatIsVisible(true)} className={classNames.closedChat}><Image src={ChatIcon} width={70} height={70} alt="chat support button" /></div>
   }
