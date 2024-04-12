@@ -49,7 +49,7 @@ export default function Chat() {
     return <div onClick={() => setChatIsVisible(true)} className={classNames.closedChat}><Image src={ChatIcon} width={70} height={70} alt="chat support button" /></div>
   }
   const classNames = {
-    chat: `h-[600px] z-[300] bg-light fixed bottom-10 right-[10px] md:w-[352px]  flex flex-col md:h-[420px] h-auto overflow-y-auto rounded-lg border`,
+    chat: `h-[362px] z-[300] bg-light fixed bottom-10 right-[10px] md:w-[352px]  flex flex-col md:h-[420px] h-auto overflow-y-auto rounded-lg border`,
   }
   return (
     <div className={classNames.chat}>
@@ -64,7 +64,7 @@ export default function Chat() {
           </div>
           <Button size="vainilla" variant="closeChat" onClick={() => setChatIsVisible(false)}><Image alt="close icon" src={close} width={24} height={24} /></Button>
         </div>
-        <div className="p-4 flex-1 flex flex-col gap-4 items-end">
+        <div className="max-h-[340px] p-4 flex-1 flex flex-col gap-4 items-end">
           <MessageBubble><TypographyP>¡Hola! ¡Cómo puedo ayudarte hoy?</TypographyP></MessageBubble>
           <QuickReplies closeChat={() => setChatIsVisible(false)} />
         </div>
