@@ -13,9 +13,10 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { CALENDLY_EVENT_URL, calendlyFormSchema } from "@/assets/constants"
 import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { useState } from "react"
 import Link from "next/link"
+import { cn } from "@/lib/utils"
 
 export default function CalendlyForm() {
     const [calendlyUrl, setCalendlyUrl] = useState("")
@@ -111,7 +112,7 @@ export default function CalendlyForm() {
 
                     <Button type="submit" variant="primary" className="text-base">Enviar</Button>
                 </form>
-            </Form> : <Link href={calendlyUrl} className="text-indigo" target="_blank">Confirmar reserva</Link>}
+            </Form> : <Link href={calendlyUrl} className={cn("text-indigo", buttonVariants({ variant: "primary" }))} target="_blank">Confirmar reserva</Link>}
         </>
     )
 }

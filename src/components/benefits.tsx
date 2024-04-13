@@ -70,7 +70,7 @@ function CompanyBenefitsList() {
     const classNames = {
         companyBenefits: `px-4`,
         heading: `text-[22px] leading-[32px] md:text-[34px] md:leading-[51px] font-semibold text-center pt-[70px] max-w-[860px] mx-auto px-4`,
-        cards: `overflow-x-auto  pt-[55px] flex flex-row  gap-5 md:justify-center items-center`,
+        cards: `overflow-x-auto  pt-[55px] flex flex-row  gap-5 md:justify-center items-stretch`,
         image: `mb-5`
     }
     const heading = "¿Qué beneficios brindan las Obras por Impuestos para las empresas que las financian?"
