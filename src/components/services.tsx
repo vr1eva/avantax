@@ -16,7 +16,7 @@ export default function Services() {
 
     const classNames = {
         services: `flex-col md:gap-[44px] md:px-[15px] md:flex-row flex gap-[42px] max-w-[1306px] w-full my-0 mx-auto overflow-y-hidden p-[600px_15px_0] md:pt-[292px]`,
-        content: `w-full md:w-[437px]`,
+        content: `w-full md:w-[437px] shrink-0`,
         heading: `md:text-[22px] md:leading-8 font-semibold text-[34px] leading-[51px] m-0`,
         description: `md:text-[16px] md:leading-[26px] md:mt-5 md:w-auto text-[18px] leading-7 mt-[35px] md:w-[437px] xl:text-[18px] xl:leading-[28px] w-full`,
         highlight: `md:font-bold md:text-[16px] md:leading-[26px] text-indigo font-extrabold`,
@@ -51,7 +51,7 @@ export default function Services() {
                             </div>
                         </>
                     )
-                }} cellSpacing={20} disableEdgeSwiping slidesToShow={width > 836 ? 3.2 : 1.2} renderCenterLeftControls={() => (null)} renderCenterRightControls={() => (null)} >
+                }} cellSpacing={20} disableEdgeSwiping slidesToShow={width > 836 ? 3 : 1} renderCenterLeftControls={() => (null)} renderCenterRightControls={() => (null)} >
                     {SERVICE_STAGES.slice(0).concat(SERVICE_STAGES.slice(0, 0)).map(({ title, items, color, icon, background }) => (
                         <ServiceCard key={title} title={title} items={items} color={color} icon={serviceIcons[icon as ServiceIconKey]} background={background} />
                     ))}
@@ -63,7 +63,7 @@ export default function Services() {
 
 function ServiceCard({ title, items, color, background, icon }: ServiceCardProps) {
     const classNames = {
-        card: `md:w-full cursor-grab pt-[28px] px-[22px] pb-[84px] w-[350px] h-[357px] overflow-hidden rounded-[20px] text-white relative transition ease-in-out delay-500`,
+        card: `md:w-full cursor-grab pt-[28px] px-[22px] pb-[84px] w-[350px] h-[357px] overflow-auto rounded-[20px] text-white relative transition ease-in-out delay-500`,
         cardHeading: `font-semibold text-[21px] leading-8 m-0`,
         cardItems: `mt-[13px] px-[22px] list-disc`,
         cardItem: `font-normal text-[16px] leading-6`,
