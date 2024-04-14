@@ -106,7 +106,7 @@ function CallToAction() {
     const buttonName = "Comienza a invertir"
     return (
         <div className={classNames.cta}>
-            <Link href="/#contact" className={cn(classNames.button, buttonVariants({ variant: "primary" }))}>
+            <Link href="/#contacto" className={cn(classNames.button, buttonVariants({ variant: "primary" }))}>
                 {buttonName}
             </Link>
         </div>
