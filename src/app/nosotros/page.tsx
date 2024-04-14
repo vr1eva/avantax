@@ -28,8 +28,8 @@ function Hero() {
         heading: `max-w-[820px] self-end text-orange xl:text-[72px] xl:leading-[95px] text-[40px] leading-[51px]`,
         paragraph: `max-w-[698px]`,
         highlight: `text-indigo font-semibold`,
-        images: `flex flew-row md:flex-col md:h-[614px] w-full md:w-[504px] md:flex-wrap h-[230px] gap-x-[15px] overflow-x-hidden justify-center`,
-        image: `shrink-0  mt-0 md:last:mt-[158px]`,
+        images: `flex md:flex-wrap flew-row md:flex-col md:h-[614px] w-full md:w-[504px] md:flex-wrap] gap-x-[15px] overflow-x-hidden justify-center`,
+        image: `shrink-0 mt-0 md:last:mt-[158px]`,
         row: `flex gap-[42px] flex-col xl:flex-row`,
         paragraphs: `flex flex-col gap-[40px]`
     }
@@ -39,7 +39,9 @@ function Hero() {
             <div className={classNames.row}>
                 <div className={classNames.images}>
                     {NOSOTROS_IMAGES.map((image, index) => (
-                        <Image className={classNames.image} key={index} width={230} height={188} src={image} alt="nosotros" />
+                        <div className={classNames.image} key={index}>
+                            <Image width={243} height={298} src={image} alt="nosotros" />
+                        </div>
                     ))}
                 </div>
                 <div className={classNames.paragraphs}>
@@ -116,12 +118,12 @@ function TeamCard({ teammate }: { teammate: Teammate }) {
         name: `text-[21px] font-semibold `,
         role: `text-indigo xl:text-[20px] text-[]`,
         bio: `mt-2`,
-        image: `w-[131px] h-[165px] absolute -top-[66px] left-0`
+        image: `w-[131px] h-[165px] absolute -top-[66px] left-0 shrink-0 `
     }
     const cardClassName = teammate.orientation == "left" ? classNames.leftyCard : classNames.rightyCard
     return (
         <li className={`${classNames.card} ${cardClassName}`}>
-            <Image className={classNames.image} width={253} height={290} priority={true} alt={`${teammate.name}'s picture`} src={teammate.image} />
+            <div> <Image className={classNames.image} width={253} height={290} priority={true} alt={`${teammate.name}'s picture`} src={teammate.image} /></div>
             <div className={classNames.description}>
                 <div className={classNames.details}>
                     <h3 className={classNames.name}>{teammate.name}</h3>

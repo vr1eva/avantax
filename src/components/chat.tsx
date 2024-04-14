@@ -16,6 +16,7 @@ import Image from "next/image"
 import CalendlyForm from "./calendly-form"
 import QuotationForm from "@/components/quotation-form"
 import close from "@/assets/close.svg"
+import { useDeviceSize } from "@/lib/hooks"
 
 function StatusLed({ active, mini }: StatusLedProps) {
   const classNames = {
@@ -42,11 +43,12 @@ function StatusLabel({ prompt }: StatusLabelProps) {
 
 export default function Chat() {
   const [chatIsVisible, setChatIsVisible] = useState(false)
+  const [width, height] = useDeviceSize()
   if (!chatIsVisible) {
     const classNames = {
-      closedChat: `z-[3000] flex items-center gap-x-2 fixed bottom-10 md:right-[10px] right-0 max-w-[400px] px-[29px] py-[11px] rounded-5 cursor-pointer rounded-[20px] animate-pulse`
+      closedChat: `z-[3000] flex items-center gap-x-2 fixed bottom-[180px] right-[10px] max-w-[400px] px-[29px] py-[11px] rounded-5 cursor-pointer rounded-[20px] animate-pulse`
     }
-    return <div onClick={() => setChatIsVisible(true)} className={classNames.closedChat}><Image src={ChatIcon} width={70} height={70} alt="chat support button" /></div>
+    return <div onClick={() => setChatIsVisible(true)} className={classNames.closedChat}><Image src={ChatIcon} width={width > 875 ? 70 : 40} height={width > 875 ? 70 : 40} alt="chat support button" /></div>
   }
   const classNames = {
     chat: `h-[362px] z-[300] bg-light fixed bottom-10 right-[10px] md:w-[352px]  flex flex-col md:h-[420px] h-auto overflow-y-auto rounded-lg border`,
