@@ -4,8 +4,6 @@ import Image from "next/image"
 
 import faqCardImage from "@/assets/faqCardImage.jpg"
 import Link from "next/link"
-import Ellipse from "@/assets/ellipse.svg"
-import ActiveEllipse from "@/assets/activeEllipse.svg"
 import { NOSOTROS_IMAGES, team } from "@/assets/constants"
 import { Teammate } from "@/types"
 

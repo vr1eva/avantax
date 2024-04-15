@@ -51,7 +51,7 @@ export default function Services() {
                             </div>
                         </>
                     )
-                }} cellSpacing={20} disableEdgeSwiping slidesToShow={width > 836 ? 3 : 0.8} renderCenterLeftControls={() => (null)} renderCenterRightControls={() => (null)} >
+                }} cellSpacing={30} disableEdgeSwiping slidesToShow={width > 836 ? 3 : 1} renderCenterLeftControls={() => (null)} renderCenterRightControls={() => (null)} >
                     {SERVICE_STAGES.slice(0).concat(SERVICE_STAGES.slice(0, 0)).map(({ title, items, color, icon, background }) => (
                         <ServiceCard key={title} title={title} items={items} color={color} icon={serviceIcons[icon as ServiceIconKey]} background={background} />
                     ))}
@@ -63,7 +63,7 @@ export default function Services() {
 
 function ServiceCard({ title, items, color, background, icon }: ServiceCardProps) {
     const classNames = {
-        card: `md:w-full cursor-grab pt-[28px] px-[22px] pb-[84px] w-[350px] h-[357px]  rounded-[20px] text-white relative transition ease-in-out delay-500`,
+        card: `md:w-full cursor-grab pt-[28px] px-[22px] pb-[84px] h-[357px]  rounded-[20px] text-white relative transition ease-in-out delay-500 `,
         cardHeading: `font-semibold text-[21px] leading-8 m-0`,
         cardItems: `mt-[13px] px-[22px] list-disc`,
         cardItem: `font-normal text-[16px] leading-6`,
