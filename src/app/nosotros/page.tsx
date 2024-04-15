@@ -75,7 +75,7 @@ function Faq() {
 
                 <div className={classNames.actions}>
                     <Link className={classNames.faqLink} href="/faq" >Ir a preguntas frecuentes</Link>
-                    <Link className={classNames.primaryCta} href="/faq" >Contacta con nosotros</Link>
+                    <Link className={classNames.primaryCta} href="/#contacto" >Contacta con nosotros</Link>
                 </div>
             </div>
 
