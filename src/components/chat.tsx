@@ -77,7 +77,7 @@ export default function Chat() {
 
 function MessageBubble({ author = "AvantaxGPT", children }: MessageBubbleProps) {
   return (
-    <div className="rounded-xl bg-white dark:bg-gray-800 p-4 max-w-xs self-start">
+    <div className="rounded-xl bg-white w-full dark:bg-gray-800 p-4 self-start">
       <div className="flex gap-2"><StatusLed active mini /><h3 className="text-sm font-semibold">{author}</h3></div>
       <Separator className="bg-light" />
       <div className="mt-2 text-sm text-gray-500 dark:text-gray-400">

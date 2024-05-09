@@ -37,7 +37,7 @@ export default function CalendlyForm() {
     return (
         <>
             {!calendlyUrl ? <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col space-y-4 justify-start">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col space-y-4 justify-start w-full">
                     <FormField
                         control={form.control}
                         name="razon"

@@ -71,6 +71,6 @@ function ContactActions() {
 
 function CopyrightNotice() {
     return (
-        <p className="px-[15px] text-center pt-[35px] pb-[32px] text-[18px] bg-[#222222] text-beige">Avantax © Todos los derechos reservados 2023</p>
+        <p className="px-[15px] text-center pt-[35px] pb-[32px] text-[18px] bg-[#222222] text-beige">Avantax © Todos los derechos reservados 2024</p>
     )
 }
